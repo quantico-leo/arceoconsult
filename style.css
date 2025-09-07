@@ -13,3 +13,13 @@ h1, h3 {
 footer {
   font-size: 0.8rem;
 }
+.navbar-nav .nav-link {
+  font-family: "Georgia", serif;
+  margin-right: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-link.active {
+  border-bottom: 2px solid white;
+}
