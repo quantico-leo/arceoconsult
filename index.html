@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ArceoConsult – Boutique Consultancy</title>
   <meta name="description" content="ArceoConsult helps mid-tier investors and SMEs unlock value from broken investments – unlisted shares, bonds, crypto. Exit clearly, achieve tax optimization, and regain control.">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="icon" type="image/webp" href="ArceoConsult loggo.webp">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Favicon (byt till en liten PNG/SVG utan mellanslag) -->
+  <link rel="icon" type="image/svg+xml" href="assets/arceoconsult-logo.svg">
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">
-        <img src="ArceoConsult loggo.webp" alt="ArceoConsult Logo" height="45">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+        <img src="assets/arceoconsult-logo.svg" alt="ArceoConsult Logo" class="logo" />
       </a>
-      <div class="collapse navbar-collapse">
+
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link fw-bold active" href="about.html">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bold" href="what-we-do.html">What We Do</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bold" href="services.html">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bold" href="contact.html">Contact</a>
-          </li>
+          <li class="nav-item"><a class="nav-link fw-semibold active" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="what-we-do.html">What We Do</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -38,7 +42,7 @@
   <!-- Hero Section -->
   <header class="hero bg-light text-center py-5">
     <div class="container">
-      <h1 class="display-3 fw-bold">Are you trapped in a broken financial arrangement?</h1>
+      <h1 class="display-5 fw-semibold">Are you trapped in a broken financial arrangement?</h1>
       <p class="lead">We coach mid-tier investors and SMEs stuck in unlisted shares, high-yield bonds, and crypto/derivatives. Exit clearly, achieve <strong>tax optimization</strong>, and regain control.</p>
       <a href="contact.html" class="btn btn-primary btn-lg m-2">Book a 20-minute Loss-to-Liquidity Call</a>
       <a href="how-it-works.html" class="btn btn-outline-dark btn-lg m-2">See how it works</a>
@@ -67,5 +71,8 @@
   <footer class="bg-dark text-white text-center py-3">
     <small>ArceoConsult OÜ (Estonia) is a coaching & coordination practice. We are not a law firm or investment advisor. All engagements comply with KYC/AML.</small>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
