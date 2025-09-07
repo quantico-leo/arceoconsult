@@ -1,25 +1,29 @@
-body {
-  font-family: Arial, sans-serif;
+/* Global typography */
+:root {
+  --text-color: #333;
 }
 
-.hero {
-  background: linear-gradient(to right, #f8f9fa, #e9ecef);
+html, body {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
-h1, h3 {
+/* Logo sizing */
+.logo {
+  width: 240px;     /* desktop */
+  height: auto;
+  display: block;
+}
+
+/* Headings for consistency */
+h1, h2, h3, h4 {
   font-weight: 600;
+  letter-spacing: 0.2px;
 }
 
-footer {
-  font-size: 0.8rem;
-}
-.navbar-nav .nav-link {
-  font-family: "Georgia", serif;
-  margin-right: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.nav-link.active {
-  border-bottom: 2px solid white;
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .logo { width: 170px; }     /* mobil */
+  .hero .display-5 { font-size: 2rem; }
 }
