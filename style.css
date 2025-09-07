@@ -27,3 +27,20 @@ h1, h2, h3, h4 {
   .logo { width: 170px; }     /* mobil */
   .hero .display-5 { font-size: 2rem; }
 }
+/* Premium CTA med guldkant */
+.btn-gold {
+  border: 2px solid #d4af37;   /* guld */
+  color: #d4af37;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+  background-color: transparent;
+}
+
+.btn-gold:hover {
+  background-color: #d4af37;   /* fylls i guld */
+  color: #fff;                 /* texten blir vit */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
