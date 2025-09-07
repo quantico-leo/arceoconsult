@@ -44,3 +44,15 @@ h1, h2, h3, h4 {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
+/* Footer polish */
+footer {
+  border-top: 2px solid #d4af37; /* tunn guldkant */
+  padding-top: 1.5rem;
+  background-color: #111;        /* mörkare svart för kontrast */
+  color: #ddd;
+  font-size: 0.9rem;
+}
+
+footer small {
+  color: #bbb;
+}
