@@ -21,9 +21,16 @@
     a{color:inherit;text-decoration:none;}
     a:hover{text-decoration:underline;}
     .navbar{box-shadow:0 2px 12px rgba(0,0,0,.06);}
+    .navbar-brand{
+      background:#f2f2f2;     /* loggan på en ljusgrå platta */
+      padding:4px 10px;
+      border-radius:6px;
+      display:inline-flex;
+      align-items:center;
+    }
     .navbar-brand img{
       height:52px;width:auto;display:block;
-      filter:drop-shadow(0 0 4px rgba(0,0,0,.4)); /* gör loggan tydligare */
+      filter:drop-shadow(0 0 3px rgba(0,0,0,.2));
     }
     .hero{position:relative;min-height:68vh;display:flex;align-items:center;background:#f6f7fb;}
     .hero::before{
@@ -69,62 +76,4 @@
   <header class="hero">
     <div class="overlay"></div>
     <div class="container content py-5">
-      <span class="badge-gold mb-2">Financial Restructuring Boutique</span>
-      <h1>Stabilize liquidity. Coordinate creditors. Regain control.</h1>
-      <p class="lead">We help owner-led companies across the Nordics and the European Union/United Kingdom. Clear cash planning, structured creditor dialogue, and confident decision-making — delivered discreetly.</p>
-      <div class="d-flex gap-3 mt-2">
-        <a class="btn btn-custom btn-lg" href="#contact">Start a confidential call</a>
-        <a class="btn btn-outline btn-lg" href="#approach">How we work</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- APPROACH -->
-  <section id="approach" class="py-5">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="p-4 pill h-100">
-            <h3 class="h5 fw-bold">Liquidity</h3>
-            <p class="mb-0">Thirteen-week cash plan with weekly variance rhythm lenders trust.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="p-4 pill h-100">
-            <h3 class="h5 fw-bold">Creditors</h3>
-            <p class="mb-0">Standstill preparation, respectful dialogue, and clear weekly packs.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="p-4 pill h-100">
-            <h3 class="h5 fw-bold">Governance</h3>
-            <p class="mb-0">Founder protection, access control, and a simple operating cadence.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="py-5 bg-light">
-    <div class="container">
-      <div class="p-4 p-md-5 bg-white pill">
-        <h2 class="h4 fw-bold mb-2">Contact</h2>
-        <p class="mb-3 text-muted">Quick, confidential first step — reach us directly.</p>
-        <div class="d-flex flex-wrap gap-2">
-          <a class="btn btn-custom" href="mailto:info@arceocoult.com">info@arceocoult.com</a>
-          <a class="btn btn-outline" href="https://wa.me/46700193462" target="_blank">
-            +46 700-193462 <i class="fa-brands fa-whatsapp" style="color:#25D366; margin-left:8px;"></i>
-          </a>
-          <a class="btn btn-outline" href="https://www.arceoconsult.com" target="_blank">www.arceoconsult.com</a>
-        </div>
-        <p class="small text-muted mt-3 mb-0">Advisory services only. We coordinate with licensed local professionals for regulated processes.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="py-4 bg-white">
-    <div class="container d-flex justify-content-between flex-wrap gap-2">
-      <small>© <span id="y"></span> ArceoConsult OÜ. All rights reserved.</small>
-      <small class="text-muted">info@arceocoult.com • +46 700-193462 <i class="fa-brands fa-whatsapp" style="color:#25D366; margin-left:4px;"></i> • www.arceoconsult.com</small>
+      <span class="badge-gold mb-2">Financial Restructuring Boutiq
