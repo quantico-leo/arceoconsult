@@ -4,63 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="google" content="notranslate">
-  <title>ArceoConsult — Boutique Restructuring for Small and Mid-Sized Companies</title>
-  <meta name="description" content="ArceoConsult helps owner-led companies regain control during financial stress. We stabilize liquidity, coordinate with creditors, and restore clear governance with discretion.">
+  <title>ArceoConsult — Boutique Restructuring</title>
+  <meta name="description" content="Boutique restructuring for owner-led companies. We stabilize liquidity, coordinate with creditors, and restore clear governance with discretion.">
 
-  <!-- Canonical & theme -->
+  <!-- Canonical & theme (byt YOURDOMAIN) -->
   <link rel="canonical" href="https://YOURDOMAIN/">
   <meta name="theme-color" content="#ffffff">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="ArceoConsult — Boutique Restructuring for Small and Mid-Sized Companies">
+  <meta property="og:title" content="ArceoConsult — Boutique Restructuring">
   <meta property="og:description" content="Practical restructuring delivered with speed and discretion across the European Union and the United Kingdom.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://YOURDOMAIN/">
   <meta property="og:image" content="https://YOURDOMAIN/assets/img/og-image.png">
 
-  <!-- Fonts & CSS -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/img/arceoconsult-logo.svg">
 
-  <!-- Favicon -->
-  <img src="arceoconsult-logo.svg" alt="ArceoConsult logo" style="height:40px; width:auto;">
-
-
-
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"ProfessionalService",
-    "name":"ArceoConsult OU",
-    "url":"https://YOURDOMAIN/",
-    "description":"Restructuring and turnaround advisory for owner-led small and mid-sized companies.",
-    "areaServed":"European Union, United Kingdom",
-    "founder":{"@type":"Person","name":"Leo Riccardo Celija"},
-    "sameAs":[
-      "https://www.linkedin.com/in/YOUR-LINKEDIN",
-      "https://x.com/YOUR-HANDLE"
-    ],
-    "hasOfferCatalog":{
-      "@type":"OfferCatalog",
-      "name":"ArceoConsult Programs",
-      "itemListElement":[
-        {"@type":"Offer","name":"Stabilize (approximately 3 to 4 weeks)"},
-        {"@type":"Offer","name":"Restructure (approximately 2 to 3 months)"},
-        {"@type":"Offer","name":"Chief Restructuring Officer — Remote (approximately 3 to 6 months)"}
-      ]
-    }
-  }
-  </script>
+  <!-- Minimal inline-style för guld-box + logga -->
+  <style>
+    .badge-gold{background:#d4af37;color:#000;border-radius:.5rem;padding:.5rem 1rem;font-weight:700;display:inline-block}
+    .brand-logo{height:40px;width:auto}
+    @media (max-width: 480px){.brand-logo{height:34px}}
+    /* Om SVG mot för mörk bakgrund – ta bort kommentaren nedan för att invertera:
+    .navbar-dark .brand-logo{filter: invert(1) hue-rotate(180deg);}
+    */
+  </style>
 </head>
 <body class="notranslate">
-  <!-- Navigation -->
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation" aria-label="Main navigation">
     <div class="container">
-      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
-        <img src="arceoconsult-logo.svg" alt="ArceoConsult logo" width="28" height="28">
-        <span>ArceoConsult</span>
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <!-- LOGO med robust fallback: om bilden inte laddar, visas bara texten -->
+        <img src="assets/img/arceoconsult-logo.svg"
+             alt="ArceoConsult logo"
+             class="brand-logo"
+             onerror="this.replaceWith(document.getElementById('brandText'));">
+        <span id="brandText" style="display:none;font-weight:700;">ArceoConsult</span>
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
@@ -70,12 +52,11 @@
 
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link fw-semibold active" href="approach.html">Approach</a></li>
-          <li class="nav-item"><a class="nav-link fw-semibold" href="services.html">Programs and Pricing</a></li>
-          <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="approach.html">Approach</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
-        <a class="btn btn-primary ms-lg-3" href="contact.html">Book a Consultation</a>
+        <a class="btn btn-primary ms-lg-3" href="contact.html">Book a consultation</a>
       </div>
     </div>
   </nav>
@@ -83,119 +64,35 @@
   <!-- Hero -->
   <header class="py-5 text-center bg-light border-bottom">
     <div class="container">
-      <h1 class="display-5 fw-bold">Boutique Restructuring for Small and Mid-Sized Companies</h1>
+      <div class="badge-gold mb-3">Financial Restructuring Boutique</div>
+      <h1 class="fw-bold">Stabilize liquidity. Coordinate creditors. Regain control.</h1>
       <p class="lead mt-3">
-        We apply proven restructuring methods to real-world situations. Our work focuses on three things:
-        stable liquidity, constructive creditor dialogue, and clear decision-making. We deliver discreetly across the European Union and the United Kingdom.
+        We apply proven restructuring methods to owner-led companies. Clear cash planning, structured dialogue,
+        and confident decision-making — delivered discreetly across the European Union and the United Kingdom.
       </p>
       <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
-        <a class="btn btn-primary btn-lg" href="contact.html" role="button">Start with a confidential call</a>
+        <a class="btn btn-primary btn-lg" href="contact.html" role="button">Start a confidential call</a>
         <a class="btn btn-outline-dark btn-lg" href="light-ibr.html" role="button">View our review template</a>
       </div>
       <ul class="list-inline text-muted mt-3">
         <li class="list-inline-item">Thirteen-week cash planning</li>
-        <li class="list-inline-item">Independent business review (light version)</li>
+        <li class="list-inline-item">Independent business review (light)</li>
         <li class="list-inline-item">Creditor standstill coordination</li>
         <li class="list-inline-item">Founder protection and governance</li>
       </ul>
     </div>
   </header>
 
-  <!-- Our role / scope -->
-  <section class="container py-5">
+  <!-- What we do (kort) -->
+  <section class="container py-5 text-center">
     <div class="row g-4">
-      <div class="col-md-6">
-        <div class="p-4 border rounded-3 h-100">
-          <h2 class="h4 fw-bold mb-3">Our role</h2>
-          <ul class="mb-0">
-            <li>We are a hands-on restructuring partner for owner-led companies.</li>
-            <li>We build a clear liquidity view and a weekly operating rhythm.</li>
-            <li>We help leadership communicate consistently with lenders and suppliers.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="p-4 border rounded-3 h-100">
-          <h2 class="h4 fw-bold mb-3">Our scope</h2>
-          <ul class="mb-0">
-            <li>We are not a bank or a lender.</li>
-            <li>We are not a law firm or a bookkeeping service.</li>
-            <li>We do not sell financial products. We provide advisory work and coordinate with licensed professionals when required.</li>
-          </ul>
-        </div>
-      </div>
+      <div class="col-md-4"><h3>Liquidity</h3><p>Build a practical thirteen-week cash plan and a weekly review.</p></div>
+      <div class="col-md-4"><h3>Creditors</h3><p>Plan standstills and maintain clear, consistent communication.</p></div>
+      <div class="col-md-4"><h3>Governance</h3><p>Protect the founder with roles, access control, and cadence.</p></div>
     </div>
   </section>
 
-  <!-- Programs -->
-  <section class="bg-body-tertiary py-5 border-top border-bottom">
-    <div class="container">
-      <h2 class="h3 fw-bold text-center mb-4">Programs and pricing</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="p-4 border rounded-3 h-100">
-            <h3 class="h5 fw-bold">Stabilize (approximately 3 to 4 weeks)</h3>
-            <ul>
-              <li>Build a thirteen-week cash plan and review weekly differences</li>
-              <li>Map creditors and plan the first conversations</li>
-              <li>Prepare a standstill request for the most important counterparties</li>
-              <li>Introduce basic governance and access control</li>
-            </ul>
-            <p class="fw-semibold">95,000–145,000 SEK or 8,500–12,500 EUR (fixed, paid in advance)</p>
-            <a class="btn btn-outline-dark" href="contact.html">Book a consultation</a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="p-4 border rounded-3 h-100">
-            <h3 class="h5 fw-bold">Restructure (approximately 2 to 3 months)</h3>
-            <ul>
-              <li>Independent business review (10–12 pages) and liquidity runway</li>
-              <li>Options memo: refinancing, debt-to-equity conversion, or asset sale</li>
-              <li>Tax-aware structure with local licensed advisors</li>
-              <li>Weekly lender pack and scheduled calls</li>
-            </ul>
-            <p class="fw-semibold">295,000–495,000 SEK or 25,000–45,000 EUR plus a success component (2–4 percent)</p>
-            <a class="btn btn-outline-dark" href="services.html">See how we work</a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="p-4 border rounded-3 h-100">
-            <h3 class="h5 fw-bold">Chief Restructuring Officer — Remote (approximately 3 to 6 months)</h3>
-            <ul>
-              <li>Weekly cadence, reporting, and covenant management</li>
-              <li>Supplier program, pricing discipline, and working capital actions</li>
-              <li>Oversight of the chosen plan and critical negotiations</li>
-              <li>Board reporting and preparation</li>
-            </ul>
-            <p class="fw-semibold">75,000–95,000 SEK or 6,500–8,500 EUR per month plus an outcome component</p>
-            <a class="btn btn-outline-dark" href="contact.html">Discuss fit</a>
-          </div>
-        </div>
-      </div>
-      <p class="text-muted small mt-3 mb-0">Advisory services only. When a formal legal process is required, we coordinate with licensed local professionals and remain on the company side.</p>
-    </div>
-  </section>
-
-  <!-- Outcomes -->
-  <section class="container py-5">
-    <h2 class="h3 fw-bold text-center mb-4">Typical results</h2>
-    <div class="row g-4">
-      <div class="col-md-4"><div class="p-4 border rounded-3 h-100">
-        <h3 class="h6 fw-bold mb-2">Clear view of liquidity</h3>
-        <p class="mb-0">A practical thirteen-week cash plan and weekly follow-up create transparency.</p>
-      </div></div>
-      <div class="col-md-4"><div class="p-4 border rounded-3 h-100">
-        <h3 class="h6 fw-bold mb-2">Time to act</h3>
-        <p class="mb-0">Standstill discussions with the most important creditors to create space for changes.</p>
-      </div></div>
-      <div class="col-md-4"><div class="p-4 border rounded-3 h-100">
-        <h3 class="h6 fw-bold mb-2">Stronger leadership</h3>
-        <p class="mb-0">Clear roles, controlled access, and consistent communication reduce noise and risk.</p>
-      </div></div>
-    </div>
-  </section>
-
-  <!-- Brand note -->
+  <!-- Brand split (utan priser) -->
   <section class="bg-light py-5 border-top">
     <div class="container">
       <h2 class="h4 fw-bold text-center mb-4">Two brands, clear hand-offs</h2>
@@ -203,14 +100,13 @@
         <div class="col-md-6">
           <div class="p-4 border rounded-3 h-100">
             <h3 class="h6 fw-bold">ArceoConsult OU</h3>
-            <p class="mb-3">Company-side restructuring: liquidity, creditors, options, and founder protection.</p>
-            <a class="btn btn-outline-dark" href="services.html">Programs and pricing</a>
+            <p class="mb-0">Company-side restructuring: liquidity, creditors, options, and founder protection.</p>
           </div>
         </div>
         <div class="col-md-6">
           <div class="p-4 border rounded-3 h-100">
             <h3 class="h6 fw-bold">SweInvest Finance</h3>
-            <p class="mb-3">Recovery of portfolio assets: unlisted shares, high-yield bonds, digital assets, and distressed holdings.</p>
+            <p class="mb-3">Recovery of portfolio assets: unlisted shares, high-yield bonds, and digital assets.</p>
             <a class="btn btn-outline-dark" href="https://sweinvest.se" target="_blank" rel="noopener">Visit SweInvest</a>
           </div>
         </div>
@@ -218,11 +114,11 @@
     </div>
   </section>
 
-  <!-- Closing call to action -->
+  <!-- CTA -->
   <section class="py-5 text-center">
     <div class="container">
-      <h2 class="h3 fw-bold">Stabilize liquidity, gain time, negotiate effectively.</h2>
-      <a class="btn btn-primary btn-lg mt-2" href="contact.html">Start a confidential call</a>
+      <h2 class="h4 fw-bold">Stabilize liquidity, gain time, negotiate effectively.</h2>
+      <a class="btn btn-primary btn-lg mt-2" href="contact.html">Book a consultation</a>
     </div>
   </section>
 
@@ -230,9 +126,7 @@
   <footer class="bg-dark text-white text-center py-4">
     <div class="container">
       <small class="d-block mb-2">© <span id="year"></span> ArceoConsult OÜ. All rights reserved.</small>
-      <small class="d-block">
-        Advisory practice only. We are not a law firm, a lender, or an investment adviser. All engagements follow know-your-customer and anti-money-laundering requirements.
-      </small>
+      <small class="d-block">Advisory practice only. We are not a law firm, a lender, or an investment adviser. KYC/AML applies to all engagements.</small>
     </div>
   </footer>
 
