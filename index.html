@@ -4,15 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="google" content="notranslate">
-  <title>ArceoConsult — Nordic Restructuring Boutique</title>
-  <meta name="description" content="Boutique restructuring for owner-led companies across the Nordics and EU/UK. We stabilize liquidity, coordinate creditors, and restore clear governance with discretion.">
+  <title>ArceoConsult — Nordic Restructuring & Founder Protection</title>
+  <meta name="description" content="Nordic boutique for restructuring and founder protection. We give clarity, time, and negotiation strength to owner-led companies across the Nordics and EU/UK.">
 
   <!-- Bootstrap & Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    :root{ --accent:#d4af37; --dark:#1c1c1c; --ink:#111; --light:#fff; }
+    :root{
+      --accent:#d4af37;
+      --dark:#2a2a2a; /* lite gråare än pitch black */
+      --ink:#111;
+      --light:#fff;
+    }
     html,body{background:#fff;color:#222;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial}
     a{color:inherit;text-decoration:none}
     a:hover{text-decoration:underline}
@@ -24,28 +29,28 @@
     .navbar .btn:hover{background:var(--accent); color:#000 !important; border-color:var(--accent)}
     .navbar-brand img{
       height:52px; width:auto; display:block;
-      filter:drop-shadow(0 0 6px rgba(255,255,255,.75));
+      filter:drop-shadow(0 0 6px rgba(255,255,255,.9));
     }
 
     /* HERO */
-    .hero{position:relative;min-height:68vh;display:flex;align-items:center;background:#f6f7fb}
+    .hero{position:relative;min-height:72vh;display:flex;align-items:center;background:#f6f7fb}
     .hero::before{
       content:""; position:absolute; inset:0;
-      background-image:url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=2000&auto=format&fit=crop');
-      background-size:cover; background-position:center; filter:brightness(.78);
+      background-image:url('https://images.unsplash.com/photo-1509223197845-458d87318791?q=80&w=2000&auto=format&fit=crop');
+      background-size:cover; background-position:center; filter:brightness(.72);
     }
-    .hero .overlay{position:absolute; inset:0; background:linear-gradient(180deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,.82) 50%,rgba(255,255,255,.9) 100%)}
+    .hero .overlay{position:absolute; inset:0; background:rgba(255,255,255,.78)}
     .hero .content{position:relative}
     .badge-gold{background:var(--accent); color:#000; font-weight:700; border-radius:10px; padding:.5rem 1rem; display:inline-block}
-    .hero h1{font-weight:800; color:var(--ink); font-size:clamp(30px,5.2vw,56px); line-height:1.08; margin:.8rem 0 1rem}
-    .hero .lead{max-width:900px; font-size:1.1rem; color:#444; font-weight:500}
+    .hero h1{font-weight:800; color:var(--ink); font-size:clamp(30px,5.2vw,54px); line-height:1.1; margin:.8rem 0 1rem}
+    .hero .lead{max-width:860px; font-size:1.1rem; color:#333; font-weight:500}
     .btn-darkfill{background:#000; color:#fff; border:none; border-radius:8px; padding:.8rem 1.4rem; font-weight:600}
     .btn-darkfill:hover{background:var(--accent); color:#000}
     .btn-outline{border:2px solid #000; color:#000; border-radius:8px; padding:.8rem 1.4rem; font-weight:600}
     .btn-outline:hover{background:var(--accent); color:#000; border-color:var(--accent)}
 
     /* Sections */
-    .pill{border-radius:12px; border:1px solid rgba(0,0,0,.08); box-shadow:0 2px 12px rgba(0,0,0,.06)}
+    .pill{border-radius:12px; border:1px solid rgba(0,0,0,.08); box-shadow:0 2px 12px rgba(0,0,0,.06); background:#fff}
     section h2{font-weight:800; color:#111}
 
     /* Footer */
@@ -65,9 +70,9 @@
       </button>
       <div id="nav" class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="#whatwedo">What We Do</a></li>
-          <li class="nav-item"><a class="nav-link" href="#benefits">What's in it for me?</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#whatwedo">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#benefits">Your Advantage</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           <li class="nav-item ms-lg-2"><a class="btn" href="#contact">Book a consultation</a></li>
         </ul>
@@ -79,9 +84,9 @@
   <header id="top" class="hero">
     <div class="overlay"></div>
     <div class="container content py-5">
-      <span class="badge-gold mb-2">Financial Restructuring Boutique</span>
-      <h1>Stabilize liquidity. Coordinate creditors. Regain control.</h1>
-      <p class="lead">We help owner-led companies across the Nordics and the European Union/United Kingdom. Clear cash planning, structured creditor dialogue, and confident decision-making — delivered discreetly.</p>
+      <span class="badge-gold mb-2">Nordic Restructuring & Founder Protection</span>
+      <h1>Clarity. Stability. Control.</h1>
+      <p class="lead">We support owner-led companies across the Nordics and EU/UK. Our role is to bring clarity to your cash, create breathing space with creditors, and ensure you as the founder stay in control — discreetly and effectively.</p>
       <div class="d-flex gap-3 mt-2">
         <a class="btn btn-darkfill btn-lg" href="#contact">Start a confidential call</a>
         <a class="btn btn-outline btn-lg" href="#whatwedo">How we work</a>
@@ -93,26 +98,30 @@
   <section id="about" class="py-5 bg-light">
     <div class="container">
       <h2 class="h4 mb-3">About Us</h2>
-      <p class="lead">ArceoConsult is a Nordic boutique focused on restructuring and founder protection. We stabilize liquidity, coordinate stakeholders, and restore clear governance with a discreet, remote-first approach.</p>
+      <p class="lead">ArceoConsult is a Nordic boutique focused on restructuring and founder protection. We work alongside law firms, lenders, and advisors to safeguard owner interests, restore governance, and give clear direction in uncertain times.</p>
     </div>
   </section>
 
   <!-- WHAT WE DO -->
   <section id="whatwedo" class="py-5">
     <div class="container">
-      <h2 class="h4 mb-4">What We Do</h2>
+      <h2 class="h4 mb-4">Services</h2>
       <div class="row g-4">
-        <div class="col-md-4"><div class="p-4 pill h-100">
-          <h3 class="h6 fw-bold">Thirteen-week cash</h3>
-          <p class="mb-0">Build clarity and run weekly variance discipline lenders trust.</p>
+        <div class="col-md-3"><div class="p-4 pill h-100">
+          <h3 class="h6 fw-bold">Cash clarity</h3>
+          <p class="mb-0">A simple 13-week cash plan that shows how long funds last — trusted by lenders and giving you peace of mind.</p>
         </div></div>
-        <div class="col-md-4"><div class="p-4 pill h-100">
-          <h3 class="h6 fw-bold">Creditor standstills</h3>
-          <p class="mb-0">Prepare standstill requests and choreograph respectful dialogue.</p>
+        <div class="col-md-3"><div class="p-4 pill h-100">
+          <h3 class="h6 fw-bold">Creditor dialogue</h3>
+          <p class="mb-0">We prepare respectful standstill requests and lead the dialogue with banks and suppliers — reducing pressure and buying you time.</p>
         </div></div>
-        <div class="col-md-4"><div class="p-4 pill h-100">
+        <div class="col-md-3"><div class="p-4 pill h-100">
           <h3 class="h6 fw-bold">Founder protection</h3>
-          <p class="mb-0">Governance reset, access control, and a simple operating cadence.</p>
+          <p class="mb-0">We secure governance, access control, and a practical rhythm so you as the founder keep control of the company.</p>
+        </div></div>
+        <div class="col-md-3"><div class="p-4 pill h-100">
+          <h3 class="h6 fw-bold">Cross-border structuring</h3>
+          <p class="mb-0">For international operations we coordinate with local counsel in the EU and UK for entity resets, exits, and asset shielding.</p>
         </div></div>
       </div>
     </div>
@@ -121,8 +130,8 @@
   <!-- BENEFITS -->
   <section id="benefits" class="py-5 bg-light">
     <div class="container">
-      <h2 class="h4 mb-3">What's in it for me?</h2>
-      <p class="lead">You gain time, stability, and negotiation power. Liquidity clarity and steady rhythms reduce noise, strengthen lender trust, and let you lead instead of react. This is about control — back in your hands.</p>
+      <h2 class="h4 mb-3">Your Advantage</h2>
+      <p class="lead">You gain time, stability, and negotiation strength. With clear cash planning and structured creditor dialogue, noise goes down, trust goes up, and you can lead with confidence instead of reacting in stress.</p>
     </div>
   </section>
 
@@ -138,7 +147,7 @@
             +46 700-193462 <i class="fa-brands fa-whatsapp" style="color:#25D366; margin-left:8px;"></i>
           </a>
         </div>
-        <p class="small text-muted mt-3 mb-0">Advisory services only. We coordinate with licensed local professionals for regulated processes.</p>
+        <p class="small text-muted mt-3 mb-0">ArceoConsult OÜ is a strategic advisory. Not a law firm. Engagements comply with KYC/AML and coordinate with licensed local professionals.</p>
       </div>
     </div>
   </section>
@@ -147,4 +156,12 @@
   <footer class="py-4 bg-white">
     <div class="container d-flex justify-content-between flex-wrap gap-2">
       <small>© <span id="y"></span> ArceoConsult OÜ. All rights reserved.</small>
-      <small class="text-muted">info@arceoconsult.com •
+      <small class="text-muted">info@arceoconsult.com</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
