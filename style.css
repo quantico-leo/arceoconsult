@@ -56,3 +56,19 @@ footer {
 footer small {
   color: #bbb;
 }
+/* Kill any glow/shadow on the navbar logo */
+.navbar img,
+.logo,
+.navbar .logo,
+.navbar img[src$="arceoconsult-logo.svg"] {
+  filter: none !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
+/* Säkerställ solid header (ingen transparent/blur som “mjölkar” loggan) */
+.navbar {
+  background: #111 !important;
+  backdrop-filter: none !important;
+}
