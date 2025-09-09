@@ -1,18 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="google" content="notranslate">
-  <title>ArceoConsult — Nordic Restructuring & Founder Protection</title>
-  <meta name="description" content="Boutique restructuring for owner-led companies across the Nordics and EU/UK. Cash clarity, creditor dialogue, and founder control — delivered discreetly.">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google" content="notranslate">
+<title>ArceoConsult — Nordic Restructuring & Founder Protection</title>
+<meta name="description" content="Boutique restructuring for owner-led companies across the Nordics and EU/UK. Cash clarity, creditor dialogue, and founder control — delivered discreetly.">
+<style>
+  :root{--accent:#d4af37;--dark:#2a2a2a;--ink:#111;}
+  html,body{margin:0;background:#fff;color:#222;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial}
+  a{color:inherit;text-decoration:none} a:hover{text-decoration:underline}
+  /* NAVBAR (no Bootstrap) */
+  .navbar{position:sticky;top:0;z-index:50;background:var(--dark);box-shadow:0 2px 12px rgba(0,0,0,.25)}
+  .navwrap{max-width:1120px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:18px}
+  .brand img{height:52px;filter:drop-shadow(0 0 10px rgba(255,255,255,.95));display:block}
+  .spacer{flex:1}
+  .nav a{color:#fff;margin-left:18px;font-weight:500}
+  .btn{display:inline-block;border:1px solid #fff;padding:8px 14px;border-radius:8px}
+  .btn:hover{background:var(--accent);color:#000;border-color:var(--accent)}
+  /* HERO */
+  .hero{position:relative;min-height:68vh;display:flex;align-items:center;background:#f4f5f8}
+  .hero::before{content:"";position:absolute;inset:0;
+    background:url('https://images.unsplash.com/photo-1509223197845-458d87318791?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+    filter:brightness(.68) saturate(.95)}
+  .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.85),rgba(255,255,255,.8),rgba(255,255,255,.86))}
+  .container{position:relative;max-width:1120px;margin:0 auto;padding:0 16px}
+  .badge{display:inline-block;background:var(--accent);color:#000;font-weight:700;border-radius:10px;padding:.5rem 1rem;margin-top:18px}
+  h1{font-size:clamp(30px,5.2vw,54px);line-height:1.1;margin:.8rem 0 1rem;color:var(--ink);font-weight:800}
+  .lead{max-width:860px;font-size:1.1rem;color:#333;font-weight:500}
+  .cta{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
+  .btn-dark{background:#000;color:#fff;border:none;border-radius:8px;padding:.8rem 1.4rem;font-weight:600}
+  .btn-dark:hover{background:var(--accent);color:#000}
+  .btn-outline{border:2px solid #000;color:#000;border-radius:8px;padding:.8rem 1.4rem;font-weight:600}
+  .btn-outline:hover{background:var(--accent);color:#000;border-color:var(--accent)}
+  /* Sections */
+  section{padding:56px 0}
+  .section-title{font-size:22px;font-weight:800;color:#111;margin:0 0 12px}
+  .pill{border-radius:12px;border:1px solid rgba(0,0,0,.08);box-shadow:0 2px 12px rgba(0,0,0,.06);background:#fff}
+  .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+  .card{padding:18px}
+  @media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.grid{grid-template-columns:1fr}}
+  .muted{color:#666}
+  /* Footer */
+  footer{border-top:1px solid rgba(0,0,0,.08);padding:18px 0}
+  .foot{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+</style>
+</head>
+<body class="notranslate">
 
-  <!-- Bootstrap & Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="navwrap">
+      <a class="brand" href="#top"><img src="arceoconsult-logo.svg" alt="ArceoConsult logo"></a>
+      <div class="spacer"></div>
+      <div class="nav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#benefits">Your Advantage</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="#contact">Book a consultation</a>
+      </div>
+    </div>
+  </div>
 
-  <style>
-    :root{
-      --accent:#d4af37;          /* gold accent */
-      --dark:#2a2a2a;            /* softer than pitch black */
-      --ink:#111;
+  <!-- HERO -->
+  <header id="top" class="hero">
+    <div class="overlay"></div>
+    <div class="container" style="padding:48px 16px">
+      <span class="badge">Nordic Restructuring & Founder Protection</span>
+      <h1>Clarity. Stability. Control.</h1>
+      <p class="lead">We support owner-led companies across the Nordics and EU/UK. Clear cash planning, structured creditor dialogue, and simple governance — so you can lead with confidence, discreetly and effectively.</p>
+      <div class="cta">
+        <a class="btn-dark" href="mailto:info@arceoconsult.com">Start a confidential call</a>
+        <a class="btn-outline" href="#services">How we work</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" style="background:#f7f7f9">
+    <div class="container">
+      <h2 class="section-title">About Us</h2>
+      <p class="lead">ArceoConsult is a Nordic boutique focused on restructuring and founder protection. We work alongside law firms, lenders, and advisors to safeguard owner interests, restore governance, and give clear direction when decisions matter most.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Services</h2>
+      <div class="grid">
+        <div class="pill card">
+          <h3 style="margin:0 0 6px;font-size:15px;font-weight:800">Cash clarity</h3>
+          <p class="muted" style="margin:0">A simple 13-week cash plan that shows how long funds last — trusted by lenders and easy to run weekly.</p>
+        </div>
+        <div class="pill card">
+          <h3 style="margin:0 0 6px;font-size:15px;font-weight:800">Creditor dialogue</h3>
+          <p class="muted" style="margin:0">Respectful standstill requests and coordinated conversations with banks and suppliers — less pressure, more time.</p>
+        </div>
+        <div class="pill card">
+          <h3 style="margin:0 0 6px;font-size:15px;font-weight:800">Founder protection</h3>
+          <p class="muted" style="margin:0">Practical governance, access control, and a simple operating rhythm — so the founder stays in control.</p>
+        </div>
+        <div class="pill card">
+          <h3 style="margin:0 0 6px;font-size:15px;font-weight:800">Cross-border support</h3>
+          <p class="muted" style="margin:0">For international operations we coordinate with EU/UK counsel on resets, exits, and structure — seamless and discreet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section id="benefits" style="background:#f7f7f9">
+    <div class="container">
+      <h2 class="section-title">Your Advantage</h2>
+      <p class="lead">You gain time, stability, and negotiation strength. With clear cash visibility and a calm, structured creditor process, noise goes down, trust goes up, and you can focus on running the business.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="pill card" style="padding:22px">
+        <h2 class="section-title" style="margin:0 0 6px">Contact</h2>
+        <p class="muted" style="margin:0 0 10px">Quick, confidential first step — reach us directly.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn-dark" href="mailto:info@arceoconsult.com">info@arceoconsult.com</a>
+          <a class="btn-outline" href="https://wa.me/46700193462" target="_blank" rel="noopener">+46 700-193462</a>
+        </div>
+        <p class="muted" style="margin:12px 0 0;font-size:13px">ArceoConsult OÜ is a strategic advisory. Not a law firm. Engagements comply with KYC/AML and coordinate with licensed local professionals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="foot">
+      <small>© <span id="y"></span> ArceoConsult OÜ. All rights reserved.</small>
+      <small class="muted">info@arceoconsult.com</small>
+    </div>
+  </footer>
+
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
