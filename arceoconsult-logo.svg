@@ -11,18 +11,15 @@
       <stop offset="50%" stop-color="#E6B800"/>
       <stop offset="100%" stop-color="#B8860B"/>
     </linearGradient>
-    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
-      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.25"/>
-    </filter>
   </defs>
 
   <!-- Transparent background -->
   <rect x="0" y="0" width="1600" height="500" fill="none"/>
 
-  <!-- Text group with soft shadow -->
-  <g filter="url(#softShadow)">
-    <text x="80" y="330" font-family="Playfair Display, 'Times New Roman', serif" font-size="240" font-weight="500" letter-spacing="1">
-      <tspan fill="url(#silverGrad)">Arceo</tspan><tspan fill="url(#goldGrad)">Consult</tspan>
-    </text>
-  </g>
+  <!-- Text without shadow -->
+  <text x="80" y="330" font-family="Playfair Display, 'Times New Roman', serif"
+        font-size="240" font-weight="500" letter-spacing="1">
+    <tspan fill="url(#silverGrad)">Arceo</tspan>
+    <tspan fill="url(#goldGrad)">Consult</tspan>
+  </text>
 </svg>
