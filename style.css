@@ -108,3 +108,20 @@ footer small {
   background: #111 !important;
   backdrop-filter: none !important;
 }
+/* Absolut reset för allt som kan skapa glow runt loggan */
+.navbar, .navbar * { filter: none !important; text-shadow: none !important; box-shadow: none !important; opacity: 1 !important; }
+.navbar::before, .navbar::after, .navbar *::before, .navbar *::after { content: none !important; filter: none !important; box-shadow: none !important; }
+
+/* Extra hög specificitet mot ev. specialklasser */
+.navbar .brand-logo,
+.navbar img[src$="arceoconsult-logo.svg"],
+.navbar .logo img,
+.navbar .brand img {
+  filter: none !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
+/* Ingen blur/transparens i själva headern */
+.navbar { background:#111 !important; backdrop-filter:none !important; box-shadow:none !important; }
