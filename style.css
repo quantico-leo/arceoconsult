@@ -66,6 +66,42 @@ footer small {
   box-shadow: none !important;
   opacity: 1 !important;
 }
+/* Nollställ ALLA effekter runt loggan i headern */
+.navbar,
+.navbar * {
+  text-shadow: none !important;
+  filter: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
+/* Döda pseudo-element som kan rita glow bakom loggan */
+.navbar::before,
+.navbar::after,
+.navbar *::before,
+.navbar *::after {
+  content: none !important;
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+/* Headern ska vara solid svart – ingen blur/transparens */
+.navbar {
+  background: #111 !important;
+  backdrop-filter: none !important;
+}
+
+/* Om själva headern hade skugga: bort */
+.navbar {
+  box-shadow: none !important;
+}
+
+/* Säkerställ att <img> verkligen träffas av reglerna */
+.navbar img[src$="arceoconsult-logo.svg"] {
+  filter: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
 
 /* Säkerställ solid header (ingen transparent/blur som “mjölkar” loggan) */
 .navbar {
