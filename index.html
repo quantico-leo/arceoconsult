@@ -12,12 +12,45 @@
     a{text-decoration:none;color:inherit}
     a:hover{text-decoration:underline}
 
-    /* NAVBAR */
-    .navbar{background:var(--dark);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50}
-    .navbar img{height:50px;filter:drop-shadow(0 0 8px rgba(255,255,255,.9))}
-    .navbar nav a{margin-left:20px;color:#fff;font-weight:500}
-    .navbar nav .btn{border:1px solid #fff;padding:8px 14px;border-radius:8px}
-    .navbar nav .btn:hover{background:var(--accent);color:#000;border-color:var(--accent)}
+    /* HEADER */
+    .site-header {
+      background:#fff;
+      border-bottom:1px solid #eee;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+    .site-header .container {
+      max-width:1200px;
+      margin:0 auto;
+      padding:12px 20px;
+      display:flex;
+      align-items:center;
+    }
+    .brand img {
+      height:36px;
+      width:auto;
+      display:block;
+    }
+    .main-nav { margin-left:auto; }
+    .main-nav ul {
+      list-style:none;
+      margin:0; padding:0;
+      display:flex;
+      gap:24px;
+      align-items:center;
+    }
+    .main-nav a {
+      text-decoration:none;
+      color:#111;
+      font-weight:600;
+    }
+    .main-nav a:hover { opacity:.7; }
+    .main-nav li.cta a {
+      padding:8px 14px;
+      border:1px solid #111;
+      border-radius:6px;
+    }
 
     /* HERO */
     .hero{position:relative;min-height:72vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#000}
@@ -27,7 +60,7 @@
     .overlay{position:absolute;inset:0;background:rgba(255,255,255,.78);z-index:-1}
     .hero h1{font-size:clamp(28px,5vw,52px);margin:1rem 0;font-weight:800;color:var(--ink)}
     .hero p{max-width:800px;margin:0 auto 1.5rem;font-size:1.1rem;font-weight:500;color:#333}
-    .badge{display:inline-block;background:var(--accent);color:#000;font-weight:700;border-radius:10px;padding:.5rem 1rem}
+    .eyebrow{margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:#111;font-weight:700}
     .cta{margin-top:1.5rem;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
     .btn-dark{background:#000;color:#fff;border:none;border-radius:8px;padding:.9rem 1.4rem;font-weight:600}
     .btn-dark:hover{background:var(--accent);color:#000}
@@ -46,27 +79,29 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <a class="navbar-brand" href="index.html">
-  <img src="arceoconsult-logo.png" alt="ArceoConsult logo" class="logo">
-</a>
-
-
-
-    <nav>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#advantage">Your Advantage</a>
-      <a href="#contact">Contact</a>
-      <a href="#contact" class="btn">Book a consultation</a>
-    </nav>
-  </div>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <a href="./" class="brand" aria-label="ArceoConsult Home">
+        <img src="arceoconsult-logo.svg" alt="ArceoConsult">
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#advantage">Your Advantage</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="cta"><a href="#contact">Book a consultation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <!-- HERO -->
   <header class="hero">
     <div class="overlay"></div>
     <div>
-      <span class="badge">International Restructuring & Capital Optimization</span>
+      <p class="eyebrow">International Restructuring & Capital Optimization</p>
       <h1>Clarity. Liquidity. Control.</h1>
       <p>We help entrepreneurs, families, and SMEs restructure debt, recover assets, optimize tax, and access alternative capital — discreetly and globally.</p>
       <div class="cta">
