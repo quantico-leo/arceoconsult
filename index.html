@@ -33,11 +33,7 @@
       width:auto;
       display:block;
     }
-
-    /* NAV DESKTOP */
-    .main-nav {
-      margin-left:auto;
-    }
+    .main-nav { margin-left:auto; }
     .main-nav ul {
       list-style:none;
       margin:0; padding:0;
@@ -72,7 +68,7 @@
       box-shadow: inset 0 2px 6px rgba(0,0,0,0.25);
     }
 
-    /* HAMBURGER ICON */
+    /* HAMBURGER */
     .hamburger {
       display:none;
       flex-direction:column;
@@ -90,9 +86,7 @@
     .hamburger.active span:nth-child(1) {
       transform:rotate(45deg) translate(5px,5px);
     }
-    .hamburger.active span:nth-child(2) {
-      opacity:0;
-    }
+    .hamburger.active span:nth-child(2) { opacity:0; }
     .hamburger.active span:nth-child(3) {
       transform:rotate(-45deg) translate(5px,-5px);
     }
@@ -110,18 +104,13 @@
         overflow:hidden;
         transition:max-height 0.4s ease;
       }
-      .main-nav.open {
-        max-height:300px;
-      }
+      .main-nav.open { max-height:320px; }
       .main-nav ul {
         flex-direction:column;
         gap:20px;
         padding:20px;
       }
-      .main-nav a {
-        color:#fff;
-        font-size:18px;
-      }
+      .main-nav a { color:#fff;font-size:18px; }
       .hamburger { display:flex; }
     }
 
@@ -136,36 +125,17 @@
     .hero p{max-width:800px;margin:0 auto 1.5rem;font-size:1.1rem;font-weight:500;color:#333}
     .cta{margin-top:1.5rem;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
     .btn-dark{
-      background:#000;
-      color:#fff;
-      border:none;
-      border-radius:8px;
-      padding:.9rem 1.4rem;
-      font-weight:600;
-      transition: all .3s ease;
+      background:#000;color:#fff;border:none;border-radius:8px;padding:.9rem 1.4rem;font-weight:600;transition: all .3s ease;
     }
-    .btn-dark:hover{
-      background:var(--accent);
-      color:#000;
-    }
+    .btn-dark:hover{ background:var(--accent);color:#000; }
     .btn-dark:active{
       background: linear-gradient(135deg, #d4af37, #f8e473, #b8860b);
-      color:#000;
-      box-shadow: inset 0 2px 6px rgba(0,0,0,0.25);
+      color:#000;box-shadow: inset 0 2px 6px rgba(0,0,0,0.25);
     }
     .btn-outline{
-      border:2px solid #000;
-      color:#000;
-      border-radius:8px;
-      padding:.9rem 1.4rem;
-      font-weight:600;
-      transition: all .3s ease;
+      border:2px solid #000;color:#000;border-radius:8px;padding:.9rem 1.4rem;font-weight:600;transition: all .3s ease;
     }
-    .btn-outline:hover{
-      background:var(--accent);
-      color:#000;
-      border-color:var(--accent);
-    }
+    .btn-outline:hover{ background:var(--accent);color:#000;border-color:var(--accent); }
 
     /* === SECTIONS === */
     section{padding:64px 20px;max-width:1100px;margin:0 auto}
@@ -185,13 +155,9 @@
       <a href="./" class="brand" aria-label="ArceoConsult Home">
         <img src="arceoconsult-logo.svg" alt="ArceoConsult">
       </a>
-      <!-- Hamburger -->
       <div class="hamburger" onclick="toggleMenu(this)">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </div>
-      <!-- Navigation -->
       <nav class="main-nav">
         <ul>
           <li><a href="#about">About</a></li>
@@ -221,32 +187,55 @@
   <!-- ABOUT -->
   <section id="about">
     <h2>About Us</h2>
-    <p>ArceoConsult OÜ, based in Estonia, is an international boutique advisory. We adapt advanced restructuring methods to serve SMEs and private clients worldwide. Our focus: reduce debt, improve liquidity, protect wealth, and unlock smarter investments.</p>
+    <div style="display:flex;gap:40px;flex-wrap:wrap;align-items:center;">
+      <div style="flex:1;min-width:280px;">
+        <p><strong>My name is Leonardo Celija</strong>, founder of ArceoConsult. 
+        After more than a decade in finance, trading and cross-border business, 
+        I saw how entrepreneurs and families often became locked into complex investments, debts, or legal traps without a way forward. 
+        This firm was created to provide clarity, liquidity, and discretion — when traditional advisors fall short.</p>
+        
+        <p><strong>Our vision:</strong> To become Europe’s most trusted boutique for discreet restructuring and capital recovery. 
+        We return control to entrepreneurs, investors, and families — even under maximum pressure.</p>
+        
+        <p><strong>Direct contact:</strong><br>
+        📧 <a href="mailto:leo@arceoconsult.com">leo@arceoconsult.com</a><br>
+        📞 <a href="tel:+46700193462">+46 700-193462</a></p>
+      </div>
+      <div style="flex:0 0 250px;max-width:250px;">
+        <img src="leo-profile.webp.webp" alt="Leonardo Celija" style="width:100%;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.15)">
+      </div>
+    </div>
   </section>
 
   <!-- SERVICES -->
   <section id="services">
     <h2>Our Services</h2>
     <div class="grid">
-      <div class="card"><h3>Debt & Balance Sheet Fix</h3><p>We restructure obligations, renegotiate loans, and reduce leverage — giving you financial breathing space.</p></div>
-      <div class="card"><h3>Liquidity & Cash Visibility</h3><p>Clear forecasting and access to alternative financing when banks say no.</p></div>
-      <div class="card"><h3>Asset & Investment Recovery</h3><p>We recover value from failed or illiquid investments and convert it into usable capital.</p></div>
+      <div class="card"><h3>Debt Restructuring & Balance Sheet Repair</h3><p>We renegotiate obligations and reduce leverage — restoring financial breathing space.</p></div>
+      <div class="card"><h3>Liquidity Mapping & Cash Flow Control</h3><p>Clear forecasting and access to alternative financing when banks say no.</p></div>
+      <div class="card"><h3>Asset Recovery & Capital Recycling</h3><p>We recover value from failed or illiquid investments and convert it into usable capital.</p></div>
       <div class="card"><h3>Tax & Structure Optimization</h3><p>Cross-border setups that lower tax, shield assets, and simplify governance.</p></div>
-      <div class="card"><h3>Alternative Investment Advisory</h3><p>Guidance on crypto, unlisted equities, and high-yield bonds — balancing risk with opportunity.</p></div>
+      <div class="card"><h3>Alternative & Special Situations Advisory</h3><p>Guidance on crypto, unlisted equities, and high-yield bonds — balancing risk with opportunity.</p></div>
     </div>
   </section>
 
   <!-- ADVANTAGE -->
   <section id="advantage">
     <h2>Your Advantage</h2>
-    <p>Less debt. More liquidity. Safer structures. Smarter investments. With ArceoConsult, you gain time, stability, and trust to grow again.</p>
+    <ul style="line-height:1.8;">
+      <li>Less debt, more freedom</li>
+      <li>Assets recovered and put back to work</li>
+      <li>Tax optimization that creates breathing space</li>
+      <li>Structures that hold even under pressure</li>
+      <li>Discreet, international advisory without PR risk</li>
+    </ul>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
     <h2>Contact</h2>
     <p>Quick, confidential first step — reach us directly.</p>
-    <p><a href="mailto:info@arceoconsult.com">info@arceoconsult.com</a> • <a href="https://wa.me/46700193462" target="_blank">+46 700 193462</a></p>
+    <p><a href="mailto:leo@arceoconsult.com">leo@arceoconsult.com</a> • <a href="tel:+46700193462">+46 700-193462</a></p>
     <p style="font-size:13px;color:#666">ArceoConsult OÜ is a strategic advisory. Not a law firm. Engagements comply with KYC/AML and coordinate with licensed counsel where required.</p>
   </section>
 
@@ -262,8 +251,7 @@
       el.classList.toggle("active");
       const nav = document.querySelector(".main-nav");
       nav.classList.toggle("open");
-
-      // Stäng meny när man klickar på en länk
+      // Auto-close when clicking a link
       nav.querySelectorAll("a").forEach(link => {
         link.addEventListener("click", () => {
           nav.classList.remove("open");
@@ -274,4 +262,3 @@
   </script>
 </body>
 </html>
-
