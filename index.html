@@ -164,12 +164,24 @@
   <section id="contact">
     <h2>Contact</h2>
     <p>Quick, confidential first step — reach us directly.</p>
-    <form action="https://formspree.io/f/yourformid" method="POST" style="max-width:500px;margin:auto;display:grid;gap:12px;">
-      <input type="text" name="name" placeholder="Your Name" required style="padding:12px;border:1px solid #ccc;border-radius:6px;">
-      <input type="email" name="email" placeholder="Your Email" required style="padding:12px;border:1px solid #ccc;border-radius:6px;">
-      <textarea name="message" rows="5" placeholder="Your Message" required style="padding:12px;border:1px solid #ccc;border-radius:6px;"></textarea>
-      <button type="submit" class="btn-dark">Send Secure Message</button>
-    </form>
+    <form action="https://formspree.io/f/mwpnynjz" method="POST" 
+      style="max-width:500px;margin:auto;display:grid;gap:12px;"
+      target="_self">
+  <!-- Redirect till tack-sidan -->
+  <input type="hidden" name="_redirect" value="https://arceoconsult.com/thankyou.html">
+
+  <input type="text" name="name" placeholder="Your Name" required 
+         style="padding:12px;border:1px solid #ccc;border-radius:6px;">
+
+  <input type="email" name="email" placeholder="Your Email" required 
+         style="padding:12px;border:1px solid #ccc;border-radius:6px;">
+
+  <textarea name="message" rows="5" placeholder="Your Message" required 
+            style="padding:12px;border:1px solid #ccc;border-radius:6px;"></textarea>
+
+  <button type="submit" class="btn-dark">Send Secure Message</button>
+</form>
+
     <p style="margin-top:16px;font-size:13px;color:#666">We handle all inquiries confidentially.</p>
   </section>
 
