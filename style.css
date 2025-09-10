@@ -134,3 +134,8 @@ footer small {
 
 /* Ingen blur/transparens i själva headern */
 .navbar { background:#111 !important; backdrop-filter:none !important; box-shadow:none !important; }
+@media (min-width: 1200px) {
+  .navbar .brand img {
+    margin-left: 10px; /* ger lite luft från kanten */
+  }
+}
