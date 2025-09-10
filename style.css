@@ -113,15 +113,24 @@ footer small {
 .navbar::before, .navbar::after, .navbar *::before, .navbar *::after { content: none !important; filter: none !important; box-shadow: none !important; }
 
 /* Extra hög specificitet mot ev. specialklasser */
-.navbar .brand-logo,
-.navbar img[src$="arceoconsult-logo.svg"],
-.navbar .logo img,
+/* Standardstorlek och reset för loggan */
 .navbar .brand img {
+  height: 48px;
+  width: auto;
+  display: block;
   filter: none !important;
   text-shadow: none !important;
   box-shadow: none !important;
   opacity: 1 !important;
 }
+
+/* Desktop – gör loggan större på breda skärmar */
+@media (min-width: 1200px) {
+  .navbar .brand img {
+    height: 60px;
+  }
+}
+
 
 /* Ingen blur/transparens i själva headern */
 .navbar { background:#111 !important; backdrop-filter:none !important; box-shadow:none !important; }
