@@ -78,6 +78,7 @@
       flex-direction:column;
       gap:5px;
       cursor:pointer;
+      z-index:1100;
     }
     .hamburger span {
       width:25px;
@@ -86,22 +87,36 @@
       border-radius:2px;
       transition:0.3s;
     }
+    .hamburger.active span:nth-child(1) {
+      transform:rotate(45deg) translate(5px,5px);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity:0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform:rotate(-45deg) translate(5px,-5px);
+    }
 
     /* MOBILE NAV */
     @media (max-width: 768px) {
       .main-nav {
-        display:none;
+        display:block;
         position:absolute;
         top:64px;
         right:0;
         left:0;
         background:#000;
-        padding:20px;
+        max-height:0;
+        overflow:hidden;
+        transition:max-height 0.4s ease;
       }
-      .main-nav.open { display:block; }
+      .main-nav.open {
+        max-height:300px;
+      }
       .main-nav ul {
         flex-direction:column;
         gap:20px;
+        padding:20px;
       }
       .main-nav a {
         color:#fff;
@@ -171,7 +186,7 @@
         <img src="arceoconsult-logo.svg" alt="ArceoConsult">
       </a>
       <!-- Hamburger -->
-      <div class="hamburger" onclick="document.querySelector('.main-nav').classList.toggle('open')">
+      <div class="hamburger" onclick="toggleMenu(this)">
         <span></span>
         <span></span>
         <span></span>
@@ -242,6 +257,21 @@
 
   <script>
     document.getElementById("year").textContent=new Date().getFullYear();
+
+    function toggleMenu(el) {
+      el.classList.toggle("active");
+      const nav = document.querySelector(".main-nav");
+      nav.classList.toggle("open");
+
+      // Stäng meny när man klickar på en länk
+      nav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("open");
+          el.classList.remove("active");
+        });
+      });
+    }
   </script>
 </body>
 </html>
+
