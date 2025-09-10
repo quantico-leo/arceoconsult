@@ -12,10 +12,10 @@
     a{text-decoration:none;color:inherit}
     a:hover{text-decoration:underline}
 
-    /* HEADER */
+    /* === HEADER === */
     .site-header {
-      background:#fff;
-      border-bottom:1px solid #eee;
+      background:#000; /* svart bakgrund */
+      border-bottom:1px solid #111;
       position:sticky;
       top:0;
       z-index:1000;
@@ -23,12 +23,12 @@
     .site-header .container {
       max-width:1200px;
       margin:0 auto;
-      padding:12px 20px;
+      padding:14px 28px;
       display:flex;
       align-items:center;
     }
     .brand img {
-      height:36px;
+      height:48px; /* större logga */
       width:auto;
       display:block;
     }
@@ -37,43 +37,85 @@
       list-style:none;
       margin:0; padding:0;
       display:flex;
-      gap:24px;
+      gap:32px;
       align-items:center;
     }
     .main-nav a {
       text-decoration:none;
-      color:#111;
+      color:#fff; /* vit text */
       font-weight:600;
+      transition: all .3s ease;
     }
-    .main-nav a:hover { opacity:.7; }
+    .main-nav a:hover { color:var(--accent); }
     .main-nav li.cta a {
-      padding:8px 14px;
-      border:1px solid #111;
-      border-radius:6px;
+      padding:10px 18px;
+      border:1px solid var(--accent);
+      border-radius:8px;
+      color:var(--accent);
+      font-weight:700;
+      background:transparent;
+      transition: all .3s ease;
+    }
+    .main-nav li.cta a:hover {
+      background:var(--accent);
+      color:#000;
+    }
+    .main-nav li.cta a:active {
+      background: linear-gradient(135deg, #d4af37, #f8e473, #b8860b);
+      color:#000;
+      border-color:#b8860b;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.25);
     }
 
-    /* HERO */
+    /* === HERO === */
     .hero{position:relative;min-height:72vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#000}
     .hero::before{content:"";position:absolute;inset:0;
       background:linear-gradient(135deg,#004e92 0%,#000428 100%);
       background-size:cover;background-position:center;z-index:-2}
     .overlay{position:absolute;inset:0;background:rgba(255,255,255,.78);z-index:-1}
+    .eyebrow{margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:#111;font-weight:700}
     .hero h1{font-size:clamp(28px,5vw,52px);margin:1rem 0;font-weight:800;color:var(--ink)}
     .hero p{max-width:800px;margin:0 auto 1.5rem;font-size:1.1rem;font-weight:500;color:#333}
-    .eyebrow{margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:#111;font-weight:700}
     .cta{margin-top:1.5rem;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    .btn-dark{background:#000;color:#fff;border:none;border-radius:8px;padding:.9rem 1.4rem;font-weight:600}
-    .btn-dark:hover{background:var(--accent);color:#000}
-    .btn-outline{border:2px solid #000;color:#000;border-radius:8px;padding:.9rem 1.4rem;font-weight:600}
-    .btn-outline:hover{background:var(--accent);color:#000;border-color:var(--accent)}
+    .btn-dark{
+      background:#000;
+      color:#fff;
+      border:none;
+      border-radius:8px;
+      padding:.9rem 1.4rem;
+      font-weight:600;
+      transition: all .3s ease;
+    }
+    .btn-dark:hover{
+      background:var(--accent);
+      color:#000;
+    }
+    .btn-dark:active{
+      background: linear-gradient(135deg, #d4af37, #f8e473, #b8860b);
+      color:#000;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.25);
+    }
+    .btn-outline{
+      border:2px solid #000;
+      color:#000;
+      border-radius:8px;
+      padding:.9rem 1.4rem;
+      font-weight:600;
+      transition: all .3s ease;
+    }
+    .btn-outline:hover{
+      background:var(--accent);
+      color:#000;
+      border-color:var(--accent);
+    }
 
-    /* SECTIONS */
+    /* === SECTIONS === */
     section{padding:64px 20px;max-width:1100px;margin:0 auto}
     section h2{font-weight:800;font-size:1.6rem;margin-bottom:20px}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
     .card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:24px}
 
-    /* FOOTER */
+    /* === FOOTER === */
     footer{border-top:1px solid rgba(0,0,0,.08);padding:20px;text-align:center;font-size:14px;color:#555}
   </style>
 </head>
