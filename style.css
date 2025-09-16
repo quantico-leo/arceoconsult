@@ -27,6 +27,7 @@ h1, h2, h3, h4 {
   .logo { width: 170px; }     /* mobil */
   .hero .display-5 { font-size: 2rem; }
 }
+
 /* Premium CTA med guldkant */
 .btn-gold {
   border: 2px solid #d4af37;   /* guld */
@@ -44,6 +45,7 @@ h1, h2, h3, h4 {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
+
 /* Footer polish */
 footer {
   border-top: 2px solid #d4af37; /* tunn guldkant */
@@ -56,6 +58,7 @@ footer {
 footer small {
   color: #bbb;
 }
+
 /* Kill any glow/shadow on the navbar logo */
 .navbar img,
 .logo,
@@ -66,6 +69,7 @@ footer small {
   box-shadow: none !important;
   opacity: 1 !important;
 }
+
 /* Nollställ ALLA effekter runt loggan i headern */
 .navbar,
 .navbar * {
@@ -89,10 +93,6 @@ footer small {
 .navbar {
   background: #111 !important;
   backdrop-filter: none !important;
-}
-
-/* Om själva headern hade skugga: bort */
-.navbar {
   box-shadow: none !important;
 }
 
@@ -103,103 +103,59 @@ footer small {
   text-shadow: none !important;
 }
 
-/* Säkerställ solid header (ingen transparent/blur som “mjölkar” loggan) */
-.navbar {
-  background: #111 !important;
-  backdrop-filter: none !important;
-}
-/* Absolut reset för allt som kan skapa glow runt loggan */
-.navbar, .navbar * { filter: none !important; text-shadow: none !important; box-shadow: none !important; opacity: 1 !important; }
-.navbar::before, .navbar::after, .navbar *::before, .navbar *::after { content: none !important; filter: none !important; box-shadow: none !important; }
-
-/* Extra hög specificitet mot ev. specialklasser */
-/* Standardstorlek och reset för loggan */
-.navbar .brand img {
-  height: 48px;
-  width: auto;
-  display: block;
-  filter: none !important;
-  text-shadow: none !important;
-  box-shadow: none !important;
-  opacity: 1 !important;
-}
-
 /* Desktop – gör loggan större på breda skärmar */
 @media (min-width: 1200px) {
   .navbar .brand img {
     height: 60px;
+    margin-left: 10px; /* lite luft från kanten */
   }
 }
 
-
-/* Ingen blur/transparens i själva headern */
-.navbar { background:#111 !important; backdrop-filter:none !important; box-shadow:none !important; }
-@media (min-width: 1200px) {
-  .navbar .brand img {
-    margin-left: 10px; /* ger lite luft från kanten */
-  }
-}
+/* Brand + tagline */
 .brand {
   display: flex;
   flex-direction: column;
-  align-items: center; /* ändra till center så tagline hamnar rakt under loggan */
+  align-items: center; /* centrerar tagline under loggan */
 }
 
 .brand .tagline {
-  font-size: 14px;
-  color: #d4af37;  /* guld */
-  font-weight: 600;
-  margin-top: 4px;
-  letter-spacing: 0.05em;
-}
-
-@media (max-width: 768px) {
-  .brand .tagline {
-    font-size: 12px; /* lite mindre i mobil */
-  }
-}
-.brand .tagline {
-  font-size: 14px;
-  font-weight: 600;
-  margin-top: 4px;
-  letter-spacing: 0.05em;
-
-  /* Fallback färg */
-  color: #C0C0C0;
-
-  /* Gradient silver för modern browsers */
-  background: linear-gradient(90deg, #f5f5f5, #c0c0c0, #a9a9a9, #dcdcdc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-@media (max-width: 768px) {
-  .brand .tagline {
-    font-size: 12px; /* lite mindre i mobil */
-  }
-}
-.brand .tagline {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
-  margin-top: 4px;
-  letter-spacing: 0.08em;
+  margin-top: 6px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 
-  /* Fallback ljus silver */
-  color: #e5e5e5;
-
-  /* Ljus metallisk gradient */
-  background: linear-gradient(90deg, #ffffff, #e5e5e5, #dcdcdc);
+  /* Ljus silver/metall */
+  color: #f2f2f2;
+  background: linear-gradient(90deg, #ffffff, #e5e5e5, #bfbfbf);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 
-  /* Subtil skugga för kontrast mot svart bakgrund */
-  text-shadow: 0 0 6px rgba(0,0,0,0.6);
+  /* Skugga för kontrast */
+  text-shadow: 0 0 6px rgba(0,0,0,0.8),
+               0 0 12px rgba(0,0,0,0.6);
 }
 
 @media (max-width: 768px) {
   .brand .tagline {
     font-size: 12px; /* mindre i mobil */
   }
+}
+
+/* Hero headline (Clarity. Liquidity. Control.) */
+.hero h1 {
+  font-size: clamp(28px,5vw,52px);
+  margin: 1rem 0;
+  font-weight: 800;
+
+  /* Ljus silver/metall */
+  color: #f2f2f2;
+  background: linear-gradient(90deg, #ffffff, #e5e5e5, #bfbfbf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  text-shadow: 0 0 8px rgba(0,0,0,0.85),
+               0 0 16px rgba(0,0,0,0.7);
 }
