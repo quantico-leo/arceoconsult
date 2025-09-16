@@ -149,13 +149,14 @@ footer small {
   margin: 1rem 0;
   font-weight: 800;
 
-  /* Ljus silver/metall */
-  color: #f2f2f2;
-  background: linear-gradient(90deg, #ffffff, #e5e5e5, #bfbfbf);
+  /* Vit–guld gradient för premium look */
+  background: linear-gradient(90deg, #ffffff, #d4af37, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 
-  text-shadow: 0 0 8px rgba(0,0,0,0.85),
-               0 0 16px rgba(0,0,0,0.7);
+  /* Starkare kontrast med tydlig skugga */
+  text-shadow: 0 0 10px rgba(0,0,0,0.85),
+               0 0 20px rgba(0,0,0,0.7);
 }
+
