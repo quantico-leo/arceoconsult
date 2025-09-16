@@ -179,3 +179,27 @@ footer small {
     font-size: 12px; /* lite mindre i mobil */
   }
 }
+.brand .tagline {
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 4px;
+  letter-spacing: 0.08em;
+
+  /* Fallback ljus silver */
+  color: #e5e5e5;
+
+  /* Ljus metallisk gradient */
+  background: linear-gradient(90deg, #ffffff, #e5e5e5, #dcdcdc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  /* Subtil skugga för kontrast mot svart bakgrund */
+  text-shadow: 0 0 6px rgba(0,0,0,0.6);
+}
+
+@media (max-width: 768px) {
+  .brand .tagline {
+    font-size: 12px; /* mindre i mobil */
+  }
+}
