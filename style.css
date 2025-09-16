@@ -171,3 +171,12 @@ header.hero h1 a {
   text-shadow: 0 0 6px rgba(0,0,0,0.7) !important;
 }
 /* cache-bust 2025-09-17 */
+/* FINAL override for hero headline */
+header.hero h1,
+header.hero h1 a,
+.hero h1,
+.hero h1 a,
+a.brand h1 {
+  color: #ffffff !important;   /* vit */
+  text-shadow: 0 0 6px rgba(0,0,0,0.7) !important;
+}
