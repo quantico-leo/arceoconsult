@@ -180,4 +180,14 @@ a.brand h1 {
   color: #d4af37 !important;   /* guld */
   text-shadow: 0 0 6px rgba(0,0,0,0.7) !important;
 }
+/* ULTRA override for hero headline */
+body header.hero h1,
+body header.hero h1 a,
+body .hero h1,
+body .hero h1 a,
+body a.brand h1 {
+  color: #d4af37 !important;   /* guld */
+  font-weight: 800 !important;
+  text-shadow: 0 0 6px rgba(0,0,0,0.7) !important;
+}
 
