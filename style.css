@@ -151,3 +151,9 @@ header.hero h1 {
   color: #d4af37 !important; /* guld */
   text-shadow: 0 0 8px rgba(0,0,0,0.8) !important;
 }
+/* Force hero headline gold */
+header.hero h1,
+header.hero h1 a {
+  color: #d4af37 !important;  /* guld */
+  text-shadow: 0 0 8px rgba(0,0,0,0.8) !important;
+}
