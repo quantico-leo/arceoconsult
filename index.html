@@ -11,7 +11,6 @@
       --gold:#d4af37;
       --black:#0b0b0b;
       --white:#ffffff;
-      --muted:#f0f0f0;
       --max-width:1200px;
     }
 
@@ -22,37 +21,51 @@
 
     /* Header */
     .site-header{background:var(--black);border-bottom:1px solid rgba(255,255,255,0.05)}
-    .site-header .container{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+    .site-header .container{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 20px;
+    }
 
-    .brand{display:flex;flex-direction:column;align-items:center;text-align:center}
+    /* Brand */
+    .brand{display:flex;flex-direction:column;align-items:flex-start;text-align:left}
     .brand .logo{height:60px;width:auto}
-    .brand .tagline,
-    .brand .tagline:link,
-    .brand .tagline:visited,
-    .brand .tagline:hover,
-    .brand .tagline:active {
+    .brand .tagline{
       font-size:11px;
-      color:#cce0ff !important; /* ljus blå */
+      color:#cce0ff;
       font-weight:600;
       letter-spacing:0.12em;
       text-transform:uppercase;
       margin-top:4px;
       text-shadow:0 0 3px rgba(0,0,0,0.4);
-      text-decoration:none !important;
-      border:none !important;
-      outline:none !important;
-      box-shadow:none !important;
     }
 
-    .main-nav ul{list-style:none;display:flex;gap:26px;align-items:center}
-    .main-nav a{color:var(--white);font-weight:600;text-decoration:none}
+    /* Nav */
+    .main-nav ul{list-style:none;display:flex;gap:26px;margin:0;padding:0;align-items:center}
+    .main-nav a{color:#fff;font-weight:600;text-decoration:none}
     .main-nav a:hover{color:var(--gold)}
-    .main-nav .cta a{border:1px solid var(--gold);padding:8px 14px;border-radius:8px;color:var(--gold);font-weight:700}
+    .main-nav .cta a{
+      border:1px solid var(--gold);
+      padding:8px 14px;
+      border-radius:8px;
+      color:var(--gold);
+      font-weight:700;
+    }
     .main-nav .cta a:hover{background:var(--gold);color:var(--black)}
+
+    /* Hamburger */
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+    .hamburger span{width:25px;height:3px;background:#fff;border-radius:2px}
+
+    @media (max-width:900px){
+      .main-nav{display:none}
+      .hamburger{display:flex}
+    }
 
     /* Hero */
     .hero{background:linear-gradient(135deg,var(--ocean-start),var(--ocean-end));text-align:center;padding:90px 20px;color:var(--white)}
-    .hero h1{font-size:clamp(32px,6vw,60px);color:var(--gold);font-weight:800;letter-spacing:0.5px;margin-bottom:14px;text-shadow:0 6px 18px rgba(0,0,0,0.6)}
+    .hero h1{font-size:clamp(32px,6vw,60px);color:var(--gold);font-weight:800;margin-bottom:14px;text-shadow:0 6px 18px rgba(0,0,0,0.6)}
     .hero .subtitle{max-width:820px;margin:0 auto 22px;font-size:1.1rem;color:#f5f5f5}
     .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
     .btn{padding:12px 18px;border-radius:8px;font-weight:700;text-decoration:none;transition:all .25s ease}
@@ -78,28 +91,15 @@
 
     /* Contact form */
     form{max-width:600px;margin:0 auto;display:grid;gap:12px}
-    form input[type="text"],
-    form input[type="email"],
-    form textarea {
-      width:100%;
-      padding:12px;
-      border:1px solid #ccc;
-      border-radius:6px;
-      font-size:1rem;
+    form input,form textarea{
+      width:100%;padding:12px;border:1px solid #ccc;border-radius:6px;font-size:1rem
     }
     form textarea{min-height:120px}
-    form button {
-      display:inline-block;
-      padding:12px 18px;
-      border-radius:8px;
-      font-weight:700;
-      background:#000;
-      color:#fff;
-      cursor:pointer;
-      border:none;
-      transition:all .25s ease;
+    form button{
+      display:inline-block;padding:12px 18px;border-radius:8px;font-weight:700;
+      background:#000;color:#fff;cursor:pointer;border:none;transition:all .25s ease;
     }
-    form button:hover {background:var(--gold);color:#000}
+    form button:hover{background:var(--gold);color:#000}
 
     /* Footer */
     footer{background:var(--black);color:#ccc;padding:20px;text-align:center;font-size:14px}
@@ -112,12 +112,9 @@
   <header class="site-header">
     <div class="container">
       <div class="brand">
-  <div class="brand">
-  <a href="/">
-    <img src="arceoconsult-logo.svg" alt="ArceoConsult logo" class="logo" />
-  </a>
-  <span class="tagline">Clarity. Liquidity. Control.</span>
-</div>
+        <a href="/"><img src="arceoconsult-logo.svg" alt="ArceoConsult logo" class="logo" /></a>
+        <span class="tagline">Clarity. Liquidity. Control.</span>
+      </div>
 
       <nav class="main-nav">
         <ul>
@@ -128,15 +125,17 @@
           <li class="cta"><a href="#contact">Book Consultation</a></li>
         </ul>
       </nav>
+
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
   <!-- HERO -->
   <section class="hero">
     <h1>Clarity. Liquidity. Control.</h1>
-    <p class="subtitle">
-      The boutique advisors protecting SMEs in complex financial disputes and cross-border challenges.
-    </p>
+    <p class="subtitle">The boutique advisors protecting SMEs in complex financial disputes and cross-border challenges.</p>
     <div class="cta">
       <a href="#contact" class="btn btn-primary">Start Confidential Call</a>
       <a href="#services" class="btn btn-outline">Explore Services</a>
@@ -150,7 +149,7 @@
       <div class="flex">
         <div style="flex:1;min-width:260px">
           <p>
-            ArceoConsult is a founder-led boutique dedicated to SMEs navigating complex financial disputes and cross-border challenges. 
+            ArceoConsult is a boutique dedicated to SMEs navigating complex financial disputes and cross-border challenges. 
             Where large litigation firms decline smaller mandates and traditional advisors lack reach, we deliver clarity, liquidity and control.
           </p>
           <p>
