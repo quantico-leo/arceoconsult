@@ -26,6 +26,7 @@
       align-items:center;
       justify-content:space-between;
       padding:14px 20px;
+      position:relative;
     }
 
     /* Brand */
@@ -41,7 +42,7 @@
       text-shadow:0 0 3px rgba(0,0,0,0.4);
     }
 
-    /* Nav */
+    /* Desktop Nav */
     .main-nav ul{list-style:none;display:flex;gap:26px;margin:0;padding:0;align-items:center}
     .main-nav a{color:#fff;font-weight:600;text-decoration:none}
     .main-nav a:hover{color:var(--gold)}
@@ -55,8 +56,26 @@
     .main-nav .cta a:hover{background:var(--gold);color:var(--black)}
 
     /* Hamburger */
-    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none}
     .hamburger span{width:25px;height:3px;background:#fff;border-radius:2px}
+
+    /* Mobile nav panel */
+    .mobile-nav {
+      display:none;
+      position:absolute;
+      right:16px;
+      top:68px;
+      background:var(--black);
+      border-radius:8px;
+      padding:14px;
+      box-shadow:0 12px 30px rgba(0,0,0,0.45);
+      z-index:1200;
+      min-width:220px;
+    }
+    .mobile-nav.open { display:block; }
+    .mobile-nav ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+    .mobile-nav a{color:var(--white);text-decoration:none;font-weight:600;padding:6px 8px;border-radius:6px}
+    .mobile-nav a:hover{background:rgba(255,255,255,0.05);color:var(--gold)}
 
     @media (max-width:900px){
       .main-nav{display:none}
@@ -126,9 +145,19 @@
         </ul>
       </nav>
 
-      <button class="hamburger" aria-label="Toggle menu">
+      <button class="hamburger" aria-label="Toggle menu" onclick="toggleMobile()">
         <span></span><span></span><span></span>
       </button>
+
+      <div id="mobileNav" class="mobile-nav" aria-hidden="true">
+        <ul>
+          <li><a href="#about" onclick="closeMobile()">About</a></li>
+          <li><a href="#services" onclick="closeMobile()">Services</a></li>
+          <li><a href="#advantage" onclick="closeMobile()">Your Advantage</a></li>
+          <li><a href="#contact" onclick="closeMobile()">Contact</a></li>
+          <li><a href="#contact" class="cta" onclick="closeMobile()" style="border:1px solid var(--gold);padding:8px 10px;border-radius:6px;color:var(--gold);font-weight:700;">Book Consultation</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 
@@ -213,6 +242,17 @@
 
   <script>
     document.getElementById("year").textContent=new Date().getFullYear();
+
+    function toggleMobile(){
+      const nav = document.getElementById('mobileNav');
+      nav.classList.toggle('open');
+      nav.setAttribute('aria-hidden', nav.classList.contains('open') ? 'false' : 'true');
+    }
+    function closeMobile(){
+      const nav = document.getElementById('mobileNav');
+      nav.classList.remove('open');
+      nav.setAttribute('aria-hidden','true');
+    }
   </script>
 </body>
 </html>
