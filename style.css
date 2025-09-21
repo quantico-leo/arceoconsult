@@ -1,201 +1,180 @@
-/* Global typography */
+/* Global Typography */
 :root {
-  --text-color: #333;
+  --accent: #d4af37;
+  --dark: #111;
+  --light: #f2f2f2;
+  --text: #333;
 }
 
-html, body {
+body {
+  margin: 0;
   font-family: "Playfair Display", "Times New Roman", serif;
-  color: var(--text-color);
+  color: var(--text);
+  background: #fff;
   line-height: 1.6;
 }
 
-/* Logo sizing */
-.logo {
-  width: 240px;     /* desktop */
-  height: auto;
-  display: block;
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: 0.3px;
 }
 
-/* Headings for consistency */
-h1, h2, h3, h4 {
-  font-weight: 600;
-  letter-spacing: 0.2px;
+/* Header */
+.site-header {
+  background: var(--dark);
+  padding: 12px 28px;
 }
 
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .logo { width: 170px; }     /* mobil */
-  .hero .display-5 { font-size: 2rem; }
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* Premium CTA med guldkant */
-.btn-gold {
-  border: 2px solid #d4af37;   /* guld */
-  color: #d4af37;
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  transition: all 0.3s ease-in-out;
-  background-color: transparent;
-}
-
-.btn-gold:hover {
-  background-color: #d4af37;   /* fylls i guld */
-  color: #fff;                 /* texten blir vit */
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* Footer polish */
-footer {
-  border-top: 2px solid #d4af37; /* tunn guldkant */
-  padding-top: 1.5rem;
-  background-color: #111;        /* mörkare svart för kontrast */
-  color: #ddd;
-  font-size: 0.9rem;
-}
-
-footer small {
-  color: #bbb;
-}
-
-/* Kill any glow/shadow on the navbar logo */
-.navbar img,
-.logo,
-.navbar .logo,
-.navbar img[src$="arceoconsult-logo.svg"] {
-  filter: none !important;
-  text-shadow: none !important;
-  box-shadow: none !important;
-  opacity: 1 !important;
-}
-
-/* Nollställ ALLA effekter runt loggan i headern */
-.navbar,
-.navbar * {
-  text-shadow: none !important;
-  filter: none !important;
-  box-shadow: none !important;
-  opacity: 1 !important;
-}
-
-/* Döda pseudo-element som kan rita glow bakom loggan */
-.navbar::before,
-.navbar::after,
-.navbar *::before,
-.navbar *::after {
-  content: none !important;
-  filter: none !important;
-  box-shadow: none !important;
-}
-
-/* Headern ska vara solid svart – ingen blur/transparens */
-.navbar {
-  background: #111 !important;
-  backdrop-filter: none !important;
-  box-shadow: none !important;
-}
-
-/* Säkerställ att <img> verkligen träffas av reglerna */
-.navbar img[src$="arceoconsult-logo.svg"] {
-  filter: none !important;
-  box-shadow: none !important;
-  text-shadow: none !important;
-}
-
-/* Desktop – gör loggan större på breda skärmar */
-@media (min-width: 1200px) {
-  .navbar .brand img {
-    height: 60px;
-    margin-left: 10px; /* lite luft från kanten */
-  }
-}
-
-/* Brand + tagline */
 .brand {
   display: flex;
   flex-direction: column;
-  align-items: center; /* centrerar tagline under loggan */
+  align-items: center;
 }
 
-.brand .tagline {
-  font-size: 15px;
-  font-weight: 700;
+.logo {
+  height: 60px;
+}
+
+.tagline {
   margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-
-  /* Ljus silver/metall */
-  color: #f2f2f2;
-  background: linear-gradient(90deg, #ffffff, #e5e5e5, #bfbfbf);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-
-  /* Skugga för kontrast */
-  text-shadow: 0 0 6px rgba(0,0,0,0.8),
-               0 0 12px rgba(0,0,0,0.6);
+  color: var(--light);
+  text-shadow: 0 0 6px rgba(0,0,0,0.7);
 }
 
-@media (max-width: 768px) {
-  .brand .tagline {
-    font-size: 12px; /* mindre i mobil */
-  }
+/* Navigation */
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
 }
 
-/* Hero headline (Clarity. Liquidity. Control.) */
-header.hero h1 {
-  font-size: clamp(28px,5vw,52px);
-  margin: 1rem 0;
-  font-weight: 800;
-  color: #d4af37 !important; /* guld */
-  text-shadow: 0 0 8px rgba(0,0,0,0.8) !important;
-}
-/* Force hero headline gold */
-header.hero h1,
-header.hero h1 a {
-  color: #d4af37 !important;  /* guld */
-  text-shadow: 0 0 8px rgba(0,0,0,0.8) !important;
-}
-/* Override link-style on hero headline */
-header.hero h1,
-header.hero h1 a,
-a.brand h1 {
-  color: #d4af37 !important;  /* guld */
-  text-shadow: 0 0 8px rgba(0,0,0,0.8) !important;
-}
-/* Hero headline (Clarity. Liquidity. Control.) - vit version */
-header.hero h1,
-header.hero h1 a {
-  color: #ffffff !important;   /* vit */
-  text-shadow: 0 0 6px rgba(0,0,0,0.7) !important;
-}
-/* cache-bust 2025-09-17 */
-/* FINAL override for hero headline */
-header.hero h1,
-header.hero h1 a,
-.hero h1,
-.hero h1 a,
-a.brand h1 {
-  color: #d4af37 !important;   /* guld */
-  text-shadow: 0 0 6px rgba(0,0,0,0.7) !important;
-}
-/* ULTRA override for hero headline */
-body header.hero h1,
-body header.hero h1 a,
-body .hero h1,
-body .hero h1 a,
-body a.brand h1 {
-  color: #d4af37 !important;   /* guld */
-  font-weight: 800 !important;
-  text-shadow: 0 0 6px rgba(0,0,0,0.7) !important;
-}
-/* ULTRA override for hero headline link */
-header.hero a.brand,
-header.hero a.brand h1 {
-  color: #d4af37 !important;   /* guld */
-  text-shadow: 0 0 6px rgba(0,0,0,0.7) !important;
-  font-weight: 800 !important;
-  text-decoration: none !important;
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
 }
 
+.main-nav a:hover {
+  color: var(--accent);
+}
+
+.main-nav .cta a {
+  border: 1px solid var(--accent);
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.main-nav .cta a:hover {
+  background: var(--accent);
+  color: var(--dark);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #004e92, #000428);
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 54px);
+  color: var(--accent);
+  text-shadow: 0 0 6px rgba(0,0,0,0.7);
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  max-width: 720px;
+  margin: 1rem auto 2rem;
+  color: #f0f0f0;
+}
+
+.cta {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-dark, .btn-outline {
+  padding: 0.9rem 1.4rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.btn-dark {
+  background: var(--dark);
+  color: #fff;
+  border: none;
+}
+
+.btn-dark:hover {
+  background: var(--accent);
+  color: var(--dark);
+}
+
+.btn-outline {
+  border: 2px solid #fff;
+  color: #fff;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color: var(--dark);
+  border-color: var(--accent);
+}
+
+/* Sections */
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+/* Footer */
+footer {
+  background: var(--dark);
+  color: #ccc;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+footer small {
+  display: block;
+  margin-top: 8px;
+  color: #aaa;
+}
