@@ -178,3 +178,16 @@ footer small {
   margin-top: 8px;
   color: #aaa;
 }
+.brand .tagline,
+.brand .tagline * {
+  text-decoration: none !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  color: #cce0ff !important;   /* ljus blå */
+  cursor: default !important;
+}
+
+a.brand .tagline {
+  pointer-events: none !important; /* gör den helt inaktiv som länk */
+}
