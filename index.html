@@ -6,8 +6,8 @@
   <title>ArceoConsult — Clarity. Liquidity. Control.</title>
   <style>
     :root {
-      --ocean-start:#1e90ff; /* lighter blue */
-      --ocean-end:#002147;   /* deep navy */
+      --ocean-start:#4faaff; /* medelhavsblå */
+      --ocean-end:#002147;   /* djup navy */
       --gold:#d4af37;
       --black:#0b0b0b;
       --white:#ffffff;
@@ -26,15 +26,19 @@
 
     .brand{display:flex;flex-direction:column;align-items:center;text-align:center}
     .brand .logo{height:60px;width:auto}
-    .brand .tagline{
+    .brand .tagline,
+    .brand .tagline:link,
+    .brand .tagline:visited,
+    .brand .tagline:hover,
+    .brand .tagline:active {
       font-size:11px;
-      color:#cce0ff; /* light blue */
+      color:#cce0ff !important; /* ljus blå */
       font-weight:600;
       letter-spacing:0.12em;
       text-transform:uppercase;
       margin-top:4px;
       text-shadow:0 0 3px rgba(0,0,0,0.4);
-      text-decoration:none;
+      text-decoration:none !important;
     }
 
     .main-nav ul{list-style:none;display:flex;gap:26px;align-items:center}
