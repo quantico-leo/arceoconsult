@@ -1,164 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ArceoConsult — International Restructuring & Capital Optimization</title>
-
-  <!-- SEO Meta -->
-  <meta name="title" content="ArceoConsult — International Restructuring & Capital Optimization">
-  <meta name="description" content="We help SMEs and investors restructure debt, recover assets, optimize tax, and access discreet capital. Based in Europe, serving globally.">
-  <meta name="keywords" content="restructuring, asset recovery, capital optimization, debt advisory, boutique consulting, ArceoConsult">
-  <meta name="robots" content="index, follow">
-
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="ArceoConsult — International Restructuring & Capital Optimization">
-  <meta property="og:description" content="We help SMEs and investors restructure debt, recover assets, optimize tax, and access discreet capital.">
-  <meta property="og:image" content="https://arceoconsult.com/leo-profile.webp.webp">
-  <meta property="og:url" content="https://arceoconsult.com">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <style>
-    :root{--accent:#d4af37;--dark:#2a2a2a;--ink:#111;}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:#fff;color:#222}
-    a{text-decoration:none;color:inherit}
-    a:hover{text-decoration:underline}
-
-    /* === HEADER === */
-    .site-header { background:#000;border-bottom:1px solid #111;position:sticky;top:0;z-index:1000; }
-    .site-header .container { max-width:1200px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between; }
-    .brand img { height:48px;width:auto;display:block; }
-    .main-nav { margin-left:auto; }
-    .main-nav ul { list-style:none;margin:0;padding:0;display:flex;gap:32px;align-items:center; }
-    .main-nav a { text-decoration:none;color:#fff;font-weight:600;transition: all .3s ease; }
-    .main-nav a:hover { color:var(--accent); }
-    .main-nav li.cta a { padding:10px 18px;border:1px solid var(--accent);border-radius:8px;color:var(--accent);font-weight:700;background:transparent;transition: all .3s ease; }
-    .main-nav li.cta a:hover { background:var(--accent);color:#000; }
-    .main-nav li.cta a:active { background: linear-gradient(135deg, #d4af37, #f8e473, #b8860b);color:#000;border-color:#b8860b;box-shadow: inset 0 2px 6px rgba(0,0,0,0.25); }
-
-    /* HAMBURGER */
-    .hamburger { display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:1100; }
-    .hamburger span { width:25px;height:3px;background:#fff;border-radius:2px;transition:0.3s; }
-    .hamburger.active span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
-    .hamburger.active span:nth-child(2) { opacity:0; }
-    .hamburger.active span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
-
-    /* MOBILE NAV */
-    @media (max-width: 768px) {
-      .main-nav { display:block;position:absolute;top:64px;right:0;left:0;background:#000;max-height:0;overflow:hidden;transition:max-height 0.4s ease; }
-      .main-nav.open { max-height:320px; }
-      .main-nav ul { flex-direction:column;gap:20px;padding:20px; }
-      .main-nav a { color:#fff;font-size:18px; }
-      .hamburger { display:flex; }
-    }
-
-    /* === HERO === */
-    .hero{position:relative;min-height:72vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#000}
-    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#004e92 0%,#000428 100%);background-size:cover;background-position:center;z-index:-2}
-    .overlay{position:absolute;inset:0;background:rgba(255,255,255,.78);z-index:-1}
-    .eyebrow{margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:#111;font-weight:700}
-    .hero h1{font-size:clamp(28px,5vw,52px);margin:1rem 0;font-weight:800;color:var(--ink)}
-    .hero p{max-width:800px;margin:0 auto 1.5rem;font-size:1.1rem;font-weight:500;color:#333}
-    .cta{margin-top:1.5rem;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    .btn-dark{background:#000;color:#fff;border:none;border-radius:8px;padding:.9rem 1.4rem;font-weight:600;transition: all .3s ease;}
-    .btn-dark:hover{ background:var(--accent);color:#000; }
-    .btn-dark:active{ background: linear-gradient(135deg, #d4af37, #f8e473, #b8860b);color:#000;box-shadow: inset 0 2px 6px rgba(0,0,0,0.25); }
-    .btn-outline{border:2px solid #000;color:#000;border-radius:8px;padding:.9rem 1.4rem;font-weight:600;transition: all .3s ease;}
-    .btn-outline:hover{ background:var(--accent);color:#000;border-color:var(--accent); }
-
-    /* === SECTIONS === */
-    section{padding:64px 20px;max-width:1100px;margin:0 auto}
-    section h2{font-weight:800;font-size:1.6rem;margin-bottom:20px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-    .card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:24px}
-
-    /* === FOOTER === */
-    footer{border-top:1px solid rgba(0,0,0,.08);padding:20px;text-align:center;font-size:14px;color:#555}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArceoConsult — Clarity. Liquidity. Control.</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- HEADER -->
   <header class="site-header">
     <div class="container">
-      <a href="./" class="brand" aria-label="ArceoConsult Home">
-  <img src="arceoconsult-logo.svg" alt="ArceoConsult logo">
-  <span class="tagline">Clarity. Recovery. Protection.</span>
-</a>
-
-      <div class="hamburger" onclick="toggleMenu(this)">
-        <span></span><span></span><span></span>
-      </div>
+      <a href="./" class="brand">
+        <img src="arceoconsult-logo.svg" alt="ArceoConsult logo" class="logo">
+        <span class="tagline">Clarity. Protection. Recovery.</span>
+      </a>
       <nav class="main-nav">
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#advantage">Your Advantage</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li class="cta"><a href="#contact">Book a consultation</a></li>
+          <li class="cta"><a href="#contact">Book Consultation</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <!-- HERO -->
-  <header class="hero">
+  <section class="hero">
     <div class="overlay"></div>
-    <div>
-      <p class="eyebrow">International Restructuring & Capital Optimization</p>
+    <div class="hero-inner">
       <h1>Clarity. Liquidity. Control.</h1>
-      <p>We help entrepreneurs, families, and SMEs restructure debt, recover assets, optimize tax, and access alternative capital — discreetly and globally.</p>
+      <p class="hero-subtitle">
+        The boutique advisors protecting SME founders in complex financial disputes and cross-border challenges.
+      </p>
       <div class="cta">
-        <a href="#contact" class="btn-dark">Start a confidential call</a>
-        <a href="#services" class="btn-outline">Our Services</a>
+        <a href="#contact" class="btn-dark">Start Confidential Call</a>
+        <a href="#services" class="btn-outline">Explore Services</a>
       </div>
     </div>
-  </header>
+  </section>
 
   <!-- ABOUT -->
   <section id="about">
     <h2>About Us</h2>
-    <div style="display:flex;gap:40px;flex-wrap:wrap;align-items:center;">
-      <div style="flex:1;min-width:280px;">
-        <p><strong>My name is Leonardo Celija</strong>, founder of ArceoConsult. 
-        After more than a decade in finance, trading and cross-border business, 
-        I saw how entrepreneurs and families often became locked into complex investments, debts, or legal traps without a way forward. 
-        This firm was created to provide clarity, liquidity, and discretion — when traditional advisors fall short.</p>
-        
-        <p><strong>Our vision:</strong> To become Europe’s most trusted boutique for discreet restructuring and capital recovery. 
-        We return control to entrepreneurs, investors, and families — even under maximum pressure.</p>
-        
-        <p><strong>Direct contact:</strong><br>
-        📧 <a href="mailto:leo@arceoconsult.com">leo@arceoconsult.com</a><br>
-        📞 <a href="tel:+46700193462">+46 700-193462</a></p>
-      </div>
-      <div style="flex:0 0 250px;max-width:250px;">
-        <img src="leo-profile.webp.webp" alt="Leonardo Celija" style="width:100%;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.15)">
-      </div>
-    </div>
+    <p>
+      ArceoConsult is a founder-led boutique built to protect entrepreneurs and SME founders
+      when structures collapse, trust fades, or financial conflict takes over. 
+      We restore clarity and control where traditional advisors step back.
+    </p>
   </section>
 
   <!-- SERVICES -->
   <section id="services">
     <h2>Our Services</h2>
     <div class="grid">
-      <div class="card"><h3>Debt Restructuring & Balance Sheet Repair</h3><p>We renegotiate obligations and reduce leverage — restoring financial breathing space.</p></div>
-      <div class="card"><h3>Liquidity Mapping & Cash Flow Control</h3><p>Clear forecasting and access to alternative financing when banks say no.</p></div>
-      <div class="card"><h3>Asset Recovery & Capital Recycling</h3><p>We recover value from failed or illiquid investments and convert it into usable capital.</p></div>
-      <div class="card"><h3>Tax & Structure Optimization</h3><p>Cross-border setups that lower tax, shield assets, and simplify governance.</p></div>
-      <div class="card"><h3>Alternative & Special Situations Advisory</h3><p>Guidance on crypto, unlisted equities, and high-yield bonds — balancing risk with opportunity.</p></div>
+      <div class="card"><h3>Cross-Border Restructuring</h3><p>Negotiation and structuring to restore stability and cash flow.</p></div>
+      <div class="card"><h3>Asset Recovery</h3><p>Recover value from failed or illiquid investments and redeploy it into capital.</p></div>
+      <div class="card"><h3>Dispute & Case Support</h3><p>Strategic guidance and coordination with international counsel.</p></div>
+      <div class="card"><h3>Crisis Stabilisation</h3><p>Rapid triage to protect operations, assets, and reputation.</p></div>
+      <div class="card"><h3>Tax & Structure Advisory</h3><p>Cross-border structuring to reduce complexity and strengthen resilience.</p></div>
     </div>
   </section>
 
   <!-- ADVANTAGE -->
   <section id="advantage">
     <h2>Your Advantage</h2>
-    <ul style="line-height:1.8;">
-      <li>Less debt, more freedom</li>
-      <li>Assets recovered and put back to work</li>
-      <li>Tax optimization that creates breathing space</li>
-      <li>Structures that hold even under pressure</li>
-      <li>Discreet, international advisory without PR risk</li>
+    <ul>
+      <li>Direct access to founder-led expertise</li>
+      <li>Cross-border capability without big-firm cost</li>
+      <li>Discreet and confidential handling</li>
+      <li>Faster response than traditional firms</li>
+      <li>Solutions built for SME founders</li>
     </ul>
   </section>
 
@@ -166,45 +80,24 @@
   <section id="contact">
     <h2>Contact</h2>
     <p>Quick, confidential first step — reach us directly.</p>
-    <form action="https://formspree.io/f/mwpnynjz" method="POST" 
-      style="max-width:500px;margin:auto;display:grid;gap:12px;"
-      target="_self">
-  <!-- Redirect till tack-sidan -->
-  <input type="hidden" name="_redirect" value="https://arceoconsult.com/thankyou.html">
-
-  <input type="text" name="name" placeholder="Your Name" required 
-         style="padding:12px;border:1px solid #ccc;border-radius:6px;">
-
-  <input type="email" name="email" placeholder="Your Email" required 
-         style="padding:12px;border:1px solid #ccc;border-radius:6px;">
-
-  <textarea name="message" rows="5" placeholder="Your Message" required 
-            style="padding:12px;border:1px solid #ccc;border-radius:6px;"></textarea>
-
-  <button type="submit" class="btn-dark">Send Secure Message</button>
-</form>
-
-    <p style="margin-top:16px;font-size:13px;color:#666">We handle all inquiries confidentially.</p>
+    <form action="https://formspree.io/f/mwpnynjz" method="POST">
+      <input type="hidden" name="_redirect" value="https://arceoconsult.com/thankyou.html">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn-dark">Send Secure Message</button>
+    </form>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    © <span id="year"></span> ArceoConsult OÜ. All rights reserved.
+    © <span id="year"></span> ArceoConsult OÜ. All rights reserved.<br>
+    <small>Note: ArceoConsult provides strategic and financial consulting and coordinates with licensed professionals when legal or regulated services are required. This is not legal advice.</small>
   </footer>
 
   <script>
-    document.getElementById("year").textContent=new Date().getFullYear();
-    function toggleMenu(el) {
-      el.classList.toggle("active");
-      const nav = document.querySelector(".main-nav");
-      nav.classList.toggle("open");
-      nav.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          nav.classList.remove("open");
-          el.classList.remove("active");
-        });
-      });
-    }
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
