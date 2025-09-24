@@ -198,3 +198,20 @@ form input, form textarea {
 form button {
   margin-top: 20px; /* flyttar ned knappen */
 }
+form button {
+  margin-top: 20px; /* behåller spacing */
+  background-color: #000; /* svart */
+  color: #fff; /* vit text */
+  font-size: 16px; /* lite större */
+  font-weight: 600; /* semi-bold för mer tyngd */
+  padding: 14px 28px; /* gör knappen högre/bredare */
+  border-radius: 6px; /* rundade hörn */
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background-color: #333; /* subtil hover-effekt */
+  transform: translateY(-2px); /* liten lyft-effekt */
+}
