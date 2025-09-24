@@ -191,3 +191,10 @@ footer small {
 a.brand .tagline {
   pointer-events: none !important; /* gör den helt inaktiv som länk */
 }
+form input, form textarea {
+  margin-bottom: 15px; /* bättre spacing mellan fält */
+}
+
+form button {
+  margin-top: 20px; /* flyttar ned knappen */
+}
