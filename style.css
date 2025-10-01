@@ -191,4 +191,8 @@ body{ background-color: var(--gs-3); }           /* djup GS-blå som grund */
 .hero .cta a:hover{ transform:translateY(-1px); }
 
 /* (om du vill tona ner knapparna i headern): – redan vita som textlänkar via .link-ghost */
+/* --- Logo större, ta bort dubbel "ArceoConsult" text --- */
+.site-header .brand .logo{ height:36px; }            /* öka vid behov: 38–40px */
+.site-header .brand-name{ display:none !important; } /* döljer texten bredvid loggan */
+.tagline{ margin-top:0; }                             /* drar upp taglinen lite när texten försvinner */
 
