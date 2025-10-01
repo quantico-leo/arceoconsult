@@ -321,4 +321,30 @@ header .logo {
 .main-nav a:active {
   color: #d4af37 !important;
 }
+/* === FINAL FIX: Logo + Slogan === */
+
+/* Loggan lagom stor */
+.site-header .brand .logo {
+  height: 65px !important; 
+  width: auto !important;
+  display: block !important;
+  margin: 0 auto; /* centrerar */
+}
+
+/* Behåll brand-blocket som block */
+.site-header .brand {
+  display: block !important;
+  text-align: center; /* byt till left om du vill */
+}
+
+/* Ledorden under loggan */
+.navbar-slogan,
+.tagline {
+  display: block !important;
+  font-size: 14px;
+  color: white;
+  margin-top: 4px;
+  letter-spacing: 1px;
+  text-align: center; /* ändra till left om du vill */
+}
 
