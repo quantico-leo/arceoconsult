@@ -63,21 +63,22 @@ h3 { font-size:20px }
 .main-nav a { color:#fff; opacity:.92; text-decoration:none }
 .main-nav a:hover,
 .main-nav a:focus,
-.main-nav a:active { color:#d4af37 !important; opacity:1 }
+.main-nav a:active { color:#d4af37; opacity:1 }
 
 /* Logo + slogan */
 .site-header .brand .logo {
-  height:40px !important; /* mindre logga */
-  width:auto !important;
-  display:block !important;
+  height:70px;              /* lagom stor logga */
+  width:auto;
+  display:block;
   margin:0 auto;
 }
-.site-header .brand { display:block !important; text-align:center }
+.site-header .brand { display:block; text-align:center }
 .navbar-slogan {
-  font-size:14px; color:#fff;
-  margin-top:-4px; /* flytta upp */
-  letter-spacing:1px;
+  margin-top:4px;           /* direkt under loggan */
+  font-size:15px;
+  font-weight:500;
   text-align:center;
+  color:#fff;
 }
 
 /* Buttons */
@@ -93,8 +94,17 @@ h3 { font-size:20px }
   color:#fff; box-shadow:0 8px 20px rgba(15,61,138,.18);
 }
 .btn-primary:hover { transform:translateY(-1px) }
-.btn-secondary { background:#fff; border:1px solid var(--line); color:var(--ink) }
-.btn-secondary:hover { border-color:#cbd5e1 }
+
+/* LinkedIn-knappen */
+.btn-secondary {
+  background:#fff;
+  border:1px solid #d4af37;  /* guld border */
+  color:#0b0f19;             /* mörk text */
+}
+.btn-secondary:hover {
+  background:#d4af37;        /* guld fyllning */
+  color:#fff;                /* vit text */
+}
 
 /* Hero */
 .hero {
@@ -126,8 +136,8 @@ h3 { font-size:20px }
 /* Programs */
 .checklist { margin:12px 0 0; padding-left:20px }
 .checklist li { margin:.35rem 0 }
-#programs .program-cta { margin-top:32px } /* mer luft */
-#programs .program-cta a { margin-right:15px }
+#programs .program-cta { margin-top:48px }
+#programs .program-cta a { margin-right:20px }
 
 /* Contact */
 .contact-form { margin-top:18px }
@@ -172,77 +182,3 @@ h3 { font-size:20px }
   .cards-4 { grid-template-columns:1fr }
   .form-grid { grid-template-columns:1fr }
 }
-/* === Leo Final Call 22:30 === */
-.site-header .brand .logo {
-  height: 38px !important; /* loggan mindre */
-  margin: 0 auto;
-  display: block;
-}
-
-.navbar-slogan {
-  margin-top: -6px !important; /* ledorden uppflyttade */
-  font-size: 14px;
-  text-align: center;
-  color: #fff;
-}
-
-.founder-photo {
-  max-width: 260px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  display: block;
-  margin: 20px auto;
-}
-
-#programs .program-cta {
-/* === Leo override final === */
-
-.site-header .brand .logo {
-  height: 36px !important;   /* gör loggan mindre */
-  margin: 0 auto !important;
-  display: block !important;
-}
-
-.navbar-slogan {
-  margin-top: -8px !important; /* flytta upp ledorden */
-  font-size: 14px !important;
-  text-align: center !important;
-  color: #fff !important;
-}
-
-#programs .program-cta {
-  margin-top: 48px !important; /* flytta ner knapparna */
-}
-
-#programs .program-cta a {
-  margin-right: 20px !important;
-}
-/* === Leo fix 22:20 === */
-
-/* Gör loggan lite större */
-.site-header .brand .logo {
-  height: 55px !important;  /* större men inte för dominerande */
-  margin: 0 auto !important;
-  display: block !important;
-}
-
-/* Ledorden snyggt under loggan */
-.navbar-slogan {
-  margin-top: 2px !important;
-  font-size: 15px !important;
-  text-align: center !important;
-  color: #fff !important;
-  font-weight: 500;
-}
-
-/* LinkedIn-knappen styling tillbaka */
-.btn-secondary {
-  background: #fff !important;
-  border: 1px solid #d4af37 !important;  /* guld border */
-  color: #0b0f19 !important;             /* mörk text */
-}
-.btn-secondary:hover {
-  background: #d4af37 !important;  /* guld fyllning */
-  color: #fff !important;          /* vit text */
-}
-
