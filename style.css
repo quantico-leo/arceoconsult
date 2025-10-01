@@ -182,3 +182,24 @@ h3 { font-size:20px }
   .cards-4 { grid-template-columns:1fr }
   .form-grid { grid-template-columns:1fr }
 }
+/* === Leo Sleep Fix === */
+
+/* Ledorden mindre och nättare */
+.navbar-slogan {
+  font-size: 12px !important;   /* mindre text */
+  margin-top: 0 !important;
+  font-weight: 400 !important;
+  text-align: center !important;
+  color: #fff !important;
+}
+
+/* LinkedIn-knappen fix */
+.btn-secondary {
+  background: #fff !important;
+  border: 1px solid #d4af37 !important;
+  color: #0b0f19 !important;    /* mörk text så den syns */
+}
+.btn-secondary:hover {
+  background: #d4af37 !important;  /* guld bakgrund vid hover */
+  color: #fff !important;          /* vit text */
+}
