@@ -173,4 +173,22 @@ h3{font-size:20px}
 
 /* (Valfritt) lite mer luft i toppen på desktop */
 .header-inner{min-height:80px}
+/* 1) Bort med vita sidorna – ge sidan en mörk blå bakgrund bakom heron */
+body{ background-color: var(--gs-3); }           /* djup GS-blå som grund */
+
+/* 2) Brand-länk & tagline alltid vit i headern */
+.brand, .brand *{ color:#fff !important; text-decoration:none !important; }
+.brand:hover{ opacity:.95; }
+
+/* 3) Hero-CTA i svart/guld */
+.hero .cta a{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:10px 16px; border-radius:10px; font-weight:600;
+  border:1px solid #d4af37;            /* guld */
+  background:#000; color:#d4af37;      /* svart/guld */
+  text-decoration:none;
+}
+.hero .cta a:hover{ transform:translateY(-1px); }
+
+/* (om du vill tona ner knapparna i headern): – redan vita som textlänkar via .link-ghost */
 
