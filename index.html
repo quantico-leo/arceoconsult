@@ -16,35 +16,38 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header" role="banner">
-    <div class="container header-inner">
-      <a class="brand" href="/" aria-label="ArceoConsult home">
-        <img src="arceoconsult-logo.svg" alt="ArceoConsult" class="logo" />
+ <header class="site-header" role="banner">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="ArceoConsult home">
+      <img src="arceoconsult-logo.svg" alt="ArceoConsult" class="logo" />
+      <div class="brand-text">
         <span class="brand-name">ArceoConsult</span>
-      </a>
+        <span class="tagline">CLARITY • LIQUIDITY • CONTROL</span>
+      </div>
+    </a>
 
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+    <!-- Ingen nav-toggle = ingen vit plupp -->
+    <nav class="main-nav" role="navigation">
+      <ul>
+        <li><a href="#purpose">Purpose</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="header-cta">
+        <a class="link-ghost" href="#contact">Contact</a>
+        <a class="link-ghost" href="https://www.linkedin.com/in/leocelija" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </nav>
+  </div>
+</header>
 
-      <nav class="main-nav" role="navigation">
-        <ul>
-          <li><a href="#purpose">Purpose</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#programs">Programs</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <a class="btn btn-primary btn-compact" href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
 
   <!-- HERO -->
   <section class="hero">
     <div class="container hero-inner">
-      <p class="eyebrow">CLARITY • LIQUIDITY • CONTROL</p>
+      
       <h1>Clarity. Liquidity. Control.</h1>
       <p class="hero-subtitle">
         Helping business owners regain control in <strong>48 hours</strong> and restart predictable sales in <strong>30 days</strong>.
