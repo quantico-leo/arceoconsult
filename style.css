@@ -172,3 +172,26 @@ h3 { font-size:20px }
   .cards-4 { grid-template-columns:1fr }
   .form-grid { grid-template-columns:1fr }
 }
+/* === Leo Final Call 22:30 === */
+.site-header .brand .logo {
+  height: 38px !important; /* loggan mindre */
+  margin: 0 auto;
+  display: block;
+}
+
+.navbar-slogan {
+  margin-top: -6px !important; /* ledorden uppflyttade */
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+}
+
+.founder-photo {
+  max-width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: block;
+  margin: 20px auto;
+}
+
+#programs .program-cta {
