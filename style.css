@@ -241,4 +241,31 @@ html, body { background-color: var(--gs-2); }
   margin-top: 20px;
   display: block;
 }
+/* === Custom Leo Styling === */
+
+/* Gör loggan större */
+.logo {
+  height: 80px;
+}
+
+/* Ledorden under loggan */
+.navbar-slogan {
+  font-size: 14px;
+  color: white;
+  text-align: left;
+  margin-top: -5px;
+  letter-spacing: 1px;
+}
+
+/* Hover-effekt guld på navbar */
+.main-nav a:hover {
+  color: #d4af37; /* guld */
+}
+
+/* Bild på Leo */
+.portrait img {
+  max-width: 260px;
+  border-radius: 12px; /* rundade hörn */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* lätt skugga */
+}
 
