@@ -268,4 +268,15 @@ html, body { background-color: var(--gs-2); }
   border-radius: 12px; /* rundade hörn */
   box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* lätt skugga */
 }
+header .logo {
+  height: 110px !important; /* större logga */
+  display: block;
+}
+header .navbar-slogan {
+  font-size: 14px;
+  color: white;
+  display: block;
+  margin-top: -5px;
+  letter-spacing: 1px;
+}
 
