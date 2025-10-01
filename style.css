@@ -67,7 +67,7 @@ h3 { font-size:20px }
 
 /* Logo + slogan */
 .site-header .brand .logo {
-  height:45px !important; /* 30% mindre */
+  height:40px !important; /* mindre logga */
   width:auto !important;
   display:block !important;
   margin:0 auto;
@@ -75,7 +75,8 @@ h3 { font-size:20px }
 .site-header .brand { display:block !important; text-align:center }
 .navbar-slogan {
   font-size:14px; color:#fff;
-  margin-top:0; letter-spacing:1px;
+  margin-top:-4px; /* flytta upp */
+  letter-spacing:1px;
   text-align:center;
 }
 
@@ -125,7 +126,7 @@ h3 { font-size:20px }
 /* Programs */
 .checklist { margin:12px 0 0; padding-left:20px }
 .checklist li { margin:.35rem 0 }
-#programs .program-cta { margin-top:20px }
+#programs .program-cta { margin-top:32px } /* mer luft */
 #programs .program-cta a { margin-right:15px }
 
 /* Contact */
