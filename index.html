@@ -2,19 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>ArceoConsult — Clarity. Liquidity. Control.</title>
   <meta name="description" content="Helping business owners regain control in 48 hours and restart predictable sales in 30 days. Tailored consulting & corporate programs.">
 
   <link rel="canonical" href="https://arceoconsult.com/" />
 
+  <!-- Open Graph -->
   <meta property="og:title" content="ArceoConsult — Clarity. Liquidity. Control." />
   <meta property="og:description" content="Guardian Consultant for SMEs. Regain control in 48 hours and restart sales flow in 30 days." />
   <meta property="og:url" content="https://arceoconsult.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://arceoconsult.com/leo-profile.webp" />
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ArceoConsult — Clarity. Liquidity. Control." />
   <meta name="twitter:description" content="Guardian Consultant for SMEs. Fast stabilization, real results." />
@@ -25,122 +27,182 @@
 <body>
 
   <!-- HEADER -->
-  <header class="site-header">
-    <div class="container">
-      <div class="brand">
-        <a href="/"><img src="arceoconsult-logo.svg" alt="ArceoConsult logo" class="logo" /></a>
-        <span class="tagline">Clarity. Liquidity. Control.</span>
-      </div>
-      <nav class="main-nav">
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="ArceoConsult home">
+        <img src="arceoconsult-logo.svg" alt="ArceoConsult" class="logo" />
+        <span class="brand-tag">ArceoConsult</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" role="navigation">
         <ul>
           <li><a href="#purpose">Purpose</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#programs">Programs</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li class="cta"><a href="#contact">Book Consultation</a></li>
         </ul>
+        <a class="btn btn-primary btn-compact" href="#contact">Book Consultation</a>
       </nav>
     </div>
   </header>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-inner" style="max-width: 900px; margin:auto; text-align:center;">
+    <div class="container hero-inner">
+      <p class="eyebrow">CLARITY • LIQUIDITY • CONTROL</p>
       <h1>Clarity. Liquidity. Control.</h1>
       <p class="hero-subtitle">
-        Helping business owners regain control in 48 hours and restart sales in 30 days.
+        Helping business owners regain control in <strong>48 hours</strong> and restart predictable sales in <strong>30 days</strong>.
       </p>
       <div class="cta">
-        <a href="#contact" class="btn-primary">Book Consultation</a>
-        <a href="https://www.linkedin.com/in/leocelija" target="_blank" class="btn-secondary">Connect on LinkedIn</a>
+        <a href="#contact" class="btn btn-primary">Book Consultation</a>
+        <a href="https://www.linkedin.com/in/leocelija" target="_blank" rel="noopener" class="btn btn-secondary">Connect on LinkedIn</a>
       </div>
     </div>
   </section>
 
   <!-- PURPOSE -->
-  <section id="purpose">
-    <h2>Our Purpose</h2>
-    <p>
-      We help business owners regain control within <strong>48 hours</strong> and re-establish a predictable sales flow within 
-      <strong>30 days</strong>. This is the foundation of ArceoConsult – fast stabilization and renewed momentum.
-    </p>
+  <section id="purpose" class="section">
+    <div class="container narrow">
+      <h2>Our Purpose</h2>
+      <p class="lead">
+        We help business owners regain control within <strong>48 hours</strong> and re-establish a predictable sales flow within
+        <strong>30 days</strong>. This is the foundation of ArceoConsult — fast stabilization and renewed momentum.
+      </p>
+    </div>
   </section>
 
   <!-- SERVICES -->
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="grid">
-      <div class="card"><h3>48h Control</h3><p>Stabilize cash flow and reduce immediate risks.</p></div>
-      <div class="card"><h3>30d Sales Reset</h3><p>Rebuild your sales pipeline in one month.</p></div>
-      <div class="card"><h3>90d Growth</h3><p>Turn leads into signed contracts within 90 days.</p></div>
-      <div class="card"><h3>Asset Recovery</h3><p>Unlock money from stuck or illiquid investments.</p></div>
-      <div class="card"><h3>Cross-Border Structuring</h3><p>Set up business structures that work seamlessly across borders.</p></div>
+  <section id="services" class="section section-alt">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="grid cards-4">
+        <article class="card">
+          <h3>48h Control</h3>
+          <p>Stabilize cash flow and reduce immediate risks.</p>
+        </article>
+        <article class="card">
+          <h3>30d Sales Reset</h3>
+          <p>Rebuild your sales pipeline in one month.</p>
+        </article>
+        <article class="card">
+          <h3>90d Growth</h3>
+          <p>Turn leads into signed contracts within 90 days.</p>
+        </article>
+        <article class="card">
+          <h3>Asset Recovery</h3>
+          <p>Unlock money from stuck or illiquid investments.</p>
+        </article>
+        <article class="card">
+          <h3>Cross-Border Structuring</h3>
+          <p>Set up business structures that work seamlessly across borders.</p>
+        </article>
+      </div>
     </div>
   </section>
 
   <!-- EXPERIENCE -->
-  <section id="experience">
-    <h2>Why ArceoConsult</h2>
-    <div class="programs-grid">
-      <div>
-        <p>
-          ArceoConsult is built on lived experience. Our founder has personally faced betrayal, hostile staff situations, liquidity crises and external threats. 
-          By navigating and overcoming these challenges, we developed a methodology SMEs can apply immediately.
-        </p>
-        <p>
-          Combined with proven sales expertise, this allows us to design solutions that are empirically grounded and individually tailored. 
-          Every engagement is discreet, hands-on and KPI-driven.
-        </p>
-      </div>
-      <div class="programs-photo">
-        <img src="leo-profile.webp" alt="Leonardo Celija — Guardian Consultant">
-        <p class="hero-caption">Leonardo Celija — Guardian Consultant</p>
+  <section id="experience" class="section">
+    <div class="container">
+      <h2>Why ArceoConsult</h2>
+      <div class="grid split">
+        <div class="copy">
+          <p>
+            ArceoConsult is built on lived experience. Our founder has personally faced betrayal, hostile staff situations,
+            liquidity crises and external threats. By navigating and overcoming these challenges, we developed a methodology
+            SMEs can apply immediately.
+          </p>
+          <p>
+            Combined with proven sales expertise, this allows us to design solutions that are empirically grounded and
+            individually tailored. Every engagement is discreet, hands-on and KPI-driven.
+          </p>
+        </div>
+        <figure class="portrait">
+          <img src="leo-profile.webp" alt="Leonardo Celija — Guardian Consultant">
+          <figcaption>Leonardo Celija — Guardian Consultant</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
   <!-- PROGRAMS -->
-  <section id="programs">
-    <h2>Corporate Advisory Programs</h2>
-    <div class="programs-grid">
-      <div>
-        <p>In addition to tailored consulting, ArceoConsult offers structured programs — webinars and seminars — designed for owners and management teams. We help you anticipate and manage:</p>
-        <ul>
-          <li>External threats and hostile actors</li>
-          <li>Staff loyalty and organizational risk</li>
-          <li>Liquidity crises and cash-flow disruptions</li>
-        </ul>
-        <p>These programs translate real-world experience into actionable knowledge, ensuring that companies are not only surviving but are also prepared for the next challenge.</p>
-        <div class="cta">
-          <a href="#contact" class="btn-primary">Book Consultation</a>
-          <a href="https://www.linkedin.com/in/leocelija" target="_blank" class="btn-secondary">Connect on LinkedIn</a>
+  <section id="programs" class="section section-alt">
+    <div class="container">
+      <h2>Corporate Advisory Programs</h2>
+      <div class="grid split">
+        <div class="copy">
+          <p>
+            In addition to tailored consulting, ArceoConsult offers structured programs — webinars and seminars — designed for
+            owners and management teams. We help you anticipate and manage:
+          </p>
+          <ul class="checklist">
+            <li>External threats and hostile actors</li>
+            <li>Staff loyalty and organizational risk</li>
+            <li>Liquidity crises and cash-flow disruptions</li>
+          </ul>
+          <div class="cta">
+            <a href="#contact" class="btn btn-primary">Book Consultation</a>
+            <a href="https://www.linkedin.com/in/leocelija" target="_blank" rel="noopener" class="btn btn-secondary">Connect on LinkedIn</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Quick, confidential first step — reach us directly.</p>
-    <form action="https://formspree.io/f/mwpnynjz" method="POST">
-      <input type="hidden" name="_redirect" value="https://arceoconsult.com/thankyou.html">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Secure Message</button>
-    </form>
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <p class="lead">Quick, confidential first step — reach us directly.</p>
+
+      <form class="contact-form" action="https://formspree.io/f/mwpnynjz" method="POST">
+        <input type="hidden" name="_redirect" value="https://arceoconsult.com/thankyou.html">
+        <div class="grid form-grid">
+          <input type="text" name="name" placeholder="Your Name" required aria-label="Your name">
+          <input type="email" name="email" placeholder="Your Email" required aria-label="Your email">
+          <textarea name="message" placeholder="Your Message" required rows="5" aria-label="Your message"></textarea>
+          <button type="submit" class="btn btn-primary">Send Secure Message</button>
+        </div>
+      </form>
+    </div>
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    © <span id="year"></span> ArceoConsult OÜ. All rights reserved.
-    <small>Note: ArceoConsult provides strategic and financial consulting and coordinates with licensed professionals when legal or regulated services are required. This is not legal advice.</small>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> ArceoConsult OÜ. All rights reserved.</div>
+      <small>
+        ArceoConsult provides strategic and financial consulting and coordinates with licensed professionals when legal or regulated
+        services are required. This is not legal advice.
+      </small>
+    </div>
   </footer>
 
   <script>
-    document.getElementById("year").textContent=new Date().getFullYear();
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Sticky shadow on scroll
+    const header = document.querySelector('.site-header');
+    const onScroll = () => {
+      if (window.scrollY > 8) header.classList.add('is-scrolled');
+      else header.classList.remove('is-scrolled');
+    };
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+
+    // Mobile nav
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.main-nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
   </script>
 </body>
 </html>
