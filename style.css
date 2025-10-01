@@ -222,4 +222,46 @@ form button:hover {
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
+section p {
+  margin-bottom: 1.2rem;  /* luft mellan stycken */
+}
+
+section ul {
+  margin: 1rem 0 1.5rem 1.5rem; /* luft runt listor */
+  line-height: 1.7;
+}
+section {
+  padding: 80px 20px; /* istället för 60px */
+}
+#contact form {
+  margin-top: 40px;
+  padding: 24px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+#contact input, #contact textarea {
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+#contact button {
+  margin-top: 10px;
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+#contact button:hover {
+  background: var(--accent);
+  color: var(--dark);
+}
+
 
