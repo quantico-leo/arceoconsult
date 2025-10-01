@@ -214,4 +214,31 @@ body{ background-color: var(--gs-3); }           /* djup GS-blå som grund */
 
 /* 4) Om du tidigare satte mörk sidbakgrund – gör den lite ljusare */
 html, body { background-color: var(--gs-2); }
+/* === Custom Leo Styling === */
+
+/* Logga större */
+.navbar-logo img {
+  height: 80px; /* öka loggans storlek */
+}
+
+/* Ledorden under loggan */
+.navbar-slogan {
+  font-size: 14px;
+  color: white;
+  text-align: left;
+  margin-top: -5px;
+}
+
+/* Hover-effekt guld på navbar */
+.navbar a:hover {
+  color: #d4af37; /* guld */
+}
+
+/* Bild på Leo */
+.founder-photo {
+  max-width: 250px;
+  border-radius: 12px;
+  margin-top: 20px;
+  display: block;
+}
 
