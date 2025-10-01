@@ -298,20 +298,21 @@ header .logo {
 }
 
 /* Sätt brand-blocket att börja upptill (så tagline hamnar under namnet snyggt) */
+/* Brand-block centrerat, logga överst, slogan under */
 .site-header .brand {
-  display: flex;
-  align-items: flex-start !important;
-  gap: 10px;
+  display: block;
+  text-align: center; /* vill du ha vänster, byt till left */
 }
 
-/* Ledorden under brand-name */
+/* Ledorden under loggan */
 .navbar-slogan,
 .tagline {
   font-size: 14px;
   color: white;
   display: block;
-  margin-top: -4px;
+  margin-top: 4px;
   letter-spacing: 1px;
+  text-align: center; /* eller left om du vill */
 }
 
 /* Meny i guld vid hover/focus/click */
