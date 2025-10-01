@@ -279,4 +279,40 @@ header .navbar-slogan {
   margin-top: -5px;
   letter-spacing: 1px;
 }
+/* === Leo overrides v13 === */
+
+/* Force bigger logo */
+.site-header .brand img.logo,
+header .brand img.logo,
+header .logo {
+  height: 110px !important;
+  width: auto !important;
+  max-height: none !important;
+  display: block !important;
+  flex-shrink: 0;
+}
+
+/* Sätt brand-blocket att börja upptill (så tagline hamnar under namnet snyggt) */
+.site-header .brand {
+  display: flex;
+  align-items: flex-start !important;
+  gap: 10px;
+}
+
+/* Ledorden under brand-name */
+.navbar-slogan,
+.tagline {
+  font-size: 14px;
+  color: white;
+  display: block;
+  margin-top: -4px;
+  letter-spacing: 1px;
+}
+
+/* Meny i guld vid hover/focus/click */
+.main-nav a:hover,
+.main-nav a:focus,
+.main-nav a:active {
+  color: #d4af37 !important;
+}
 
