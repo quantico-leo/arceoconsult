@@ -6,7 +6,6 @@
 
   <title>ArceoConsult — Clarity. Liquidity. Control.</title>
   <meta name="description" content="Helping business owners regain control in 48 hours and restart predictable sales in 30 days. Tailored consulting & corporate programs.">
-
   <link rel="canonical" href="https://arceoconsult.com/" />
 
   <!-- Open Graph -->
@@ -22,7 +21,7 @@
   <meta name="twitter:description" content="Guardian Consultant for SMEs. Fast stabilization, real results." />
   <meta name="twitter:image" content="https://arceoconsult.com/leo-profile.webp" />
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -31,7 +30,7 @@
     <div class="container header-inner">
       <a class="brand" href="/" aria-label="ArceoConsult home">
         <img src="arceoconsult-logo.svg" alt="ArceoConsult" class="logo" />
-        <span class="brand-tag">ArceoConsult</span>
+        <span class="brand-name">ArceoConsult</span>
       </a>
 
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -82,26 +81,11 @@
     <div class="container">
       <h2>Our Services</h2>
       <div class="grid cards-4">
-        <article class="card">
-          <h3>48h Control</h3>
-          <p>Stabilize cash flow and reduce immediate risks.</p>
-        </article>
-        <article class="card">
-          <h3>30d Sales Reset</h3>
-          <p>Rebuild your sales pipeline in one month.</p>
-        </article>
-        <article class="card">
-          <h3>90d Growth</h3>
-          <p>Turn leads into signed contracts within 90 days.</p>
-        </article>
-        <article class="card">
-          <h3>Asset Recovery</h3>
-          <p>Unlock money from stuck or illiquid investments.</p>
-        </article>
-        <article class="card">
-          <h3>Cross-Border Structuring</h3>
-          <p>Set up business structures that work seamlessly across borders.</p>
-        </article>
+        <article class="card"><h3>48h Control</h3><p>Stabilize cash flow and reduce immediate risks.</p></article>
+        <article class="card"><h3>30d Sales Reset</h3><p>Rebuild your sales pipeline in one month.</p></article>
+        <article class="card"><h3>90d Growth</h3><p>Turn leads into signed contracts within 90 days.</p></article>
+        <article class="card"><h3>Asset Recovery</h3><p>Unlock money from stuck or illiquid investments.</p></article>
+        <article class="card"><h3>Cross-Border Structuring</h3><p>Set up structures that work seamlessly across borders.</p></article>
       </div>
     </div>
   </section>
@@ -113,13 +97,13 @@
       <div class="grid split">
         <div class="copy">
           <p>
-            ArceoConsult is built on lived experience. Our founder has personally faced betrayal, hostile staff situations,
-            liquidity crises and external threats. By navigating and overcoming these challenges, we developed a methodology
-            SMEs can apply immediately.
+            Built on lived experience. Our founder has personally faced betrayal, hostile staff situations,
+            liquidity crises and external threats. The methodology we use is forged in practice and deployable
+            immediately for SMEs.
           </p>
           <p>
-            Combined with proven sales expertise, this allows us to design solutions that are empirically grounded and
-            individually tailored. Every engagement is discreet, hands-on and KPI-driven.
+            Combined with proven sales expertise, we design solutions that are empirically grounded and tailored to your
+            situation. Every engagement is discreet, hands-on and KPI-driven.
           </p>
         </div>
         <figure class="portrait">
@@ -137,8 +121,8 @@
       <div class="grid split">
         <div class="copy">
           <p>
-            In addition to tailored consulting, ArceoConsult offers structured programs — webinars and seminars — designed for
-            owners and management teams. We help you anticipate and manage:
+            In addition to tailored consulting, we offer structured programs — webinars and seminars — designed for owners
+            and management teams. We help you anticipate and manage:
           </p>
           <ul class="checklist">
             <li>External threats and hostile actors</li>
@@ -177,8 +161,8 @@
     <div class="container footer-inner">
       <div>© <span id="year"></span> ArceoConsult OÜ. All rights reserved.</div>
       <small>
-        ArceoConsult provides strategic and financial consulting and coordinates with licensed professionals when legal or regulated
-        services are required. This is not legal advice.
+        ArceoConsult provides strategic and financial consulting and coordinates with licensed professionals when legal or
+        regulated services are required. This is not legal advice.
       </small>
     </div>
   </footer>
@@ -187,7 +171,7 @@
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Sticky shadow on scroll
+    // Sticky header shadow on scroll
     const header = document.querySelector('.site-header');
     const onScroll = () => {
       if (window.scrollY > 8) header.classList.add('is-scrolled');
@@ -196,7 +180,7 @@
     window.addEventListener('scroll', onScroll);
     onScroll();
 
-    // Mobile nav
+    // Mobile nav toggle
     const toggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.main-nav');
     toggle.addEventListener('click', () => {
