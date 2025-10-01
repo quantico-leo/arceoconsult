@@ -1,13 +1,13 @@
 /* ArceoConsult — clean corporate theme (Goldman-inspired) */
 
-:root{
+:root {
   --ink:#0b0f19; --slate:#4b5563; --muted:#6b7280; --line:#e4e7ec;
   --bg:#ffffff; --bg-alt:#f7f8fa;
 
-  /* Ljusare GS-blå skala */
-  --gs-1:#3b7fc1;   /* light */
-  --gs-2:#1f5fa8;   /* medium */
-  --gs-3:#0f3d8a;   /* deep */
+  /* GS-blå skala */
+  --gs-1:#6aa7e8;   /* light */
+  --gs-2:#3e7cc7;   /* medium */
+  --gs-3:#1c54a5;   /* deep */
 
   --radius:14px; --shadow:0 10px 30px rgba(11,15,25,.08);
   --t:180ms ease; --container:1120px;
@@ -16,335 +16,158 @@
   --serif:"Georgia",Cambria,"Times New Roman",Times,serif;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{margin:0;color:var(--ink);background:var(--bg);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-img{max-width:100%;height:auto;display:block}
+* { box-sizing:border-box }
+html,body { height:100% }
+body {
+  margin:0; color:var(--ink); background:var(--bg);
+  font:16px/1.6 var(--sans);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img { max-width:100%; height:auto; display:block }
 
-/* Länkar – aldrig lila/blå default */
-a,a:visited{color:inherit;text-decoration:none}
+/* Links */
+a,a:visited { color:inherit; text-decoration:none }
 
-.container{max-width:var(--container);margin:0 auto;padding:0 24px}
-.section{padding:72px 0}
-.section-alt{background:var(--bg-alt)}
-.narrow{max-width:800px}
+/* Layout */
+.container { max-width:var(--container); margin:0 auto; padding:0 24px }
+.section { padding:72px 0 }
+.section-alt { background:var(--bg-alt) }
+.narrow { max-width:800px }
 
-/* Typografi */
-h1,h2,h3{margin:0 0 .6rem}
-h1{font-family:var(--serif);font-weight:700;letter-spacing:-.01em;font-size:clamp(36px,5vw,56px);line-height:1.1}
-h2{font-family:var(--serif);font-weight:700;font-size:clamp(24px,3.2vw,32px)}
-h3{font-size:20px}
-.lead{font-size:1.125rem;color:var(--slate)}
-.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;color:#e8effa}
+/* Typography */
+h1,h2,h3 { margin:0 0 .6rem }
+h1 {
+  font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  font-size:clamp(36px,5vw,56px); line-height:1.1
+}
+h2 {
+  font-family:var(--serif); font-weight:700;
+  font-size:clamp(24px,3.2vw,32px)
+}
+h3 { font-size:20px }
+.lead { font-size:1.125rem; color:var(--slate) }
 
-/* Header – mörk, ren */
+/* Header */
 .site-header {
-  position: sticky; 
-  top: 0; 
-  z-index: 50;
-  background: #000000;  /* helt svart */
-  color: #fff;
-  border-bottom: 1px solid rgba(255,255,255,.06);
-  transition: box-shadow var(--t);
+  position:sticky; top:0; z-index:50;
+  background:#000; color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  transition:box-shadow var(--t);
+}
+.site-header.is-scrolled { box-shadow:0 6px 18px rgba(0,0,0,.35) }
+.header-inner { display:flex; align-items:center; justify-content:space-between; min-height:80px }
+
+.main-nav { display:flex; align-items:center; gap:24px }
+.main-nav ul { display:flex; gap:22px; list-style:none; margin:0; padding:0 }
+.main-nav a { color:#fff; opacity:.92; text-decoration:none }
+.main-nav a:hover,
+.main-nav a:focus,
+.main-nav a:active { color:#d4af37 !important; opacity:1 }
+
+/* Logo + slogan */
+.site-header .brand .logo {
+  height:45px !important; /* 30% mindre */
+  width:auto !important;
+  display:block !important;
+  margin:0 auto;
+}
+.site-header .brand { display:block !important; text-align:center }
+.navbar-slogan {
+  font-size:14px; color:#fff;
+  margin-top:0; letter-spacing:1px;
+  text-align:center;
 }
 
+/* Buttons */
+.btn {
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:.5rem; padding:12px 18px;
+  border-radius:10px; border:1px solid transparent;
+  font-weight:600;
+  transition:transform var(--t),box-shadow var(--t),background var(--t),border-color var(--t),color var(--t);
 }
-.site-header.is-scrolled{box-shadow:0 6px 18px rgba(0,0,0,.35)}
-.header-inner{display:flex;align-items:center;justify-content:space-between;min-height:72px}
-.brand{display:flex;align-items:center;gap:.75rem}
-.brand .logo{height:28px;width:auto}
-.brand-name{font-weight:600;letter-spacing:.02em}
-
-.main-nav{display:flex;align-items:center;gap:20px}
-.main-nav ul{display:flex;align-items:center;gap:22px;list-style:none;margin:0;padding:0}
-.main-nav a{color:#fff;opacity:.92}
-.main-nav a:hover{opacity:1}
-.btn-compact{margin-left:8px}
-
-/* Burger – göms på desktop (ingen konstig “plupp”) */
-.nav-toggle{display:none;width:40px;height:40px;border:1px solid rgba(255,255,255,.16);border-radius:10px;background:transparent}
-.nav-toggle span{display:block;height:2px;background:#fff;margin:7px 9px}
-
-/* Knappar */
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  gap:.5rem;padding:12px 18px;border-radius:10px;border:1px solid transparent;
-  font-weight:600;transition:transform var(--t),box-shadow var(--t),background var(--t),border-color var(--t),color var(--t)
-}
-.btn-primary{
+.btn-primary {
   background:linear-gradient(180deg,var(--gs-2),var(--gs-3));
   color:#fff; box-shadow:0 8px 20px rgba(15,61,138,.18);
 }
-.btn-primary:hover{transform:translateY(-1px)}
-.btn-secondary{background:#fff;border:1px solid var(--line);color:var(--ink)}
-.btn-secondary:hover{border-color:#cbd5e1}
+.btn-primary:hover { transform:translateY(-1px) }
+.btn-secondary { background:#fff; border:1px solid var(--line); color:var(--ink) }
+.btn-secondary:hover { border-color:#cbd5e1 }
 
-/* HERO – ljusare GS-blå gradient */
-.hero{
+/* Hero */
+.hero {
   background:radial-gradient(1600px 560px at 60% -10%, var(--gs-1) 0%, var(--gs-2) 55%, var(--gs-3) 100%);
   color:#fff; padding:96px 0 84px;
 }
-.hero-inner{text-align:center}
-.hero-subtitle{max-width:820px;margin:12px auto 0;color:#eef3ff;font-size:1.1rem}
-.hero .btn{margin-top:16px}
+.hero-inner { text-align:center }
+.hero-subtitle { max-width:820px; margin:12px auto 0; color:#eef3ff; font-size:1.1rem }
+.hero .btn { margin-top:16px }
 
 /* Grid & cards */
-.grid{display:grid;gap:24px}
-.cards-4{grid-template-columns:repeat(4,1fr)}
-.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);transition:transform var(--t),box-shadow var(--t)}
-.card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(11,15,25,.12)}
-.split{grid-template-columns:1.1fr .9fr;align-items:center}
+.grid { display:grid; gap:24px }
+.cards-4 { grid-template-columns:repeat(4,1fr) }
+.card {
+  background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+  padding:22px; box-shadow:var(--shadow);
+  transition:transform var(--t),box-shadow var(--t)
+}
+.card:hover { transform:translateY(-4px); box-shadow:0 16px 36px rgba(11,15,25,.12) }
+.split { grid-template-columns:1.1fr .9fr; align-items:center }
 
-/* Portrait i Experience */
-.portrait{margin:0}
-.portrait img{border-radius:12px;box-shadow:var(--shadow)}
-.portrait figcaption{margin-top:10px;color:var(--muted);font-size:.9rem}
+/* Experience portrait */
+.portrait img,
+.founder-photo {
+  max-width:260px; border-radius:12px; box-shadow:var(--shadow);
+  display:block; margin:20px auto;
+}
 
 /* Programs */
-.checklist{margin:12px 0 0;padding-left:20px}
-.checklist li{margin:.35rem 0}
+.checklist { margin:12px 0 0; padding-left:20px }
+.checklist li { margin:.35rem 0 }
+#programs .program-cta { margin-top:20px }
+#programs .program-cta a { margin-right:15px }
 
-/* Kontaktformulär */
-.contact-form{margin-top:18px}
-.form-grid{grid-template-columns:1fr 1fr}
-.form-grid textarea{grid-column:1 / -1}
-.contact-form input,.contact-form textarea{
-  width:100%;padding:14px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--ink);outline:none;font:inherit;
-  transition:border-color var(--t),box-shadow var(--t)
+/* Contact */
+.contact-form { margin-top:18px }
+.form-grid { grid-template-columns:1fr 1fr }
+.form-grid textarea { grid-column:1 / -1 }
+.contact-form input, .contact-form textarea {
+  width:100%; padding:14px; border-radius:10px;
+  border:1px solid var(--line); background:#fff; color:var(--ink);
+  outline:none; font:inherit;
+  transition:border-color var(--t), box-shadow var(--t);
 }
-.contact-form input:focus,.contact-form textarea:focus{
-  border-color:#b6c3d6;box-shadow:0 0 0 4px rgba(31,95,168,.15)
+.contact-form input:focus, .contact-form textarea:focus {
+  border-color:#b6c3d6; box-shadow:0 0 0 4px rgba(31,95,168,.15);
 }
-.contact-form button{justify-self:start}
+.contact-form button { justify-self:start }
 
 /* Footer */
-.site-footer{border-top:1px solid var(--line);background:#fff;color:var(--slate);padding:32px 0}
-.footer-inner{display:flex;flex-direction:column;gap:6px}
+.site-footer {
+  border-top:1px solid var(--line);
+  background:#fff; color:var(--slate); padding:32px 0;
+}
+.footer-inner { display:flex; flex-direction:column; gap:6px }
 
 /* Responsive */
-@media (max-width:1100px){
-  .cards-4{grid-template-columns:repeat(3,1fr)}
-  .split{grid-template-columns:1fr}
+@media (max-width:1100px) {
+  .cards-4 { grid-template-columns:repeat(3,1fr) }
+  .split { grid-template-columns:1fr }
 }
-@media (max-width:820px){
-  .cards-4{grid-template-columns:repeat(2,1fr)}
-  .hero{padding:84px 0 72px}
-  .main-nav{
-    position:fixed; inset:72px 0 auto 0; background:#0b0f19; color:#fff;
+@media (max-width:820px) {
+  .cards-4 { grid-template-columns:repeat(2,1fr) }
+  .hero { padding:84px 0 72px }
+  .main-nav {
+    position:fixed; inset:72px 0 auto 0; background:#000; color:#fff;
     transform:translateY(-120%); transition:transform var(--t);
-    padding:12px 24px; gap:16px; flex-direction:column; align-items:flex-start; border-bottom:1px solid rgba(255,255,255,.12)
+    padding:12px 24px; gap:16px; flex-direction:column; align-items:flex-start;
+    border-bottom:1px solid rgba(255,255,255,.12)
   }
-  .main-nav.open{transform:translateY(0)}
-  .main-nav ul{flex-direction:column; align-items:flex-start; gap:6px}
-  .nav-toggle{display:block}
-  .btn-compact{align-self:stretch; text-align:center; width:100%}
+  .main-nav.open { transform:translateY(0) }
+  .main-nav ul { flex-direction:column; align-items:flex-start; gap:6px }
 }
-@media (max-width:560px){
-  .cards-4{grid-template-columns:1fr}
-  .form-grid{grid-template-columns:1fr}
+@media (max-width:560px) {
+  .cards-4 { grid-template-columns:1fr }
+  .form-grid { grid-template-columns:1fr }
 }
-/* === Header tagline + vita länkar + döda pluppen === */
-.brand-text{display:flex;flex-direction:column;line-height:1.1}
-.brand-name{font-weight:700;letter-spacing:.02em}
-.tagline{
-  margin-top:2px;
-  font-size:.78rem;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:#e8effa;        /* vit/ljusblå */
-  opacity:.95;
-}
-
-/* Meny i vit text + Contact/LinkedIn som vita länkar */
-.main-nav{display:flex;align-items:center;gap:24px}
-.main-nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
-.main-nav a{color:#fff;opacity:.92;text-decoration:none}
-.main-nav a:hover{opacity:1}
-
-.header-cta{display:flex;gap:16px}
-.link-ghost{
-  color:#fff; opacity:.92; text-decoration:none;
-  border-bottom:1px solid rgba(255,255,255,.25);
-  padding-bottom:2px;
-}
-.link-ghost:hover{opacity:1; border-bottom-color:transparent}
-
-/* Döda burger-ikonen helt (ingen “vit plupp”) */
-.nav-toggle{display:none !important}
-
-/* Hero-texter – ingen eyebrow i hero längre, håll vitt */
-.hero h1{color:#fff}
-.hero-subtitle{color:#eef3ff}
-
-/* (Valfritt) lite mer luft i toppen på desktop */
-.header-inner{min-height:80px}
-/* 1) Bort med vita sidorna – ge sidan en mörk blå bakgrund bakom heron */
-body{ background-color: var(--gs-3); }           /* djup GS-blå som grund */
-
-/* 2) Brand-länk & tagline alltid vit i headern */
-.brand, .brand *{ color:#fff !important; text-decoration:none !important; }
-.brand:hover{ opacity:.95; }
-
-/* 3) Hero-CTA i svart/guld */
-.hero .cta a{
-  display:inline-flex; align-items:center; justify-content:center;
-  padding:10px 16px; border-radius:10px; font-weight:600;
-  border:1px solid #d4af37;            /* guld */
-  background:#000; color:#d4af37;      /* svart/guld */
-  text-decoration:none;
-}
-.hero .cta a:hover{ transform:translateY(-1px); }
-
-/* (om du vill tona ner knapparna i headern): – redan vita som textlänkar via .link-ghost */
-/* --- Logo större, ta bort dubbel "ArceoConsult" text --- */
-.site-header .brand .logo{ height:36px; }            /* öka vid behov: 38–40px */
-.site-header .brand-name{ display:none !important; } /* döljer texten bredvid loggan */
-.tagline{ margin-top:0; }                             /* drar upp taglinen lite när texten försvinner */
-/* === Ljusare blå & Purpose i svart === */
-
-/* 1) Ljusare GS-blå palett (överskriver tidigare variabler) */
-:root{
-  --gs-1:#6aa7e8;  /* ljus */
-  --gs-2:#3e7cc7;  /* mellan */
-  --gs-3:#1c54a5;  /* djup men ljusare än tidigare */
-}
-
-/* 2) Purpose: vit bakgrund, svart text */
-#purpose{ background:#ffffff !important; }
-#purpose h2{ color:#0b0f19 !important; }
-#purpose .lead, #purpose p{ color:#0b0f19 !important; }
-
-/* 3) (valfritt men snyggt) lite ljusare “alt”-sektioner */
-.section-alt{ background:#eef4fb !important; }
-
-/* 4) Om du tidigare satte mörk sidbakgrund – gör den lite ljusare */
-html, body { background-color: var(--gs-2); }
-/* === Custom Leo Styling === */
-
-/* Logga större */
-.navbar-logo img {
-  height: 80px; /* öka loggans storlek */
-}
-
-/* Ledorden under loggan */
-.navbar-slogan {
-  font-size: 14px;
-  color: white;
-  text-align: left;
-  margin-top: -5px;
-}
-
-/* Hover-effekt guld på navbar */
-.navbar a:hover {
-  color: #d4af37; /* guld */
-}
-
-/* Bild på Leo */
-.founder-photo {
-  max-width: 250px;
-  border-radius: 12px;
-  margin-top: 20px;
-  display: block;
-}
-/* === Custom Leo Styling === */
-
-/* Gör loggan större */
-.logo {
-  height: 80px;
-}
-
-/* Ledorden under loggan */
-.navbar-slogan {
-  font-size: 14px;
-  color: white;
-  text-align: left;
-  margin-top: -5px;
-  letter-spacing: 1px;
-}
-
-/* Hover-effekt guld på navbar */
-.main-nav a:hover {
-  color: #d4af37; /* guld */
-}
-
-/* Bild på Leo */
-.portrait img {
-  max-width: 260px;
-  border-radius: 12px; /* rundade hörn */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* lätt skugga */
-}
-header .logo {
-  height: 110px !important; /* större logga */
-  display: block;
-}
-header .navbar-slogan {
-  font-size: 14px;
-  color: white;
-  display: block;
-  margin-top: -5px;
-  letter-spacing: 1px;
-}
-/* === Leo overrides v13 === */
-
-/* Force bigger logo */
-.site-header .brand img.logo,
-header .brand img.logo,
-header .logo {
-  height: 110px !important;
-  width: auto !important;
-  max-height: none !important;
-  display: block !important;
-  flex-shrink: 0;
-}
-
-/* Sätt brand-blocket att börja upptill (så tagline hamnar under namnet snyggt) */
-/* Brand-block centrerat, logga överst, slogan under */
-.site-header .brand {
-  display: block;
-  text-align: center; /* vill du ha vänster, byt till left */
-}
-
-/* Ledorden under loggan */
-.navbar-slogan,
-.tagline {
-  font-size: 14px;
-  color: white;
-  display: block;
-  margin-top: 4px;
-  letter-spacing: 1px;
-  text-align: center; /* eller left om du vill */
-}
-
-/* Meny i guld vid hover/focus/click */
-.main-nav a:hover,
-.main-nav a:focus,
-.main-nav a:active {
-  color: #d4af37 !important;
-}
-/* === FINAL FIX: Logo + Slogan === */
-
-/* Loggan lagom stor */
-.site-header .brand .logo {
-  height: 65px !important; 
-  width: auto !important;
-  display: block !important;
-  margin: 0 auto; /* centrerar */
-}
-
-/* Behåll brand-blocket som block */
-.site-header .brand {
-  display: block !important;
-  text-align: center; /* byt till left om du vill */
-}
-
-/* Ledorden under loggan */
-.navbar-slogan,
-.tagline {
-  display: block !important;
-  font-size: 14px;
-  color: white;
-  margin-top: 4px;
-  letter-spacing: 1px;
-  text-align: center; /* ändra till left om du vill */
-}
-
