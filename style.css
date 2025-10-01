@@ -195,4 +195,23 @@ body{ background-color: var(--gs-3); }           /* djup GS-blå som grund */
 .site-header .brand .logo{ height:36px; }            /* öka vid behov: 38–40px */
 .site-header .brand-name{ display:none !important; } /* döljer texten bredvid loggan */
 .tagline{ margin-top:0; }                             /* drar upp taglinen lite när texten försvinner */
+/* === Ljusare blå & Purpose i svart === */
+
+/* 1) Ljusare GS-blå palett (överskriver tidigare variabler) */
+:root{
+  --gs-1:#6aa7e8;  /* ljus */
+  --gs-2:#3e7cc7;  /* mellan */
+  --gs-3:#1c54a5;  /* djup men ljusare än tidigare */
+}
+
+/* 2) Purpose: vit bakgrund, svart text */
+#purpose{ background:#ffffff !important; }
+#purpose h2{ color:#0b0f19 !important; }
+#purpose .lead, #purpose p{ color:#0b0f19 !important; }
+
+/* 3) (valfritt men snyggt) lite ljusare “alt”-sektioner */
+.section-alt{ background:#eef4fb !important; }
+
+/* 4) Om du tidigare satte mörk sidbakgrund – gör den lite ljusare */
+html, body { background-color: var(--gs-2); }
 
