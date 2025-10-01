@@ -138,3 +138,39 @@ h3{font-size:20px}
   .cards-4{grid-template-columns:1fr}
   .form-grid{grid-template-columns:1fr}
 }
+/* === Header tagline + vita länkar + döda pluppen === */
+.brand-text{display:flex;flex-direction:column;line-height:1.1}
+.brand-name{font-weight:700;letter-spacing:.02em}
+.tagline{
+  margin-top:2px;
+  font-size:.78rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#e8effa;        /* vit/ljusblå */
+  opacity:.95;
+}
+
+/* Meny i vit text + Contact/LinkedIn som vita länkar */
+.main-nav{display:flex;align-items:center;gap:24px}
+.main-nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+.main-nav a{color:#fff;opacity:.92;text-decoration:none}
+.main-nav a:hover{opacity:1}
+
+.header-cta{display:flex;gap:16px}
+.link-ghost{
+  color:#fff; opacity:.92; text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,.25);
+  padding-bottom:2px;
+}
+.link-ghost:hover{opacity:1; border-bottom-color:transparent}
+
+/* Döda burger-ikonen helt (ingen “vit plupp”) */
+.nav-toggle{display:none !important}
+
+/* Hero-texter – ingen eyebrow i hero längre, håll vitt */
+.hero h1{color:#fff}
+.hero-subtitle{color:#eef3ff}
+
+/* (Valfritt) lite mer luft i toppen på desktop */
+.header-inner{min-height:80px}
+
