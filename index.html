@@ -3,58 +3,60 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>ArceoConsult — Clarity. Liquidity. Control.</title>
-  <meta name="description" content="Helping business owners regain control in 48 hours and restart predictable sales in 30 days.">
-  <link rel="canonical" href="https://arceoconsult.com/">
+  <meta name="description" content="Helping business owners regain control in 48 hours and restart predictable sales in 30 days. Tailored consulting & corporate programs.">
+  <link rel="canonical" href="https://arceoconsult.com/" />
+
+  <!-- Social -->
   <meta property="og:title" content="ArceoConsult — Clarity. Liquidity. Control.">
-  <meta property="og:description" content="Guardian Consultant for SMEs. Regain control in 48 hours and restart sales in 30 days.">
+  <meta property="og:description" content="Guardian Consultant for SMEs. Regain control in 48 hours and restart sales flow in 30 days.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://arceoconsult.com/">
   <meta property="og:image" content="https://arceoconsult.com/leo-profile.webp">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- CSS (cache-busted) -->
+  <link rel="stylesheet" href="style.css?v=12" />
 </head>
 <body>
 
- <header class="site-header" role="banner">
-  <div class="container header-inner">
-    <a class="brand" href="/" aria-label="ArceoConsult home">
-      <img src="arceoconsult-logo.svg" alt="ArceoConsult" class="logo" />
-      <div class="brand-text">
-        <span class="brand-name">ArceoConsult</span>
-        <span class="tagline">CLARITY • LIQUIDITY • CONTROL</span>
-      </div>
-    </a>
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="ArceoConsult home">
+        <img src="arceoconsult-logo.svg" alt="ArceoConsult" class="logo" />
+        <div class="brand-text">
+          <span class="brand-name">ArceoConsult</span>
+          <span class="tagline">CLARITY • LIQUIDITY • CONTROL</span>
+        </div>
+      </a>
 
-    <!-- Ingen nav-toggle = ingen vit plupp -->
-    <nav class="main-nav" role="navigation">
-      <ul>
-        <li><a href="#purpose">Purpose</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#programs">Programs</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="header-cta">
-        <a class="link-ghost" href="#contact">Contact</a>
-        <a class="link-ghost" href="https://www.linkedin.com/in/leocelija" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </nav>
-  </div>
-</header>
-
+      <!-- No header CTA; just navigation -->
+      <nav class="main-nav" role="navigation" aria-label="Primary">
+        <ul>
+          <li><a href="#purpose">Purpose</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <!-- HERO -->
   <section class="hero">
     <div class="container hero-inner">
-      
       <h1>Clarity. Liquidity. Control.</h1>
       <p class="hero-subtitle">
         Helping business owners regain control in <strong>48 hours</strong> and restart predictable sales in <strong>30 days</strong>.
       </p>
       <div class="cta">
-        <a href="#contact" class="btn btn-primary">Contact</a>
-        <a href="https://www.linkedin.com/in/leocelija" class="btn btn-secondary" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#contact" class="btn btn-primary" aria-label="Contact ArceoConsult">Contact</a>
+        <a href="https://www.linkedin.com/in/leocelija"
+           class="btn btn-secondary" target="_blank" rel="noopener"
+           aria-label="Open LinkedIn profile">LinkedIn</a>
       </div>
     </div>
   </section>
@@ -92,7 +94,7 @@
         <div class="copy">
           <p>
             Built on lived experience. Our founder has personally faced betrayal, hostile staff situations,
-            liquidity crises and external threats. The methodology we use is forged in practice and deployable immediately.
+            liquidity crises and external threats. The methodology we use is forged in practice and deployable immediately for SMEs.
           </p>
           <p>
             Combined with proven sales expertise, we design solutions that are empirically grounded and tailored.
@@ -100,8 +102,8 @@
           </p>
         </div>
         <figure class="portrait">
-          <img src="leo-profile.webp" alt="Leonardo Celija — Guardian Consultant">
-          <figcaption>Leonardo Celija — Guardian Consultant</figcaption>
+          <!-- Ensure this file exists in root as 'leo-profile.webp' -->
+          <img src="leo-profile.webp" alt="Portrait of Leonardo Celija">
         </figure>
       </div>
     </div>
@@ -133,6 +135,7 @@
     <div class="container">
       <h2>Contact</h2>
       <p class="lead">Quick, confidential first step — reach us directly.</p>
+
       <form class="contact-form" action="https://formspree.io/f/mwpnynjz" method="POST">
         <input type="hidden" name="_redirect" value="https://arceoconsult.com/thankyou.html">
         <div class="grid form-grid">
@@ -155,16 +158,10 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    // Header shadow on scroll
     const header = document.querySelector('.site-header');
     const onScroll = () => { if (window.scrollY > 8) header.classList.add('is-scrolled'); else header.classList.remove('is-scrolled'); };
     window.addEventListener('scroll', onScroll); onScroll();
-
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.main-nav');
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
   </script>
 </body>
 </html>
