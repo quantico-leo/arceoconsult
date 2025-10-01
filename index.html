@@ -1,4 +1,4 @@
-F<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -17,8 +17,7 @@ F<!DOCTYPE html>
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- CSS (cache-busted) -->
-  <link rel="stylesheet" href="style.css?v=13" />
-
+  <link rel="stylesheet" href="style.css?v=14" />
 </head>
 <body>
 
@@ -27,14 +26,12 @@ F<!DOCTYPE html>
     <div class="container header-inner">
       <a class="brand" href="/" aria-label="ArceoConsult home">
         <img src="arceoconsult-logo.svg" alt="ArceoConsult" class="logo" />
-       <div class="brand-text">
-  <span class="brand-name">ArceoConsult</span>
-  <div class="navbar-slogan">Clarity • Liquidity • Control</div>
-</div>
-
+        <div class="brand-text">
+          <div class="navbar-slogan">Clarity • Liquidity • Control</div>
+        </div>
       </a>
 
-      <!-- No header CTA; just navigation -->
+      <!-- Navigation -->
       <nav class="main-nav" role="navigation" aria-label="Primary">
         <ul>
           <li><a href="#purpose">Purpose</a></li>
@@ -104,8 +101,7 @@ F<!DOCTYPE html>
           </p>
         </div>
         <figure class="portrait">
-          <!-- Ensure this file exists in root as 'leo-profile.webp' -->
-          <img src="leo-profile.webp" alt="Portrait of Leonardo Celija">
+          <img src="leo-profile.webp" alt="Portrait of Leonardo Celija" class="founder-photo">
         </figure>
       </div>
     </div>
@@ -123,7 +119,7 @@ F<!DOCTYPE html>
             <li>Staff loyalty and organizational risk</li>
             <li>Liquidity crises and cash-flow disruptions</li>
           </ul>
-          <div class="cta">
+          <div class="cta program-cta">
             <a href="#contact" class="btn btn-primary">Contact</a>
             <a href="https://www.linkedin.com/in/leocelija" class="btn btn-secondary" target="_blank" rel="noopener">LinkedIn</a>
           </div>
@@ -160,7 +156,6 @@ F<!DOCTYPE html>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Header shadow on scroll
     const header = document.querySelector('.site-header');
     const onScroll = () => { if (window.scrollY > 8) header.classList.add('is-scrolled'); else header.classList.remove('is-scrolled'); };
     window.addEventListener('scroll', onScroll); onScroll();
