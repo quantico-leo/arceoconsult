@@ -67,7 +67,7 @@ h3 { font-size:20px }
 
 /* Logo + slogan */
 .site-header .brand .logo {
-  height:56px;   /* 20% mindre än 70px */
+  height:56px;   /* desktop */
   width:auto;
   display:block;
   margin:0 auto;
@@ -91,13 +91,28 @@ h3 { font-size:20px }
 }
 .btn-primary {
   background:linear-gradient(180deg,var(--gs-2),var(--gs-3));
-  color:#fff; box-shadow:0 8px 20px rgba(15,61,138,.18);
+  color:#fff;
+  box-shadow:0 8px 20px rgba(15,61,138,.18);
 }
-.btn-primary:hover { transform:translateY(-1px) }
-
-
+.btn-primary:hover {
+  transform:translateY(-1px);
 }
 
+/* Gör secondary-knappen identisk med primary */
+.btn-secondary {
+  background: linear-gradient(180deg, var(--gs-2), var(--gs-3));
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(15,61,138,.18);
+  border: none;
+}
+.btn-secondary:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(180deg, var(--gs-3), var(--gs-2));
+}
+
+/* Avstånd mellan knappar i hero */
+.hero .cta a {
+  margin: 0 6px;
 }
 
 /* Hero */
@@ -171,48 +186,15 @@ h3 { font-size:20px }
   }
   .main-nav.open { transform:translateY(0) }
   .main-nav ul { flex-direction:column; align-items:flex-start; gap:6px }
+
   /* Mobilanpassning logga + slogan */
-  .site-header .brand .logo { height:48px; }
-  .navbar-slogan { font-size:12px; margin-top:1px; }
+  .site-header .brand .logo { height:36px; }
+  .navbar-slogan { font-size:11px; margin-top:0; }
+
   /* Göm Contact i headern på mobil */
-  .main-nav li:last-child { display:none; }
+  .main-nav a[href="#contact"] { display:none; }
 }
 @media (max-width:560px) {
   .cards-4 { grid-template-columns:1fr }
   .form-grid { grid-template-columns:1fr }
-}
-/* === Leo Mobile Final === */
-@media (max-width: 820px) {
-  /* Gör loggan tydligt mindre */
-  .site-header .brand .logo {
-    height: 36px !important;
-  }
-
-  /* Ledorden anpassade för mobil */
-  .navbar-slogan {
-    font-size: 11px !important;
-    margin-top: 0 !important;
-  }
-
-  /* Göm länken "Contact" exakt */
-  .main-nav a[href="#contact"] {
-    display: none !important;
-  }
-}
-/* === Leo Unified Button Style === */
-
-/* Gör secondary-knappen identisk med primary */
-.btn-secondary {
-  background: linear-gradient(180deg, var(--gs-2), var(--gs-3));
-  color: #fff;
-  box-shadow: 0 8px 20px rgba(15,61,138,.18);
-  border: none;
-}
-
-.btn-secondary:hover {
-  transform: translateY(-1px);
-  background: linear-gradient(180deg, var(--gs-3), var(--gs-2));
-}
-.hero .cta a {
-  margin: 0 6px;
 }
