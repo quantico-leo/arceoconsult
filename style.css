@@ -67,16 +67,16 @@ h3 { font-size:20px }
 
 /* Logo + slogan */
 .site-header .brand .logo {
-  height:70px;              /* lagom stor logga */
+  height:56px;   /* 20% mindre än 70px */
   width:auto;
   display:block;
   margin:0 auto;
 }
 .site-header .brand { display:block; text-align:center }
 .navbar-slogan {
-  margin-top:4px;           /* direkt under loggan */
-  font-size:15px;
-  font-weight:500;
+  margin-top:2px;
+  font-size:13px;
+  font-weight:400;
   text-align:center;
   color:#fff;
 }
@@ -98,12 +98,12 @@ h3 { font-size:20px }
 /* LinkedIn-knappen */
 .btn-secondary {
   background:#fff;
-  border:1px solid #d4af37;  /* guld border */
-  color:#0b0f19;             /* mörk text */
+  border:1px solid #d4af37; 
+  color:#0b0f19;
 }
 .btn-secondary:hover {
-  background:#d4af37;        /* guld fyllning */
-  color:#fff;                /* vit text */
+  background:#d4af37; 
+  color:#fff;
 }
 
 /* Hero */
@@ -177,54 +177,13 @@ h3 { font-size:20px }
   }
   .main-nav.open { transform:translateY(0) }
   .main-nav ul { flex-direction:column; align-items:flex-start; gap:6px }
+  /* Mobilanpassning logga + slogan */
+  .site-header .brand .logo { height:48px; }
+  .navbar-slogan { font-size:12px; margin-top:1px; }
+  /* Göm Contact i headern på mobil */
+  .main-nav li:last-child { display:none; }
 }
 @media (max-width:560px) {
   .cards-4 { grid-template-columns:1fr }
   .form-grid { grid-template-columns:1fr }
 }
-/* === Leo Sleep Fix === */
-
-/* Ledorden mindre och nättare */
-.navbar-slogan {
-  font-size: 12px !important;   /* mindre text */
-  margin-top: 0 !important;
-  font-weight: 400 !important;
-  text-align: center !important;
-  color: #fff !important;
-}
-
-/* LinkedIn-knappen fix */
-.btn-secondary {
-  background: #fff !important;
-  border: 1px solid #d4af37 !important;
-  color: #0b0f19 !important;    /* mörk text så den syns */
-}
-.btn-secondary:hover {
-  background: #d4af37 !important;  /* guld bakgrund vid hover */
-  color: #fff !important;          /* vit text */
-}
-/* === Leo Responsive Logo + Slogan === */
-
-/* Desktop & normal skärmar */
-.site-header .brand .logo {
-  height: 56px;   /* ca 20% mindre än 70px */
-  width: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.navbar-slogan {
-  font-size: 13px;
-  font-weight: 400;
-  margin-top: 2px;      /* direkt under loggan */
-  text-align: center;
-  color: #fff;
-}
-
-/* Anpassning för mobil */
-@media (max-width: 768px) {
-  .site-header .brand .logo {
-    height: 48px;       /* lite mindre på mobil */
-  }
-  .navbar-slogan {
-    font-size: 12px;    /* lite mindre t*
