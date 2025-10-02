@@ -62,9 +62,11 @@ h3 { font-size:20px; }
 
 /* === Header === */
 .site-header {
-  position:sticky;
+  position:fixed;
   top:0;
-  z-index:50;
+  left:0;
+  right:0;
+  z-index:1000;
   background:#000;
   color:#fff;
   border-bottom:1px solid rgba(255,255,255,.06);
@@ -76,7 +78,9 @@ h3 { font-size:20px; }
   align-items:center;
   justify-content:space-between;
   min-height:80px;
+  padding:0 16px;
 }
+body { padding-top:80px; } /* flytta ner innehåll under fixed header */
 
 /* === Navigation === */
 .main-nav { display:flex; align-items:center; gap:24px; }
@@ -121,7 +125,7 @@ h3 { font-size:20px; }
   color:#fff;
 }
 
-/* === Buttons === */
+/* === Buttons (general, e.g. forms) === */
 .btn {
   display:inline-flex;
   align-items:center;
@@ -145,7 +149,24 @@ h3 { font-size:20px; }
   transform:translateY(-1px);
   background:linear-gradient(180deg,var(--gs-3),var(--gs-2));
 }
-.hero .cta a { margin:0 6px; }
+
+/* === Clean CTA links for hero & programs === */
+.hero .cta a,
+#programs .program-cta a {
+  background:none !important;
+  border:none !important;
+  color:#fff !important;
+  font-weight:600;
+  font-size:1.1rem;
+  padding:0;
+  text-decoration:underline;
+  box-shadow:none !important;
+}
+.hero .cta a:hover,
+#programs .program-cta a:hover {
+  color:#d4af37 !important;
+  text-decoration:none;
+}
 
 /* === Hero === */
 .hero {
@@ -160,7 +181,7 @@ h3 { font-size:20px; }
   color:#eef3ff;
   font-size:1.1rem;
 }
-.hero .btn { margin-top:16px; }
+.hero .cta { margin-top:24px; } /* luft under text */
 
 /* === Grid & cards === */
 .grid { display:grid; gap:24px; }
@@ -241,17 +262,19 @@ h3 { font-size:20px; }
 
   /* hide nav by default */
   .main-nav {
-    position:fixed;
-    inset:72px 0 auto 0;
+    position:absolute;
+    top:80px;
+    left:0;
+    right:0;
     background:#000;
     color:#fff;
-    transform:translateY(-120%);
+    transform:translateY(-150%);
     transition:transform var(--t);
-    padding:12px 24px;
-    gap:16px;
+    padding:16px 24px;
     flex-direction:column;
     align-items:flex-start;
     border-bottom:1px solid rgba(255,255,255,.12);
+    z-index:900;
   }
   .main-nav.open { transform:translateY(0); }
   .main-nav ul { flex-direction:column; align-items:flex-start; gap:12px; }
@@ -265,9 +288,6 @@ h3 { font-size:20px; }
     filter:none !important;
   }
   .navbar-slogan { font-size:11px; margin-top:0; }
-
-  /* space under hero buttons */
-  .hero .cta { margin-top:24px; }
 }
 
 @media (max-width:560px) {
