@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css?v=15" />
+  <link rel="stylesheet" href="style.css?v=17" />
 </head>
 <body>
 
@@ -55,9 +55,8 @@
         Helping business owners regain control in <strong>48 hours</strong> and restart predictable sales in <strong>30 days</strong>.
       </p>
       <div class="cta">
-        <a href="#contact" class="btn btn-primary" aria-label="Contact ArceoConsult">Contact</a>
         <a href="https://www.linkedin.com/in/leocelija"
-           class="btn btn-primary" target="_blank" rel="noopener"
+           target="_blank" rel="noopener"
            aria-label="Open LinkedIn profile">LinkedIn</a>
       </div>
     </div>
@@ -123,8 +122,8 @@
             <li>Liquidity crises and cash-flow disruptions</li>
           </ul>
           <div class="cta program-cta">
-            <a href="#contact" class="btn btn-primary">Contact</a>
-            <a href="https://www.linkedin.com/in/leocelija" class="btn btn-primary" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/leocelija"
+               target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>
       </div>
@@ -159,10 +158,8 @@
 
   <!-- Scripts -->
   <script>
-    // Dynamisk årtal i footern
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Header shadow vid scroll
     const header = document.querySelector('.site-header');
     const onScroll = () => {
       if (window.scrollY > 8) header.classList.add('is-scrolled');
@@ -170,10 +167,8 @@
     };
     window.addEventListener('scroll', onScroll); onScroll();
 
-    // Mobil navigation toggle
     const navToggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.main-nav');
-
     navToggle.addEventListener('click', () => {
       nav.classList.toggle('open');
     });
