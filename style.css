@@ -198,3 +198,22 @@ h3 { font-size:20px }
   .cards-4 { grid-template-columns:1fr }
   .form-grid { grid-template-columns:1fr }
 }
+/* === Leo LinkedIn Fix FINAL === */
+a[href*="linkedin.com"] {
+  background: linear-gradient(180deg, var(--gs-2), var(--gs-3)) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 20px rgba(15,61,138,.18) !important;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 12px 18px !important;
+  font-weight: 600 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+}
+a[href*="linkedin.com"]:hover {
+  transform: translateY(-1px) !important;
+  background: linear-gradient(180deg, var(--gs-3), var(--gs-2)) !important;
+  color: #fff !important;
+}
