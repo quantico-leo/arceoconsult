@@ -65,7 +65,7 @@ body { padding-top:80px; }
 .main-nav { display:flex; align-items:center; gap:24px; }
 .main-nav ul { display:flex; gap:22px; list-style:none; margin:0; padding:0; }
 .main-nav a { color:#fff; opacity:.92; text-decoration:none; }
-.main-nav a:hover, .main-nav a:focus, .main-nav a:active { color:#d4af37; opacity:1; }
+.main-nav a:hover { color:#d4af37; opacity:1; }
 
 /* Mobile nav toggle */
 .nav-toggle { display:none; font-size:28px; background:none; border:none; color:#fff; cursor:pointer; }
@@ -80,11 +80,11 @@ body { padding-top:80px; }
 .hero-inner { text-align:center; }
 .hero-subtitle { max-width:820px; margin:12px auto 0; color:#eef3ff; font-size:1.1rem; }
 .hero .cta { margin-top:32px; }
-.hero .cta a { color:#fff; text-decoration:underline; font-weight:600; font-size:1.1rem; }
+.hero .cta a { color:#fff; text-decoration:underline; font-weight:600; font-size:1.1rem; margin:0 12px; }
 .hero .cta a:hover { color:#d4af37; text-decoration:none; }
 
 /* === Programs CTA === */
-#programs .program-cta a { color:#fff; text-decoration:underline; font-weight:600; font-size:1.1rem; }
+#programs .program-cta a { color:#fff; text-decoration:underline; font-weight:600; font-size:1.1rem; margin:0 12px; }
 #programs .program-cta a:hover { color:#d4af37; text-decoration:none; }
 
 /* === Grid & cards === */
