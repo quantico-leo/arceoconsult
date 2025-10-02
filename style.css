@@ -77,6 +77,8 @@ h3 { font-size:20px; }
   justify-content:space-between;
   min-height:80px;
 }
+
+/* === Navigation === */
 .main-nav { display:flex; align-items:center; gap:24px; }
 .main-nav ul {
   display:flex;
@@ -94,12 +96,21 @@ h3 { font-size:20px; }
 .main-nav a:focus,
 .main-nav a:active { color:#d4af37; opacity:1; }
 
+/* Mobile nav toggle button */
+.nav-toggle {
+  display:none;
+  font-size:28px;
+  background:none;
+  border:none;
+  color:#fff;
+  cursor:pointer;
+}
+
 /* === Logo + slogan === */
 .site-header .brand .logo {
-  height:56px; /* desktop */
+  height:56px;
   width:auto;
   display:block;
-  margin:0 auto;
 }
 .site-header .brand { display:block; text-align:center; }
 .navbar-slogan {
@@ -220,10 +231,15 @@ h3 { font-size:20px; }
   .cards-4 { grid-template-columns:repeat(3,1fr); }
   .split { grid-template-columns:1fr; }
 }
+
 @media (max-width:820px) {
   .cards-4 { grid-template-columns:repeat(2,1fr); }
   .hero { padding:84px 0 72px; }
 
+  /* show toggle */
+  .nav-toggle { display:block; }
+
+  /* hide nav by default */
   .main-nav {
     position:fixed;
     inset:72px 0 auto 0;
@@ -238,26 +254,22 @@ h3 { font-size:20px; }
     border-bottom:1px solid rgba(255,255,255,.12);
   }
   .main-nav.open { transform:translateY(0); }
-  .main-nav ul { flex-direction:column; align-items:flex-start; gap:6px; }
+  .main-nav ul { flex-direction:column; align-items:flex-start; gap:12px; }
 
-  /* Mobil logga + slogan */
+  /* mobile logo */
   .site-header .brand .logo {
     height:48px !important;
     width:auto !important;
     display:block !important;
     margin:0 auto !important;
-    filter: brightness(0) invert(1);
+    filter:none !important;
   }
   .navbar-slogan { font-size:11px; margin-top:0; }
 
-  /* Flytta ner knapparna i hero på mobil */
-  .hero .cta {
-    margin-top:24px;
-  }
-
-  /* Dölj Contact i menyn på mobil */
-  .main-nav a[href="#contact"] { display:none; }
+  /* space under hero buttons */
+  .hero .cta { margin-top:24px; }
 }
+
 @media (max-width:560px) {
   .cards-4 { grid-template-columns:1fr; }
   .form-grid { grid-template-columns:1fr; }
