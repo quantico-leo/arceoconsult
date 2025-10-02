@@ -203,3 +203,28 @@ h3 { font-size:20px }
   background: #d4af37 !important;  /* guld bakgrund vid hover */
   color: #fff !important;          /* vit text */
 }
+/* === Leo Responsive Logo + Slogan === */
+
+/* Desktop & normal skärmar */
+.site-header .brand .logo {
+  height: 56px;   /* ca 20% mindre än 70px */
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.navbar-slogan {
+  font-size: 13px;
+  font-weight: 400;
+  margin-top: 2px;      /* direkt under loggan */
+  text-align: center;
+  color: #fff;
+}
+
+/* Anpassning för mobil */
+@media (max-width: 768px) {
+  .site-header .brand .logo {
+    height: 48px;       /* lite mindre på mobil */
+  }
+  .navbar-slogan {
+    font-size: 12px;    /* lite mindre t*
