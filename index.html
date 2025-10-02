@@ -16,8 +16,8 @@
   <meta property="og:image" content="https://arceoconsult.com/leo-profile.webp">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- CSS (cache-busted) -->
-  <link rel="stylesheet" href="style.css?v=14" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css?v=15" />
 </head>
 <body>
 
@@ -30,6 +30,9 @@
           <div class="navbar-slogan">Clarity • Liquidity • Control</div>
         </div>
       </a>
+
+      <!-- Menu toggle button (hamburger) -->
+      <button class="nav-toggle" aria-label="Open menu">☰</button>
 
       <!-- Navigation -->
       <nav class="main-nav" role="navigation" aria-label="Primary">
@@ -154,11 +157,26 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script>
+    // Dynamisk årtal i footern
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Header shadow vid scroll
     const header = document.querySelector('.site-header');
-    const onScroll = () => { if (window.scrollY > 8) header.classList.add('is-scrolled'); else header.classList.remove('is-scrolled'); };
+    const onScroll = () => {
+      if (window.scrollY > 8) header.classList.add('is-scrolled');
+      else header.classList.remove('is-scrolled');
+    };
     window.addEventListener('scroll', onScroll); onScroll();
+
+    // Mobil navigation toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.main-nav');
+
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
   </script>
 </body>
 </html>
