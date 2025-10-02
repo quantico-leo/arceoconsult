@@ -217,3 +217,13 @@ a[href*="linkedin.com"]:hover {
   background: linear-gradient(180deg, var(--gs-3), var(--gs-2)) !important;
   color: #fff !important;
 }
+/* === Leo Mobile Logo Fix === */
+@media (max-width: 820px) {
+  .site-header .brand .logo {
+    height: 48px !important;   /* större så den blir synlig */
+    width: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+    filter: brightness(0) invert(1); /* gör loggan vit om svg är mörk */
+  }
+}
