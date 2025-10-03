@@ -1,4 +1,4 @@
-/* ArceoConsult Guardian Theme */
+/* ArceoConsult Boutique Theme */
 
 /* Variables */
 :root {
@@ -9,8 +9,8 @@
   --bg:#ffffff;
   --bg-alt:#f7f8fa;
   --gold:#d4af37;
-  --blue:#1e3c72;
-  --blue-light:#2a5298;
+  --blue:#1a2c54; /* slightly darker GS blue */
+  --blue-light:#23406e;
 
   --radius:14px;
   --shadow:0 10px 30px rgba(11,15,25,.08);
@@ -41,8 +41,8 @@ h3 { font-size:1.25rem; font-weight:600; }
   background:#000; color:#fff; border-bottom:1px solid rgba(255,255,255,.06);
 }
 .header-inner { display:flex; justify-content:space-between; align-items:center; min-height:80px; }
-.brand-text h1 { font-size:1.4rem; margin:0; color:#fff; }
-.navbar-slogan { font-size:14px; color:var(--gold); }
+.logo { height:48px; }
+.navbar-slogan { font-size:14px; color:var(--gold); margin-top:4px; }
 
 /* Nav */
 .main-nav ul { list-style:none; display:flex; gap:24px; margin:0; padding:0; }
