@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ArceoConsult - Guardian Consulting Boutique</title>
-  <meta name="description" content="ArceoConsult is the guardian consulting boutique for SMEs. We elevate sales, strengthen people, and improve liquidity - fast, discreet, and hands-on.">
-  <link rel="stylesheet" href="style.css?v=800">
+  <title>ArceoConsult — Guardian Consulting Boutique</title>
+  <meta name="description" content="ArceoConsult is the guardian consulting boutique for SMEs. We elevate sales, strengthen people, and improve liquidity — fast, discreet, and hands-on.">
+  <link rel="stylesheet" href="style.css?v=400">
 </head>
 <body>
 
@@ -36,7 +36,7 @@
     <div class="container hero-inner">
       <h2>Guardian Consulting Boutique for SMEs</h2>
       <p class="hero-subtitle">
-        We elevate <strong>Sales</strong>, strengthen <strong>People</strong>, and improve <strong>Liquidity</strong> - fast, discreet, and hands-on.
+        We elevate <strong>Sales</strong>, strengthen <strong>People</strong>, and improve <strong>Liquidity</strong> — fast, discreet, and hands-on.
       </p>
       <div class="cta">
         <a href="#contact" class="btn">Contact</a>
@@ -49,14 +49,14 @@
   <section id="identity" class="section gradient-alt">
     <div class="container identity-grid">
       <div class="identity-photo">
-        <img src="leo-profile.webp.webp" alt="Leo Riccardo Celija - Founder of ArceoConsult">
+        <img src="leo-profile.webp.webp" alt="Leo Riccardo Celija — Founder of ArceoConsult">
       </div>
       <div class="identity-text">
         <h2>Who We Are</h2>
         <p>
-          ArceoConsult is a guardian partner for companies. 
-          Unlike traditional advisors, we protect the three vital levers of every SME: <strong>Sales, People, and Liquidity</strong>. 
-          Our boutique model combines financial expertise with operational precision - discreet, effective, and built for results.
+          ArceoConsult is a guardian partner for companies.  
+          Unlike traditional advisors, we protect the three vital levers of every SME: <strong>Sales, People, and Liquidity</strong>.  
+          Our boutique model combines financial expertise with operational precision — discreet, effective, and built for results.
         </p>
       </div>
     </div>
@@ -69,15 +69,18 @@
       <div class="grid cards-3">
         <article class="card">
           <h3>Sales</h3>
-          <p>We connect companies with proven agents and call centers that build structured sales funnels and accelerate revenue - fast and sustainably.</p>
+          <p>We connect companies with proven agents and call centers that build structured sales funnels and accelerate revenue — fast and sustainably.</p>
+          <p><em>Outcome:</em> Predictable sales growth through external precision and internal focus.</p>
         </article>
         <article class="card">
           <h3>People</h3>
-          <p>We vet, screen, and restructure teams to eliminate toxicity, betrayal, and internal conflicts. Our mission is loyalty, stability, and alignment - not traditional HR.</p>
+          <p>We vet, screen, and restructure teams to eliminate toxicity, betrayal, and internal conflicts. Our mission is loyalty, stability, and alignment — not traditional HR.</p>
+          <p><em>Outcome:</em> A cohesive team culture built on trust, strength, and clear leadership.</p>
         </article>
         <article class="card">
           <h3>Liquidity</h3>
-          <p>We uncover hidden assets and underutilized values within the company that can be liquidated through our private channels - no loans, no bureaucracy.</p>
+          <p>We uncover hidden assets and underutilized values within the company that can be liquidated through our private channels — no loans, no bureaucracy.</p>
+          <p><em>Outcome:</em> Increased cash flow and stability without external debt.</p>
         </article>
       </div>
     </div>
@@ -108,18 +111,25 @@
     </div>
   </section>
 
+  <!-- THE ARCEO METHOD -->
+  <section id="method" class="section">
+    <div class="container narrow">
+      <h2>The Arceo Method™</h2>
+      <p class="lead">Sales. People. Liquidity. The three signs of business vitality.</p>
+      <p>We stabilize, secure, and scale companies using a holistic guardian framework built on real-world experience, not theory. Each project combines commercial acceleration, team resilience, and liquidity optimization to create long-term strength and independence.</p>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact" class="section">
     <div class="container">
       <h2>Contact</h2>
       <p class="lead">Quick, confidential, direct.</p>
       <form class="contact-form" action="https://formspree.io/f/mwpnynjz" method="POST">
-        <div class="grid form-grid">
+        <div class="form-grid">
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="email" name="email" placeholder="Your Email" required>
           <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        </div>
-        <div class="form-button">
           <button type="submit" class="btn">Send Secure Message</button>
         </div>
       </form>
@@ -137,9 +147,8 @@
     document.getElementById('year').textContent = new Date().getFullYear();
     const navToggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.main-nav');
-    navToggle.addEventListener('click', () => {
-      nav.classList.toggle('open');
-    });
+    navToggle.addEventListener('click', () => nav.classList.toggle('open'));
   </script>
+
 </body>
 </html>
