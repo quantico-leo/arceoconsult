@@ -1,256 +1,262 @@
-/* ArceoConsult – Boutique Edition (Blue Elegance with Hero Image) */
+/* ArceoConsult – Boutique Edition (Hero with Elegant Office Background) */
 
 :root {
-  --gold: #d4af37;
-  --ink: #0b0f19;
-  --line: #e4e7ec;
-  --blue: #1e4374;
-  --blue-light: #3a639b;
-  --bg: #ffffff;
-  --container: 1120px;
-  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans";
-  --serif: "Georgia", Cambria, "Times New Roman", Times, serif;
+  --gold:#d4af37;
+  --ink:#0b0f19;
+  --line:#e4e7ec;
+  --blue:#1e4374;
+  --blue-light:#3a639b;
+  --bg:#ffffff;
+  --container:1120px;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,"Noto Sans";
+  --serif:"Georgia",Cambria,"Times New Roman",Times,serif;
 }
 
 /* === Base === */
 body {
-  margin: 0;
-  font: 16px/1.6 var(--sans);
-  color: var(--ink);
-  background: var(--bg);
+  margin:0;
+  font:16px/1.6 var(--sans);
+  color:var(--ink);
+  background:var(--bg);
 }
-a { color: inherit; text-decoration: none; }
+a { color:inherit; text-decoration:none; }
 
 /* === Layout === */
-.container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
-.section { padding: 80px 0; }
-.gradient-alt { background: linear-gradient(135deg, var(--blue), var(--blue-light)); color: #fff; }
-.narrow { max-width: 820px; margin: 0 auto; }
+.container { max-width:var(--container); margin:0 auto; padding:0 24px; }
+.section { padding:80px 0; }
+.gradient-alt { background:linear-gradient(135deg, var(--blue), var(--blue-light)); color:#fff; }
+.narrow { max-width:820px; margin:0 auto; }
 
 /* === Header === */
 .site-header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  background: #000;
-  border-bottom: 1px solid rgba(255,255,255,.06);
+  position:fixed;
+  top:0; left:0; right:0;
+  z-index:1000;
+  background:#000;
+  border-bottom:1px solid rgba(255,255,255,.06);
 }
 .header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 80px;
-  position: relative;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  min-height:80px;
+  position:relative;
 }
-.logo { height: 56px; width: auto; }
-@media (max-width: 820px) { .logo { height: 40px; } }
+.logo { height:56px; width:auto; }
+@media(max-width:820px){ .logo { height:40px; } }
 
 .navbar-slogan {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--gold);
-  margin-top: 2px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  font-size:13px;
+  font-weight:600;
+  color:var(--gold);
+  margin-top:2px;
+  letter-spacing:1px;
+  text-transform:uppercase;
 }
 
 /* === Navigation === */
-.main-nav ul { list-style: none; display: flex; gap: 24px; margin: 0; padding: 0; }
-.main-nav a { color: #fff; opacity: .92; font-weight: 500; }
-.main-nav a:hover { color: var(--gold); opacity: 1; }
+.main-nav ul { list-style:none; display:flex; gap:24px; margin:0; padding:0; }
+.main-nav a { color:#fff; opacity:.92; font-weight:500; }
+.main-nav a:hover { color:var(--gold); opacity:1; }
 
 .nav-toggle {
-  display: none;
-  font-size: 32px;
-  color: var(--gold);
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: fixed;
-  right: 14px;
-  top: 22px;
-  z-index: 99999;
+  display:none;
+  font-size:32px;
+  color:var(--gold);
+  background:none;
+  border:none;
+  cursor:pointer;
+  position:fixed;
+  right:14px;
+  top:22px;
+  z-index:99999;
 }
 
-/* === Hero (Elegant Image Blend) === */
+/* === Hero Section === */
 .hero {
   background:
-    linear-gradient(rgba(30,67,116,0.75), rgba(30,67,116,0.75)),
-    url("https://raw.githubusercontent.com/quantico-leo/arceoconsult/main/Image%20office.jpg") center center / cover no-repeat;
-  color: #fff;
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 24px 80px;
-  animation: heroFadeIn 1.2s ease forwards;
-  background-attachment: fixed;
+    linear-gradient(135deg, rgba(30,67,116,0.88), rgba(58,99,155,0.88)),
+    url("https://raw.githubusercontent.com/quantico-leo/arceoconsult/main/Image%20office.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color:#fff;
+  min-height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:0 0 80px;
+  opacity:0;
+  animation:heroFadeIn 1.2s ease forwards;
 }
 .hero h2 {
-  font-size: clamp(32px, 5vw, 52px);
-  margin-bottom: 16px;
-  font-family: var(--serif);
+  font-size:clamp(32px,5vw,52px);
+  margin-bottom:16px;
+  font-family:var(--serif);
 }
 .hero-subtitle {
-  max-width: 800px;
-  margin: 20px auto 0;
-  color: #eaf2ff;
-  font-size: 1.25rem;
-  line-height: 1.5;
+  max-width:800px;
+  margin:20px auto 0;
+  color:#eaf2ff;
+  font-size:1.25rem;
+  line-height:1.5;
 }
-.hero .cta { margin-top: 32px; }
+.hero .cta { margin-top:32px; }
 
 /* === Buttons === */
 .btn {
-  display: inline-block;
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.2s ease-in-out;
-  margin: 0 8px;
-  background: var(--gold);
-  color: #0b0f19;
-  border: 2px solid var(--gold);
+  display:inline-block;
+  padding:14px 28px;
+  border-radius:8px;
+  font-weight:600;
+  transition:all 0.2s ease-in-out;
+  margin:0 8px;
+  background:var(--gold);
+  color:#0b0f19;
+  border:2px solid var(--gold);
 }
-.btn:hover { background: #0b0f19; color: var(--gold); }
+.btn:hover { background:#0b0f19; color:var(--gold); }
 
 /* === Identity === */
 .identity-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
 }
 .identity-photo img {
-  max-width: 300px;
-  border-radius: 8px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-  display: block;
-  margin: auto;
+  max-width:300px;
+  border-radius:8px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.25);
+  display:block;
+  margin:auto;
 }
-.identity-text { font-size: 1.05rem; }
+.identity-text { font-size:1.05rem; }
 
 /* === Cards === */
-.grid { display: grid; gap: 24px; }
-.cards-3 { grid-template-columns: repeat(3, 1fr); }
+.grid { display:grid; gap:24px; }
+.cards-3 { grid-template-columns:repeat(3,1fr); }
 .card {
-  background: #fff;
-  color: var(--ink);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-  transition: all 0.25s ease-in-out;
+  background:#fff;
+  color:var(--ink);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:24px;
+  box-shadow:0 4px 14px rgba(0,0,0,0.08);
+  transition:all 0.25s ease-in-out;
 }
 .card h3 {
-  margin-bottom: 8px;
-  font-family: var(--serif);
-  color: var(--blue);
+  margin-bottom:8px;
+  font-family:var(--serif);
+  color:var(--blue);
 }
 .card:hover {
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-  border-color: var(--gold);
-  transform: translateY(-4px);
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  border-color:var(--gold);
+  transform:translateY(-4px);
 }
 
 /* === Method & Why === */
 #method h2, #why h2, #impact h2 {
-  font-family: var(--serif);
-  margin-bottom: 12px;
+  font-family:var(--serif);
+  margin-bottom:12px;
 }
 #method p.lead, #why p.lead, #impact p.lead {
-  font-size: 1.2rem;
-  margin-bottom: 24px;
+  font-size:1.2rem;
+  margin-bottom:24px;
 }
-.why-list { list-style: none; padding: 0; margin: 0; }
-.why-list li { margin-bottom: 16px; font-size: 1.05rem; }
-.why-list strong { color: var(--gold); }
+.why-list { list-style:none; padding:0; margin:0; }
+.why-list li { margin-bottom:16px; font-size:1.05rem; }
+.why-list strong { color:var(--gold); }
 
 /* === Contact === */
-.contact-form { margin-top: 40px; text-align: center; }
+.contact-form { margin-top:40px; text-align:center; }
 .form-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  max-width: 640px;
-  margin: 0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  max-width:640px;
+  margin:0 auto;
 }
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
-  padding: 10px 12px;
-  border-radius: 6px;
-  border: 1px solid var(--line);
-  font: inherit;
-  font-size: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.04);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width:100%;
+  padding:10px 12px;
+  border-radius:6px;
+  border:1px solid var(--line);
+  font:inherit;
+  font-size:15px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.04);
+  transition:border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: var(--gold);
-  box-shadow: 0 0 5px rgba(212,175,55,0.3);
-  outline: none;
+  border-color:var(--gold);
+  box-shadow:0 0 5px rgba(212,175,55,0.3);
+  outline:none;
 }
-.contact-form textarea { min-height: 140px; }
+.contact-form textarea { min-height:140px; }
 .contact-form button {
-  margin-top: 20px;
-  align-self: center;
-  background: var(--gold);
-  color: #0b0f19;
-  border: 2px solid var(--gold);
-  font-weight: 600;
-  font-size: 15px;
-  padding: 12px 28px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.25s ease-in-out;
+  margin-top:20px;
+  align-self:center;
+  background:var(--gold);
+  color:#0b0f19;
+  border:2px solid var(--gold);
+  font-weight:600;
+  font-size:15px;
+  padding:12px 28px;
+  border-radius:8px;
+  cursor:pointer;
+  transition:all 0.25s ease-in-out;
 }
-.contact-form button:hover { background: #0b0f19; color: var(--gold); }
+.contact-form button:hover { background:#0b0f19; color:var(--gold); }
 
 /* === Footer === */
 .site-footer {
-  border-top: 1px solid var(--line);
-  background: #000;
-  color: #fff;
-  padding: 32px 0;
-  text-align: center;
-  font-size: 14px;
+  border-top:1px solid var(--line);
+  background:#000;
+  color:#fff;
+  padding:32px 0;
+  text-align:center;
+  font-size:14px;
 }
 
-/* === FINAL HERO CALIBRATION (Perfect Mobile Alignment) === */
+/* === Responsive Hero for Mobile (Elegant & Centered) === */
 @media (max-width: 820px) {
   .hero {
+    min-height: 90vh !important;
     background:
-      linear-gradient(rgba(30,67,116,0.85), rgba(58,99,155,0.85)),
-      url("https://raw.githubusercontent.com/quantico-leo/arceoconsult/main/Image%20office.jpg") center center / cover no-repeat;
-    min-height: 92vh !important;
+      linear-gradient(135deg, rgba(30,67,116,0.9), rgba(58,99,155,0.9)),
+      url("https://raw.githubusercontent.com/quantico-leo/arceoconsult/main/Image%20office.jpg");
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
     display: flex !important;
     flex-direction: column !important;
-    justify-content: flex-start !important;
+    justify-content: center !important;
     align-items: center !important;
     text-align: center;
-    padding-top: 110px !important;
+    padding-top: 120px !important;
     padding-bottom: 60px !important;
-    background-attachment: scroll !important;
   }
 
   .hero-inner {
+    width: 100%;
     margin-top: -40px !important;
   }
 
   .hero h2 {
     font-size: clamp(26px, 6vw, 38px) !important;
     margin-bottom: 10px !important;
-    line-height: 1.25 !important;
+    line-height: 1.2 !important;
   }
 
   .hero-subtitle {
     font-size: 1.05rem !important;
-    max-width: 90% !important;
     margin-top: 8px !important;
+    max-width: 90% !important;
     line-height: 1.5 !important;
   }
 
@@ -267,6 +273,6 @@ a { color: inherit; text-decoration: none; }
 
 /* === Animation === */
 @keyframes heroFadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity:0; transform:translateY(20px); }
+  to { opacity:1; transform:translateY(0); }
 }
