@@ -1,237 +1,203 @@
-/* ArceoConsult – Final Boutique Edition (Elegant Hero with Background Image) */
+/* ArceoConsult — Boutique McKinsey-Inspired Rebuild (2025-10-05)
+   Focus: clarity, hierarchy, responsiveness, zero surprises. */
 
-:root {
-  --gold:#d4af37;
+:root{
   --ink:#0b0f19;
-  --line:#e4e7ec;
-  --blue:#1e4374;
-  --blue-light:#3a639b;
+  --ink-2:#1a2433;
+  --muted:#5b6473;
+  --line:#e7e9ef;
   --bg:#ffffff;
+
+  --navy:#0e2a47;
+  --navy-2:#12355a;
+  --gold:#d4af37;
+
   --container:1120px;
-  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,"Noto Sans";
-  --serif:"Georgia",Cambria,"Times New Roman",Times,serif;
+
+  --sans: ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Inter,Arial,"Noto Sans";
+  --serif: "Georgia",Cambria,"Times New Roman",Times,serif;
+
+  --radius:14px;
+  --shadow:0 8px 24px rgba(0,0,0,.08);
 }
 
-/* === Base === */
-body {
+/* ===== Base ===== */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
   margin:0;
-  font:16px/1.6 var(--sans);
   color:var(--ink);
   background:var(--bg);
+  font:16px/1.6 var(--sans);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
 }
-a { color:inherit; text-decoration:none; }
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
 
-.container { max-width:var(--container); margin:0 auto; padding:0 24px; }
-.section { padding:80px 0; }
+.container{max-width:var(--container);margin:0 auto;padding:0 24px}
+.section{padding:96px 0}
+.lead{color:var(--muted);max-width:760px}
 
-/* === Header === */
-.site-header {
-  position:fixed;
-  top:0; left:0; right:0;
+/* ===== Header ===== */
+.site-header{
+  position:fixed; inset:0 0 auto 0;
   z-index:1000;
-  background:#000;
+  background:rgba(14,42,71,.92);
   border-bottom:1px solid rgba(255,255,255,.06);
+  backdrop-filter:saturate(140%) blur(10px);
 }
-.header-inner {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.header-inner{
   min-height:80px;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
 }
-.logo { height:56px; width:auto; }
-@media(max-width:820px){ .logo { height:40px; } }
+.logo{height:48px; width:auto}
+@media (max-width:820px){ .logo{height:40px} }
 
-.navbar-slogan {
-  font-size:13px;
-  font-weight:600;
-  color:var(--gold);
-  margin-top:2px;
-  letter-spacing:1px;
-  text-transform:uppercase;
+.navbar-slogan{
+  font-size:12px; letter-spacing:1.2px; text-transform:uppercase;
+  color:var(--gold); font-weight:600; margin-top:2px;
 }
 
-/* === Navigation === */
-.main-nav ul { list-style:none; display:flex; gap:24px; margin:0; padding:0; }
-.main-nav a { color:#fff; opacity:.92; font-weight:500; }
-.main-nav a:hover { color:var(--gold); opacity:1; }
+/* ===== Navigation ===== */
+.main-nav ul{list-style:none; display:flex; gap:28px; margin:0; padding:0}
+.main-nav a{color:#fff; opacity:.95; font-weight:600}
+.main-nav a:hover{color:var(--gold); opacity:1}
 
-.nav-toggle {
+.nav-toggle{
   display:none;
-  font-size:32px;
-  color:var(--gold);
-  background:none;
-  border:none;
-  cursor:pointer;
-  position:fixed;
-  right:14px;
-  top:22px;
-  z-index:99999;
+  position:relative;
+  width:48px; height:48px;
+  border:1px solid rgba(255,255,255,.18);
+  background:transparent; color:#fff;
+  border-radius:10px; cursor:pointer;
 }
+.nav-toggle-box{display:inline-block; width:22px; height:16px; position:relative}
+.nav-toggle-line{
+  position:absolute; left:0; right:0; height:2px; background:#fff; border-radius:2px;
+  transition:transform .25s ease, opacity .2s ease, top .25s ease;
+}
+.nav-toggle-line:nth-child(1){top:0}
+.nav-toggle-line:nth-child(2){top:7px}
+.nav-toggle-line:nth-child(3){top:14px}
 
-/* === HERO === */
-.hero {
+body.nav-open .nav-toggle-line:nth-child(1){top:7px; transform:rotate(45deg)}
+body.nav-open .nav-toggle-line:nth-child(2){opacity:0}
+body.nav-open .nav-toggle-line:nth-child(3){top:7px; transform:rotate(-45deg)}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;
+  min-height:92vh;
+  display:flex; align-items:center;
+  color:#fff; overflow:hidden;
+}
+.hero-media{
+  position:absolute; inset:0;
   background:
-    linear-gradient(135deg, rgba(30,67,116,0.85), rgba(58,99,155,0.85)),
+    linear-gradient(135deg, rgba(8,22,39,.66), rgba(18,53,90,.66)),
     url("https://raw.githubusercontent.com/quantico-leo/arceoconsult/main/Image%20office.jpg");
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  background-attachment:fixed;
-  color:#fff;
-  min-height:90vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:120px 20px 80px;
-  opacity:0;
-  animation:heroFadeIn 1.2s ease forwards;
+  background-size:cover; background-position:center; background-repeat:no-repeat;
+  z-index:-1;
 }
-.hero h2 {
-  font-size:clamp(32px,5vw,52px);
-  margin-bottom:16px;
+.hero-inner{
+  padding-top:120px; padding-bottom:80px;
+  display:flex; flex-direction:column; align-items:flex-start;
+}
+.hero-eyebrow{
+  margin:0 0 6px 0; font-size:14px; letter-spacing:1.2px; text-transform:uppercase;
+  color:rgba(255,255,255,.85); font-weight:700;
+}
+.hero h2{
   font-family:var(--serif);
+  font-size:clamp(34px,5.5vw,56px);
+  line-height:1.1; margin:6px 0 12px 0;
 }
-.hero-subtitle {
-  max-width:800px;
-  margin:20px auto 0;
-  color:#eaf2ff;
-  font-size:1.25rem;
-  line-height:1.5;
+.hero-subtitle{
+  max-width:760px; color:#e9f2ff; font-size:clamp(16px,1.5vw,20px);
 }
-.hero .cta { margin-top:32px; }
+.cta{margin-top:28px; display:flex; gap:12px; flex-wrap:wrap}
 
-/* === Buttons === */
-.btn {
-  display:inline-block;
-  padding:14px 28px;
-  border-radius:8px;
-  font-weight:600;
-  transition:all 0.2s ease-in-out;
-  margin:0 8px;
-  background:var(--gold);
-  color:#0b0f19;
-  border:2px solid var(--gold);
+/* ===== Buttons ===== */
+.btn{
+  display:inline-block; padding:14px 24px; border-radius:10px;
+  font-weight:700; border:2px solid var(--gold); background:var(--gold); color:#0b0f19;
+  transition:transform .12s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
 }
-.btn:hover { background:#0b0f19; color:var(--gold); }
+.btn:hover{background:transparent; color:#fff; box-shadow:0 6px 18px rgba(0,0,0,.15)}
+.btn-ghost{
+  background:transparent; color:#fff; border-color:rgba(255,255,255,.55)
+}
+.btn-ghost:hover{border-color:var(--gold); color:var(--gold)}
 
-/* === Identity Section === */
-.identity-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  align-items:center;
+/* ===== Identity ===== */
+.gradient-alt{background:linear-gradient(180deg,#fcfdff, #f6f8fb)}
+.identity-grid{
+  display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center;
 }
-.identity-photo img {
-  max-width:300px;
-  border-radius:8px;
-  box-shadow:0 8px 25px rgba(0,0,0,0.25);
-  display:block;
-  margin:auto;
+.identity-photo img{
+  max-width:360px; border-radius:14px; box-shadow:var(--shadow); margin:auto;
+  object-fit:cover;
 }
-.identity-text { font-size:1.05rem; }
+.identity-text{font-size:1.06rem}
 
-/* === Cards === */
-.grid { display:grid; gap:24px; }
-.cards-3 { grid-template-columns:repeat(3,1fr); }
-.card {
-  background:#fff;
-  color:var(--ink);
-  border:1px solid var(--line);
-  border-radius:12px;
-  padding:24px;
-  box-shadow:0 4px 14px rgba(0,0,0,0.08);
-  transition:all 0.25s ease-in-out;
+/* ===== Cards / Grids ===== */
+.grid{display:grid; gap:24px}
+.cards-3{grid-template-columns:repeat(3,1fr)}
+.card{
+  background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:24px;
+  box-shadow:0 4px 12px rgba(0,0,0,.04); transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
-.card h3 {
-  margin-bottom:8px;
-  font-family:var(--serif);
-  color:var(--blue);
-}
-.card:hover {
-  box-shadow:0 8px 24px rgba(0,0,0,0.15);
-  border-color:var(--gold);
-  transform:translateY(-4px);
-}
+.card h3{margin:0 0 8px 0; font-family:var(--serif); color:var(--navy)}
+.card:hover{transform:translateY(-4px); box-shadow:0 10px 26px rgba(0,0,0,.10); border-color:#d9dee8}
 
-/* === Contact === */
-.contact-form { margin-top:40px; text-align:center; }
-.form-grid {
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-  max-width:640px;
-  margin:0 auto;
-}
-.contact-form input,
-.contact-form textarea {
-  width:100%;
-  padding:10px 12px;
-  border-radius:6px;
-  border:1px solid var(--line);
-  font:inherit;
-  font-size:15px;
-  box-shadow:0 2px 5px rgba(0,0,0,0.04);
-}
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color:var(--gold);
-  box-shadow:0 0 5px rgba(212,175,55,0.3);
-  outline:none;
-}
-.contact-form textarea { min-height:140px; }
-.contact-form button {
-  margin-top:20px;
-  background:var(--gold);
-  color:#0b0f19;
-  border:2px solid var(--gold);
-  font-weight:600;
-  font-size:15px;
-  padding:12px 28px;
-  border-radius:8px;
-  cursor:pointer;
-  transition:all 0.25s ease-in-out;
-}
-.contact-form button:hover { background:#0b0f19; color:var(--gold); }
+/* ===== Method ===== */
+.narrow{max-width:820px}
 
-/* === Footer === */
-.site-footer {
-  border-top:1px solid var(--line);
-  background:#000;
-  color:#fff;
-  padding:32px 0;
-  text-align:center;
-  font-size:14px;
+/* ===== Contact ===== */
+.contact-form{margin-top:32px; text-align:center}
+.form-grid{display:flex; flex-direction:column; gap:14px; max-width:640px; margin:0 auto}
+.contact-form input, .contact-form textarea{
+  width:100%; padding:12px 14px; border-radius:10px; border:1px solid var(--line);
+  font:inherit; font-size:16px; background:#fff; transition:border-color .2s ease, box-shadow .2s ease;
+}
+.contact-form input:focus, .contact-form textarea:focus{
+  outline:none; border-color:#c9cfe0; box-shadow:0 0 0 4px rgba(212,175,55,.18)
+}
+.contact-form textarea{min-height:140px}
+.contact-form button{margin-top:10px}
+
+/* ===== Footer ===== */
+.site-footer{
+  border-top:1px solid #0a213a; background:#071a30; color:#cfe0f5; padding:28px 0; text-align:center; font-size:14px;
 }
 
-/* === Mobile Optimization === */
-@media(max-width:820px){
-  .identity-grid { grid-template-columns:1fr; text-align:center; }
-  .cards-3 { grid-template-columns:1fr; }
-  .hero {
-    background:
-      linear-gradient(135deg, rgba(30,67,116,0.88), rgba(58,99,155,0.88)),
-      url("https://raw.githubusercontent.com/quantico-leo/arceoconsult/main/Image%20office.jpg");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-    background-attachment:scroll;
-    padding-top:110px;
-    padding-bottom:60px;
+/* ===== Header layout at smaller screens ===== */
+@media (max-width:1024px){
+  .main-nav ul{gap:20px}
+}
+
+/* ===== Mobile ===== */
+@media (max-width:820px){
+  .section{padding:72px 0}
+  .identity-grid{grid-template-columns:1fr; text-align:center}
+  .cards-3{grid-template-columns:1fr}
+  .hero-inner{align-items:center; text-align:center}
+  .nav-toggle{display:inline-flex; align-items:center; justify-content:center}
+  /* Mobile menu panel */
+  .main-nav{
+    position:absolute; top:80px; right:16px; left:16px; display:none;
+    background:#0c2642; border:1px solid rgba(255,255,255,.12); border-radius:14px;
+    box-shadow:0 18px 38px rgba(0,0,0,.24); padding:16px;
   }
-  .hero h2 { font-size:clamp(26px,6vw,38px); }
-  .hero-subtitle { font-size:1.05rem; }
-  .hero .btn {
-    width:80%;
-    max-width:280px;
-    margin:8px auto;
-    display:block;
-  }
+  .main-nav.open{display:block}
+  .main-nav ul{flex-direction:column; gap:8px}
+  .main-nav a{display:block; padding:10px 12px; border-radius:10px}
+  .main-nav a:hover{background:rgba(255,255,255,.06)}
 }
 
-/* === Fade-in Animation === */
-@keyframes heroFadeIn {
-  from { opacity:0; transform:translateY(20px); }
-  to { opacity:1; transform:translateY(0); }
+/* ===== Motion preferences ===== */
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important; transition:none !important}
 }
