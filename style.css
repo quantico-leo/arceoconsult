@@ -275,3 +275,16 @@ body.nav-open .nav-toggle-line:nth-child(3){top:7px; transform:rotate(-45deg)}
     margin: 0 auto;
   }
 }
+/* === Logo visibility fix across devices (ArceoConsult 2025-10-05) === */
+.logo-wrap {
+  background: rgba(255, 255, 255, 0.06); /* soft translucent backdrop */
+  padding: 6px 12px;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 820px) {
+  .logo-wrap {
+    background: rgba(255, 255, 255, 0.12); /* slightly stronger for phones */
+  }
+}
