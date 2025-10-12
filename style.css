@@ -325,6 +325,15 @@ body.nav-open .nav-toggle-line:nth-child(3){top:7px; transform:rotate(-45deg)}
     padding-top: 90px !important;
     padding-bottom: 100px !important;
   }
+   /* Micro Symmetry Enhancement — Pillars ↔ Programs (optional, visual balance) */
+#pillars {
+  padding-bottom: 130px !important;
+}
+
+#programs {
+  padding-top: 130px !important;
+}
+
 
   #method h2 {
     font-size: 30px !important;
