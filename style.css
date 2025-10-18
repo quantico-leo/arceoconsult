@@ -286,3 +286,16 @@ body.nav-open .nav-toggle-line:nth-child(3){top:7px; transform:rotate(-45deg)}
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+/* Footer link styling */
+.site-footer .footer-link { 
+  color: #cfe0f5; 
+  text-decoration: none; 
+}
+.site-footer .footer-link:hover { 
+  color: var(--gold); 
+  text-decoration: underline; 
+}
+.site-footer .footer-link:focus-visible { 
+  outline: 2px solid var(--gold); 
+  outline-offset: 2px; 
+}
