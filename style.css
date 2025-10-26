@@ -317,5 +317,16 @@ body.nav-open .nav-toggle-line:nth-child(3){top:7px; transform:rotate(-45deg)}
     padding: 0 12px;
   }
 }
+/* === Desktop centering polish for 1-on-1 Consulting hero === */
+@media (min-width: 821px) {
+  .hero[aria-label="1-on-1 Consulting"] .hero-inner {
+    align-items: center;   /* centers content horizontally */
+    text-align: center;    /* centers text and CTAs */
+  }
+
+  .hero[aria-label="1-on-1 Consulting"] .cta {
+    justify-content: center; /* aligns buttons under text */
+  }
+}
 
 
