@@ -328,5 +328,22 @@ body.nav-open .nav-toggle-line:nth-child(3){top:7px; transform:rotate(-45deg)}
     justify-content: center; /* aligns buttons under text */
   }
 }
+@media (min-width: 992px) {
+  .cards-3 .card {
+    margin: 0 1rem 2rem 1rem; /* adds space between cards */
+  }
+  .section {
+    padding-top: 80px;
+    padding-bottom: 80px; /* adds more air vertically */
+  }
+}
+.btn.btn-ghost {
+  border: 2px solid #003366;      /* darker border */
+  color: #003366;                 /* dark navy text */
+}
+.btn.btn-ghost:hover {
+  background-color: #003366;      /* dark background on hover */
+  color: #fff;                    /* white text on hover */
+}
 
 
