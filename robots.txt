@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /cdn-cgi/
-
 Sitemap: https://www.arceoconsult.com/sitemap.xml
