@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="style.css?v=final"> 
    
   <style>
-    /* Inline styles för språk-knappar */
+    /* --- SPRÅK-KNAPPAR --- */
     .lang-btn { background:none; border:1px solid rgba(255,255,255,0.3); color:#fff; padding:5px 10px; cursor:pointer; font-size:12px; margin-left:5px; border-radius:3px; transition:0.3s; }
     .lang-btn:hover { border-color:#D4AF37; color:#D4AF37; }
     .lang-btn.active { background:#D4AF37; color:#000; border-color:#D4AF37; font-weight:bold; }
@@ -34,6 +34,43 @@
     
     @media (max-width: 900px) {
         .lang-switcher { margin: 20px 0; justify-content: center; }
+    }
+
+    /* --- PREMIUM-JUSTERINGAR (LUFT & RYMD) --- */
+    .section {
+        padding-top: 100px !important;
+        padding-bottom: 100px !important;
+    }
+    p {
+        line-height: 1.8 !important;
+        margin-bottom: 24px !important;
+    }
+    h2 {
+        margin-bottom: 40px !important;
+    }
+    .hero-inner {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .card {
+        padding: 40px !important;
+    }
+    @media (max-width: 768px) {
+        .section { padding-top: 60px !important; padding-bottom: 60px !important; }
+        .card { padding: 25px !important; }
+    }
+
+    /* Justering för att loggan och texten ska linjera snyggt */
+    .logo-wrap {
+        display: flex;
+        align-items: center;
+    }
+    .logo {
+        margin-right: 15px; /* Avstånd mellan sköld och text */
+    }
+    .navbar-slogan {
+        margin-top: 0 !important; /* Tar bort tidigare marginal */
+        text-align: left;
     }
   </style>
 
@@ -45,8 +82,15 @@
     <div class="container header-inner">
       <a class="brand" href="/" aria-label="ArceoConsult Home">
         <div class="logo-wrap">
-          <img src="arceoconsult-logo.svg" alt="ArceoConsult" class="logo" height="48">
-          <div class="navbar-slogan">RECOVERY • REPUTATION • MANAGEMENT</div>
+          
+          <svg class="logo" width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #ffffff;">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1L3 5V11C3 16.5228 7.47715 21 12 21C16.5228 21 21 16.5228 21 11V5L12 1ZM12 3.23607L19 6.34721V11C19 15.4183 15.4183 19 12 19C8.58172 19 5 15.4183 5 11V6.34721L12 3.23607Z" fill="currentColor"/>
+          </svg>
+          
+          <div>
+              <div style="font-weight:bold; font-size:20px; color:#fff; letter-spacing: 1px;">ARCEOCONSULT</div>
+              <div class="navbar-slogan" style="font-size: 12px; color: rgba(255,255,255,0.7);">RECOVERY • REPUTATION • MANAGEMENT</div>
+          </div>
         </div>
       </a>
 
