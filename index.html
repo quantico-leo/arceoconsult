@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ArceoConsult - Recovery, Reputation, Management</title>
 
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
   <link rel="canonical" href="https://www.arceoconsult.com/">
   <link rel="alternate" hreflang="en" href="https://www.arceoconsult.com/?lang=en">
   <link rel="alternate" hreflang="sv" href="https://www.arceoconsult.com/?lang=sv">
@@ -26,17 +31,56 @@
   <link rel="stylesheet" href="style.css?v=final"> 
    
   <style>
-    /* --- SPRÅK-KNAPPAR --- */
-    .lang-btn { background:none; border:1px solid rgba(255,255,255,0.3); color:#fff; padding:5px 10px; cursor:pointer; font-size:12px; margin-left:5px; border-radius:3px; transition:0.3s; }
+    /* --- HEADER & NAV OPTIMERING --- */
+    
+    /* Tajtare spacing i headern för att minska totalhöjden */
+    .header-inner {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    /* Navlänkar: Grundstil */
+    .main-nav a {
+        position: relative;
+        text-decoration: none;
+        padding-bottom: 5px; /* Plats för understrykningen */
+        transition: color 0.3s ease;
+    }
+
+    /* --- PREMIUM GULD-UNDERLINE PÅ HOVER --- */
+    /* Skapar strecket */
+    .main-nav a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0); /* Dold från början */
+        height: 2px; /* Guldstreckets tjocklek */
+        bottom: 0;
+        left: 0;
+        background-color: #D4AF37; /* Guld */
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+    }
+    /* Animerar fram strecket vid hover */
+    .main-nav a:hover::after,
+    .main-nav a:focus::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+    
+    /* --- SPRÅK-KNAPPAR (Undantag från underline) --- */
+    .lang-btn { background:none; border:1px solid rgba(255,255,255,0.3); color:#fff; padding:5px 10px; cursor:pointer; font-size:12px; margin-left:5px; border-radius:3px; transition:0.3s; position: relative; }
     .lang-btn:hover { border-color:#D4AF37; color:#D4AF37; }
     .lang-btn.active { background:#D4AF37; color:#000; border-color:#D4AF37; font-weight:bold; }
     .lang-switcher { display:flex; align-items:center; margin-left:20px; }
+    /* Tar bort underline-effekten på språkknapparna */
+    .lang-switcher button::after { display: none; }
     
     @media (max-width: 900px) {
         .lang-switcher { margin: 20px 0; justify-content: center; }
     }
 
-    /* --- PREMIUM-JUSTERINGAR (LUFT & RYMD) --- */
+    /* --- PREMIUM-JUSTERINGAR (LUFT & RYMD I SEKTIONER) --- */
     .section {
         padding-top: 100px !important;
         padding-bottom: 100px !important;
@@ -67,7 +111,6 @@
     }
     .logo {
         margin-right: 15px;
-        /* Se till att den inte kläms ihop */
         min-width: 55px; 
     }
     .navbar-slogan {
@@ -85,12 +128,11 @@
       <a class="brand" href="/" aria-label="ArceoConsult Home">
         <div class="logo-wrap">
           
-          <svg class="logo" width="55" height="55" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="logo" width="55" height="55" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
             <defs>
-                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <linearGradient id="goldGradSubtle" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
-                    <stop offset="50%" style="stop-color:#FCEabb;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#EACDA3;stop-opacity:1" /> <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
                 </linearGradient>
                 <linearGradient id="silverGrad" x1="100%" y1="0%" x2="0%" y2="100%">
                     <stop offset="0%" style="stop-color:#8e9eab;stop-opacity:1" />
@@ -98,12 +140,12 @@
                     <stop offset="100%" style="stop-color:#8e9eab;stop-opacity:1" />
                 </linearGradient>
             </defs>
-            <path d="M12 2L3 6V11.5C3 17.2 7.1 21.5 12 23C16.9 21.5 21 17.2 21 11.5V6L12 2Z" fill="url(#silverGrad)"/>
-            <path d="M12 4.5L5.5 7.5V11.5C5.5 15.8 8.6 19 12 20.2C15.4 19 18.5 15.8 18.5 11.5V7.5L12 4.5Z" fill="url(#goldGrad)"/>
+            <path d="M12 2L3 6V11.5C3 17.2 7.1 21.5 12 23C16.9 21.5 21 17.2 21 11.5V6L12 2Z" fill="url(#silverGrad)" stroke="url(#silverGrad)" stroke-width="0.5"/>
+            <path d="M12 4.5L5.5 7.5V11.5C5.5 15.8 8.6 19 12 20.2C15.4 19 18.5 15.8 18.5 11.5V7.5L12 4.5Z" fill="url(#goldGradSubtle)"/>
           </svg>
           
           <div>
-              <div style="font-weight:bold; font-size:20px; color:#fff; letter-spacing: 1px;">ARCEOCONSULT</div>
+              <div style="font-weight:bold; font-size:20px; color:#fff; letter-spacing: 2px;">ARCEOCONSULT</div>
               <div class="navbar-slogan" style="font-size: 12px; color: rgba(255,255,255,0.7);">RECOVERY • REPUTATION • MANAGEMENT</div>
           </div>
         </div>
