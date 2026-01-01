@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ArceoConsult - Guardian Consulting Boutique</title>
 
-  <!-- Canonical -->
   <link rel="canonical" href="https://www.arceoconsult.com/">
+  <link rel="alternate" hreflang="en" href="https://www.arceoconsult.com/?lang=en">
+  <link rel="alternate" hreflang="sv" href="https://www.arceoconsult.com/?lang=sv">
 
-  <!-- Open Graph / Twitter Cards -->
   <meta property="og:site_name" content="ArceoConsult">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.arceoconsult.com/">
@@ -20,15 +20,27 @@
   <meta name="twitter:description" content="Sales. People. Liquidity. Guardian consulting for SMEs.">
   <meta name="twitter:image" content="https://www.arceoconsult.com/og-image.jpg">
 
- <meta name="description" content="ArceoConsult - The guardian consulting boutique for SMEs. We stabilize, rebuild, and accelerate businesses through precision, discretion, and measurable impact.">
-<meta name="robots" content="index, follow">
-<link rel="stylesheet" href="style.css?v=final">
-
+  <meta name="description" content="ArceoConsult - The guardian consulting boutique for SMEs. We stabilize, rebuild, and accelerate businesses through precision, discretion, and measurable impact.">
+  <meta name="robots" content="index, follow">
   
+  <link rel="stylesheet" href="style.css?v=final"> 
+  
+  <style>
+    /* Enkel stil för språk-knappar om de inte finns i din style.css */
+    .lang-btn { background:none; border:1px solid rgba(255,255,255,0.3); color:#fff; padding:5px 10px; cursor:pointer; font-size:12px; margin-left:5px; border-radius:3px; }
+    .lang-btn.active { background:#D4AF37; color:#000; border-color:#D4AF37; font-weight:bold; }
+    .lang-switcher { display:flex; align-items:center; margin-left:20px; }
+    
+    /* Mobilanpassning för språk */
+    @media (max-width: 900px) {
+        .lang-switcher { margin: 20px 0; justify-content: center; }
+    }
+  </style>
 
-<body>
+</head>
 
-  <!-- HEADER -->
+<body id="top">
+
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a class="brand" href="/" aria-label="ArceoConsult Home">
@@ -48,42 +60,45 @@
 
       <nav class="main-nav" id="primary-nav" role="navigation">
         <ul>
-          <li><a href="1on1-consulting.html">1-on-1 Consulting</a></li>
-          <li><a href="#intent">Intent</a></li>
-          <li><a href="#pillars">Pillars</a></li>
-          <li><a href="#programs">Programs</a></li>
-          <li><a href="#method">Method</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="1on1-consulting.html" data-i18n="nav.1on1">1-on-1 Consulting</a></li>
+          <li><a href="#intent" data-i18n="nav.intent">Intent</a></li>
+          <li><a href="#pillars" data-i18n="nav.pillars">Pillars</a></li>
+          <li><a href="#programs" data-i18n="nav.programs">Programs</a></li>
+          <li><a href="#method" data-i18n="nav.method">Method</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+          
+          <li class="lang-switcher">
+             <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+             <button class="lang-btn" id="btn-sv" onclick="setLang('sv')">SV</button>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="hero" role="region" aria-label="Intro">
     <div class="container hero-inner">
-      <h1 class="hero-eyebrow">Guardian Consulting for SMEs</h1>
-      <h2>Precision support when it matters most.</h2>
-      <p class="hero-subtitle">
+      <h1 class="hero-eyebrow" data-i18n="hero.eyebrow">Guardian Consulting for SMEs</h1>
+      <h2 data-i18n="hero.title">Precision support when it matters most.</h2>
+      <p class="hero-subtitle" data-i18n="hero.subtitle">
         We elevate <strong>Sales</strong>, strengthen <strong>People</strong>, and improve <strong>Liquidity</strong> – with precision, discretion, and hands-on impact.
       </p>
       <div class="cta">
-        <a href="#contact" class="btn">Contact</a>
+        <a href="#contact" class="btn" data-i18n="btn.contact">Contact</a>
         <a href="https://www.linkedin.com/in/leocelija" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
       </div>
     </div>
     <div class="hero-media" role="presentation" aria-hidden="true"></div>
   </section>
 
-  <!-- IDENTITY -->
   <section id="identity" class="section gradient-alt" aria-labelledby="identity-title">
     <div class="container identity-grid">
       <div class="identity-photo">
         <img src="leo-profile.webp.webp" alt="Leo Riccardo Celija – Founder of ArceoConsult" loading="lazy" style="border-radius:16px; display:block; margin:0 auto; width:560px; height:auto;">
       </div>
       <div class="identity-text">
-        <h2 id="identity-title">Who We Are</h2>
-        <p>
+        <h2 id="identity-title" data-i18n="identity.title">Who We Are</h2>
+        <p data-i18n="identity.text">
           ArceoConsult acts as a guardian force for small and medium-sized enterprises.
           We intervene at critical moments to restore balance across <strong>Sales</strong>, <strong>People</strong>, and <strong>Liquidity</strong> – stabilizing operations, rebuilding trust, and unlocking hidden value.
           Unlike traditional advisors, we combine hands-on leadership with financial precision and total confidentiality.
@@ -93,129 +108,114 @@
     </div>
   </section>
 
-  <!-- INTENT -->
   <section id="intent" class="section" aria-labelledby="intent-title">
     <div class="container narrow">
-      <h2 id="intent-title">Our Intent</h2>
-      <meta itemprop="name" content="Our Intent – ArceoConsult">
-<meta itemprop="description" content="Serving as the guardian partner for SME owners and leadership teams — bringing structure, control, and measurable impact with confidentiality and precision.">
-
-      <p class="lead">
+      <h2 id="intent-title" data-i18n="intent.title">Our Intent</h2>
+      
+      <p class="lead" data-i18n="intent.lead">
         <strong>Who We Are:</strong>
         ArceoConsult is a guardian consulting boutique for SMEs – dedicated to protecting and strengthening the three vital forces of every enterprise: <strong>Sales</strong>, <strong>People</strong>, and <strong>Liquidity</strong>.
       </p>
-      <p>
+      <p data-i18n="intent.p1">
         <strong>Our Intent:</strong>
         To serve as the leading guardian partner for owners and leadership teams during times of uncertainty, transformation, or renewal.
         We bring control, structure, and measurable impact – fast and discreetly.
       </p>
-      <p>
+      <p data-i18n="intent.p2">
         <strong>How We Pursue These Goals:</strong>
         We work shoulder-to-shoulder with decision-makers to remove friction, rebuild stability, and unlock growth.
         Every engagement is executed with confidentiality, precision, and full accountability for outcomes.
       </p>
-      <p><em>ArceoConsult stands between chaos and clarity – protecting value, creating order, and restoring control.</em></p>
+      <p><em data-i18n="intent.quote">ArceoConsult stands between chaos and clarity – protecting value, creating order, and restoring control.</em></p>
     </div>
   </section>
 
-  <!-- PILLARS -->
   <section id="pillars" class="section gradient-alt" aria-labelledby="pillars-title">
     <div class="container">
-      <h2 id="pillars-title">Our Pillars</h2>
-<meta itemprop="name" content="Our Pillars – ArceoConsult">
-<meta itemprop="description" content="Sales, People, and Liquidity — the three essential levers that restore trust, structure, and sustainable growth for SMEs.">
+      <h2 id="pillars-title" data-i18n="pillars.title">Our Pillars</h2>
 
-      <p class="lead">
+      <p class="lead" data-i18n="pillars.intro">
         Every engagement rests on three essential levers – <strong>Sales</strong>, <strong>People</strong>, and <strong>Liquidity</strong>.
         These define how ArceoConsult restores structure, trust, and growth for our clients.
       </p>
 
       <div class="grid cards-3">
         <article class="card">
-          <h3>Sales</h3>
-          <p>We build structured sales pipelines and connect clients with trusted agents and call centers that generate consistent, measurable revenue.</p>
-          <p><em>Outcome:</em> Predictable growth and renewed commercial precision.</p>
+          <h3 data-i18n="pillar1.t">Sales</h3>
+          <p data-i18n="pillar1.d">We build structured sales pipelines and connect clients with trusted agents and call centers that generate consistent, measurable revenue.</p>
+          <p><em data-i18n="pillar1.out">Outcome: Predictable growth and renewed commercial precision.</em></p>
         </article>
 
         <article class="card">
-          <h3>People</h3>
-          <p>We align and strengthen teams by removing internal friction, rebuilding loyalty, and fostering leadership clarity.</p>
-          <p><em>Outcome:</em> A cohesive organization built on trust and resilience.</p>
+          <h3 data-i18n="pillar2.t">People</h3>
+          <p data-i18n="pillar2.d">We align and strengthen teams by removing internal friction, rebuilding loyalty, and fostering leadership clarity.</p>
+          <p><em data-i18n="pillar2.out">Outcome: A cohesive organization built on trust and resilience.</em></p>
         </article>
 
         <article class="card">
-          <h3>Liquidity</h3>
-          <p>We uncover and activate hidden or underused assets to unlock liquidity – discreetly and independently of external financing.</p>
-          <p><em>Outcome:</em> Stability, flexibility, and sustained independence.</p>
+          <h3 data-i18n="pillar3.t">Liquidity</h3>
+          <p data-i18n="pillar3.d">We uncover and activate hidden or underused assets to unlock liquidity – discreetly and independently of external financing.</p>
+          <p><em data-i18n="pillar3.out">Outcome: Stability, flexibility, and sustained independence.</em></p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- PROGRAMS -->
   <section id="programs" class="section" aria-labelledby="programs-title">
     <div class="container">
-      <h2 id="programs-title">Our Programs</h2>
-<meta itemprop="name" content="Our Programs – ArceoConsult">
-<meta itemprop="description" content="Guardian Scan, Guardian Reset, and Guardian Education — programs that stabilize, accelerate, and strengthen SMEs.">
+      <h2 id="programs-title" data-i18n="programs.title">Our Programs</h2>
 
-      <p class="lead">Our Guardian Programs restore order, accelerate growth, and strengthen the company from within.</p>
+      <p class="lead" data-i18n="programs.intro">Our Guardian Programs restore order, accelerate growth, and strengthen the company from within.</p>
       <div class="grid cards-3">
         <article class="card">
-          <h3>Guardian Scan</h3>
-          <p>48-hour diagnostic across <strong>Sales</strong>, <strong>People</strong>, and <strong>Liquidity</strong>.</p>
-          <p><em>Outcome:</em> Clear report with measurable action plan and prioritized risks.</p>
+          <h3 data-i18n="prog1.t">Guardian Scan</h3>
+          <p data-i18n="prog1.d">48-hour diagnostic across <strong>Sales</strong>, <strong>People</strong>, and <strong>Liquidity</strong>.</p>
+          <p><em data-i18n="prog1.out">Outcome: Clear report with measurable action plan and prioritized risks.</em></p>
         </article>
         <article class="card">
-          <h3>Guardian Reset</h3>
-          <p>1–2 months of stabilization. We reboot sales, unlock capital, and realign staff operations.</p>
-          <p><em>Outcome:</em> Fast recovery of performance and profitability.</p>
+          <h3 data-i18n="prog2.t">Guardian Reset</h3>
+          <p data-i18n="prog2.d">1–2 months of stabilization. We reboot sales, unlock capital, and realign staff operations.</p>
+          <p><em data-i18n="prog2.out">Outcome: Fast recovery of performance and profitability.</em></p>
         </article>
         <article class="card">
-          <h3>Guardian Education</h3>
-          <p>Tailored workshops and leadership training built on the <strong>People–Sales–Liquidity</strong> model.</p>
-          <p><em>Outcome:</em> Empowered teams and sustained business momentum.</p>
+          <h3 data-i18n="prog3.t">Guardian Education</h3>
+          <p data-i18n="prog3.d">Tailored workshops and leadership training built on the <strong>People–Sales–Liquidity</strong> model.</p>
+          <p><em data-i18n="prog3.out">Outcome: Empowered teams and sustained business momentum.</em></p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- METHOD -->
   <section id="method" class="section" aria-labelledby="method-title">
     <div class="container narrow">
-      <h2 id="method-title">The Arceo Method™</h2>
-<meta itemprop="name" content="The Arceo Method – ArceoConsult">
-<meta itemprop="description" content="The Arceo Method™ integrates Sales, People, and Liquidity to stabilize, secure, and scale companies for long-term independence.">
+      <h2 id="method-title" data-i18n="method.title">The Arceo Method™</h2>
 
-      <p class="lead">Sales. People. Liquidity. The three signs of business vitality.</p>
-      <p>We stabilize, secure, and scale companies using a holistic guardian framework built on real-world experience, not theory. Each project combines commercial acceleration, team resilience, and liquidity optimization to create long-term strength and independence.</p>
+      <p class="lead" data-i18n="method.intro">Sales. People. Liquidity. The three signs of business vitality.</p>
+      <p data-i18n="method.text">We stabilize, secure, and scale companies using a holistic guardian framework built on real-world experience, not theory. Each project combines commercial acceleration, team resilience, and liquidity optimization to create long-term strength and independence.</p>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact" class="section" aria-labelledby="contact-title">
     <div class="container">
-      <h2 id="contact-title">Contact</h2>
-<meta itemprop="name" content="Contact – ArceoConsult">
-<meta itemprop="description" content="Quick, confidential, direct contact with ArceoConsult for discreet advisory and guardian consulting support.">
+      <h2 id="contact-title" data-i18n="contact.title">Contact</h2>
 
-      <p class="lead">Quick, confidential, direct.</p>
+      <p class="lead" data-i18n="contact.lead">Quick, confidential, direct.</p>
+      
       <form class="contact-form" action="https://formspree.io/f/mwpnynjz" method="POST">
         <div class="form-grid">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-          <button type="submit" class="btn">Send Secure Message</button>
+          <input type="text" name="name" id="f-name" placeholder="Your Name" required>
+          <input type="email" name="email" id="f-email" placeholder="Your Email" required>
+          <textarea name="message" id="f-msg" placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit" class="btn" data-i18n="btn.send">Send Secure Message</button>
         </div>
       </form>
     </div>
   </section>
 
-  <!-- 1-ON-1 CONSULTING -->
   <section id="consulting" class="section gradient-alt" aria-labelledby="consulting-title">
     <div class="container narrow">
-      <h2 id="consulting-title">1-on-1 Consulting for Founders & CEOs</h2>
-      <p class="lead">
+      <h2 id="consulting-title" data-i18n="cons.title">1-on-1 Consulting for Founders & CEOs</h2>
+      <p class="lead" data-i18n="cons.lead">
         When reputation, sales or liquidity come under pressure, act with precision.
         ArceoConsult provides direct, confidential advisory for leaders who need clarity,
         protection and measurable results fast.
@@ -223,49 +223,49 @@
 
       <div class="grid cards-3">
         <article class="card">
-          <h3>Reputation Management</h3>
-          <p>We assist when negative press, reviews or internal conflicts threaten your credibility.
+          <h3 data-i18n="cons1.t">Reputation Management</h3>
+          <p data-i18n="cons1.d">We assist when negative press, reviews or internal conflicts threaten your credibility.
           Strategic communication and trust rebuilding handled discreetly.</p>
         </article>
 
         <article class="card">
-          <h3>Sales & Revenue Recovery</h3>
-          <p>Hands-on commercial support. We help restore pipeline control,
+          <h3 data-i18n="cons2.t">Sales & Revenue Recovery</h3>
+          <p data-i18n="cons2.d">Hands-on commercial support. We help restore pipeline control,
           re-engage key accounts and design new revenue channels.</p>
         </article>
 
         <article class="card">
-          <h3>Legal & Financial Guidance</h3>
-          <p>Access our network of legal and financial specialists to stabilize contracts,
+          <h3 data-i18n="cons3.t">Legal & Financial Guidance</h3>
+          <p data-i18n="cons3.d">Access our network of legal and financial specialists to stabilize contracts,
           protect assets and strengthen your liquidity position.</p>
         </article>
       </div>
 
       <div class="cta" style="justify-content:center; margin-top:40px;">
-  <a href="1on1-consulting.html" class="btn">Open Full Consulting Page</a>
-  <a href="https://wa.me/46700193462" target="_blank" class="btn btn-ghost">WhatsApp +46 700 193 462</a>
-  <a href="mailto:info@arceoconsult.com" class="btn btn-ghost">Email Us</a>
-</div>
+        <a href="1on1-consulting.html" class="btn" data-i18n="btn.full">Open Full Consulting Page</a>
+        <a href="https://wa.me/46700193462" target="_blank" class="btn btn-ghost">WhatsApp +46 700 193 462</a>
+        <a href="mailto:info@arceoconsult.com" class="btn btn-ghost">Email Us</a>
+      </div>
 
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
       <div>
-        © <span id="year"></span> ArceoConsult OÜ. All rights reserved.
+        © <span id="year"></span> ArceoConsult OÜ. <span data-i18n="footer.rights">All rights reserved.</span>
         <span aria-hidden="true"> • </span>
-        <a href="/privacy-policy.html" class="footer-link" aria-label="Privacy Policy">Privacy Policy</a>
-
+        <a href="/privacy-policy.html" class="footer-link" aria-label="Privacy Policy" data-i18n="footer.privacy">Privacy Policy</a>
       </div>
     </div>
   </footer>
 
   <script>
+    // 1. Year
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+    // 2. Mobile Nav
     const navToggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.main-nav');
     if (navToggle && nav) {
@@ -282,9 +282,134 @@
         });
       });
     }
+
+    // 3. i18n Language Logic
+    let currentLang = 'en'; // default English for Arceo
+
+    const i18n = {
+      en: {
+        "nav.1on1": "1-on-1 Consulting", "nav.intent": "Intent", "nav.pillars": "Pillars", "nav.programs": "Programs", "nav.method": "Method", "nav.contact": "Contact",
+        "hero.eyebrow": "Guardian Consulting for SMEs",
+        "hero.title": "Precision support when it matters most.",
+        "hero.subtitle": "We elevate <strong>Sales</strong>, strengthen <strong>People</strong>, and improve <strong>Liquidity</strong> – with precision, discretion, and hands-on impact.",
+        "btn.contact": "Contact",
+        "identity.title": "Who We Are",
+        "identity.text": "ArceoConsult acts as a guardian force for small and medium-sized enterprises. We intervene at critical moments to restore balance across <strong>Sales</strong>, <strong>People</strong>, and <strong>Liquidity</strong> – stabilizing operations, rebuilding trust, and unlocking hidden value. Unlike traditional advisors, we combine hands-on leadership with financial precision and total confidentiality. Our approach is built for clarity, speed, and measurable results – not theory.",
+        "intent.title": "Our Intent",
+        "intent.lead": "<strong>Who We Are:</strong> ArceoConsult is a guardian consulting boutique for SMEs – dedicated to protecting and strengthening the three vital forces of every enterprise: <strong>Sales</strong>, <strong>People</strong>, and <strong>Liquidity</strong>.",
+        "intent.p1": "<strong>Our Intent:</strong> To serve as the leading guardian partner for owners and leadership teams during times of uncertainty, transformation, or renewal. We bring control, structure, and measurable impact – fast and discreetly.",
+        "intent.p2": "<strong>How We Pursue These Goals:</strong> We work shoulder-to-shoulder with decision-makers to remove friction, rebuild stability, and unlock growth. Every engagement is executed with confidentiality, precision, and full accountability for outcomes.",
+        "intent.quote": "ArceoConsult stands between chaos and clarity – protecting value, creating order, and restoring control.",
+        "pillars.title": "Our Pillars",
+        "pillars.intro": "Every engagement rests on three essential levers – <strong>Sales</strong>, <strong>People</strong>, and <strong>Liquidity</strong>. These define how ArceoConsult restores structure, trust, and growth for our clients.",
+        "pillar1.t": "Sales", "pillar1.d": "We build structured sales pipelines and connect clients with trusted agents and call centers that generate consistent, measurable revenue.", "pillar1.out": "Outcome: Predictable growth and renewed commercial precision.",
+        "pillar2.t": "People", "pillar2.d": "We align and strengthen teams by removing internal friction, rebuilding loyalty, and fostering leadership clarity.", "pillar2.out": "Outcome: A cohesive organization built on trust and resilience.",
+        "pillar3.t": "Liquidity", "pillar3.d": "We uncover and activate hidden or underused assets to unlock liquidity – discreetly and independently of external financing.", "pillar3.out": "Outcome: Stability, flexibility, and sustained independence.",
+        "programs.title": "Our Programs",
+        "programs.intro": "Our Guardian Programs restore order, accelerate growth, and strengthen the company from within.",
+        "prog1.t": "Guardian Scan", "prog1.d": "48-hour diagnostic across <strong>Sales</strong>, <strong>People</strong>, and <strong>Liquidity</strong>.", "prog1.out": "Outcome: Clear report with measurable action plan and prioritized risks.",
+        "prog2.t": "Guardian Reset", "prog2.d": "1–2 months of stabilization. We reboot sales, unlock capital, and realign staff operations.", "prog2.out": "Outcome: Fast recovery of performance and profitability.",
+        "prog3.t": "Guardian Education", "prog3.d": "Tailored workshops and leadership training built on the <strong>People–Sales–Liquidity</strong> model.", "prog3.out": "Outcome: Empowered teams and sustained business momentum.",
+        "method.title": "The Arceo Method™",
+        "method.intro": "Sales. People. Liquidity. The three signs of business vitality.",
+        "method.text": "We stabilize, secure, and scale companies using a holistic guardian framework built on real-world experience, not theory. Each project combines commercial acceleration, team resilience, and liquidity optimization to create long-term strength and independence.",
+        "contact.title": "Contact", "contact.lead": "Quick, confidential, direct.", "btn.send": "Send Secure Message",
+        "p.name": "Your Name", "p.email": "Your Email", "p.msg": "Your Message",
+        "cons.title": "1-on-1 Consulting for Founders & CEOs",
+        "cons.lead": "When reputation, sales or liquidity come under pressure, act with precision. ArceoConsult provides direct, confidential advisory for leaders who need clarity, protection and measurable results fast.",
+        "cons1.t": "Reputation Management", "cons1.d": "We assist when negative press, reviews or internal conflicts threaten your credibility. Strategic communication and trust rebuilding handled discreetly.",
+        "cons2.t": "Sales & Revenue Recovery", "cons2.d": "Hands-on commercial support. We help restore pipeline control, re-engage key accounts and design new revenue channels.",
+        "cons3.t": "Legal & Financial Guidance", "cons3.d": "Access our network of legal and financial specialists to stabilize contracts, protect assets and strengthen your liquidity position.",
+        "btn.full": "Open Full Consulting Page",
+        "footer.rights": "All rights reserved.", "footer.privacy": "Privacy Policy"
+      },
+      sv: {
+        "nav.1on1": "1-till-1 Rådgivning", "nav.intent": "Avsikt", "nav.pillars": "Grundpelare", "nav.programs": "Program", "nav.method": "Metod", "nav.contact": "Kontakt",
+        "hero.eyebrow": "Guardian Consulting för SME-bolag",
+        "hero.title": "Precisionsstöd när det gäller som mest.",
+        "hero.subtitle": "Vi ökar <strong>Försäljning</strong>, stärker <strong>Personal</strong> och frigör <strong>Likviditet</strong> – med precision, diskretion och mätbar effekt.",
+        "btn.contact": "Kontakta oss",
+        "identity.title": "Vilka vi är",
+        "identity.text": "ArceoConsult fungerar som en skyddande kraft för små och medelstora företag. Vi kliver in i kritiska lägen för att återställa balansen inom <strong>Försäljning</strong>, <strong>Personal</strong> och <strong>Likviditet</strong> – vi stabiliserar verksamheten, återuppbygger förtroende och frigör dolda värden. Till skillnad från traditionella rådgivare kombinerar vi operativt ledarskap med finansiell precision och total sekretess.",
+        "intent.title": "Vår Avsikt",
+        "intent.lead": "<strong>Vilka vi är:</strong> ArceoConsult är en guardian consulting-boutique för SME-bolag – dedikerade att skydda och stärka de tre vitala krafterna i varje företag: <strong>Försäljning</strong>, <strong>Personal</strong> och <strong>Likviditet</strong>.",
+        "intent.p1": "<strong>Vår Avsikt:</strong> Att vara den ledande guardian-partnern för ägare och ledningsgrupper under tider av osäkerhet, transformation eller förnyelse. Vi skapar kontroll, struktur och mätbar effekt – snabbt och diskret.",
+        "intent.p2": "<strong>Hur vi når målen:</strong> Vi arbetar sida vid sida med beslutsfattare för att ta bort friktion, återuppbygga stabilitet och låsa upp tillväxt. Varje uppdrag utförs med sekretess, precision och fullt ansvar för resultatet.",
+        "intent.quote": "ArceoConsult står mellan kaos och klarhet – vi skyddar värden, skapar ordning och återställer kontroll.",
+        "pillars.title": "Våra Grundpelare",
+        "pillars.intro": "Varje uppdrag vilar på tre väsentliga pelare – <strong>Försäljning</strong>, <strong>Personal</strong> och <strong>Likviditet</strong>. Dessa definierar hur ArceoConsult återställer struktur, förtroende och tillväxt för våra klienter.",
+        "pillar1.t": "Försäljning", "pillar1.d": "Vi bygger strukturerade säljpipelines och kopplar klienter till beprövade agenter och callcenters som genererar konsekventa, mätbara intäkter.", "pillar1.out": "Resultat: Förutsägbar tillväxt och förnyad kommersiell precision.",
+        "pillar2.t": "Personal", "pillar2.d": "Vi samordnar och stärker team genom att eliminera intern friktion, återuppbygga lojalitet och främja tydligt ledarskap.", "pillar2.out": "Resultat: En sammanhållen organisation byggd på tillit och motståndskraft.",
+        "pillar3.t": "Likviditet", "pillar3.d": "Vi identifierar och aktiverar dolda eller underutnyttjade tillgångar för att frigöra likviditet – diskret och oberoende av extern finansiering.", "pillar3.out": "Resultat: Stabilitet, flexibilitet och långsiktigt oberoende.",
+        "programs.title": "Våra Program",
+        "programs.intro": "Våra Guardian-program återställer ordning, accelererar tillväxt och stärker bolaget inifrån.",
+        "prog1.t": "Guardian Scan", "prog1.d": "48-timmars diagnos över <strong>Försäljning</strong>, <strong>Personal</strong> och <strong>Likviditet</strong>.", "prog1.out": "Resultat: Tydlig rapport med mätbar handlingsplan och prioriterade risker.",
+        "prog2.t": "Guardian Reset", "prog2.d": "1–2 månaders stabilisering. Vi startar om försäljningen, frigör kapital och justerar personalstrukturen.", "prog2.out": "Resultat: Snabb återhämtning av prestanda och lönsamhet.",
+        "prog3.t": "Guardian Education", "prog3.d": "Skräddarsydda workshops och ledarskapsutbildning baserad på modellen <strong>Personal–Försäljning–Likviditet</strong>.", "prog3.out": "Resultat: Bemyndigade team och hållbart affärsmomentum.",
+        "method.title": "The Arceo Method™",
+        "method.intro": "Försäljning. Personal. Likviditet. De tre tecknen på affärsvitalitet.",
+        "method.text": "Vi stabiliserar, säkrar och skalar företag med hjälp av ett holistiskt ramverk byggt på verklig erfarenhet, inte teori. Varje projekt kombinerar kommersiell acceleration, teamets motståndskraft och likviditetsoptimering för att skapa långsiktig styrka och oberoende.",
+        "contact.title": "Kontakt", "contact.lead": "Snabbt, konfidentiellt, direkt.", "btn.send": "Skicka Säkert Meddelande",
+        "p.name": "Ditt Namn", "p.email": "Din E-post", "p.msg": "Ditt Meddelande",
+        "cons.title": "1-till-1 Rådgivning för Grundare & VD:ar",
+        "cons.lead": "När rykte, försäljning eller likviditet sätts under press måste du agera med precision. ArceoConsult erbjuder direkt, konfidentiell rådgivning för ledare som behöver klarhet, skydd och mätbara resultat snabbt.",
+        "cons1.t": "Rykteshantering", "cons1.d": "Vi bistår när negativ press, recensioner eller interna konflikter hotar din trovärdighet. Strategisk kommunikation och återuppbyggnad av förtroende hanteras diskret.",
+        "cons2.t": "Sälj- & Intäktsåterhämtning", "cons2.d": "Handgripligt kommersiellt stöd. Vi hjälper till att återta kontrollen över pipelinen, återaktivera nyckelkunder och utforma nya intäktskanaler.",
+        "cons3.t": "Juridisk & Finansiell Vägledning", "cons3.d": "Tillgång till vårt nätverk av juridiska och finansiella specialister för att stabilisera avtal, skydda tillgångar och stärka din likviditetsposition.",
+        "btn.full": "Öppna Fullständig Konsultsida",
+        "footer.rights": "Alla rättigheter förbehållna.", "footer.privacy": "Integritetspolicy"
+      }
+    };
+
+    function setLang(lang) {
+      try {
+        currentLang = (lang === 'sv') ? 'sv' : 'en';
+        localStorage.setItem('arceo_lang', currentLang);
+        document.documentElement.setAttribute('lang', currentLang);
+
+        const dict = i18n[currentLang];
+        
+        // Update text content
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (dict && dict[key]) el.innerHTML = dict[key];
+        });
+
+        // Update placeholders
+        const fName = document.getElementById('f-name');
+        if (fName && dict['p.name']) fName.placeholder = dict['p.name'];
+        const fEmail = document.getElementById('f-email');
+        if (fEmail && dict['p.email']) fEmail.placeholder = dict['p.email'];
+        const fMsg = document.getElementById('f-msg');
+        if (fMsg && dict['p.msg']) fMsg.placeholder = dict['p.msg'];
+
+        // Update buttons
+        const btnEn = document.getElementById('btn-en');
+        const btnSv = document.getElementById('btn-sv');
+        if (btnEn) btnEn.classList.toggle('active', currentLang === 'en');
+        if (btnSv) btnSv.classList.toggle('active', currentLang === 'sv');
+
+      } catch (e) {
+        console.error('Language switch error', e);
+      }
+    }
+
+    // Initialize Language
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('arceo_lang');
+      const params = new URLSearchParams(window.location.search);
+      const urlLang = params.get('lang');
+
+      if (urlLang === 'sv' || urlLang === 'en') {
+        setLang(urlLang);
+      } else if (saved) {
+        setLang(saved);
+      } else {
+        setLang('en'); // Default to English
+      }
+    });
   </script>
 
-  <!-- Structured Data for Google -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
