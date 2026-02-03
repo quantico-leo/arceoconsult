@@ -10,7 +10,7 @@
     /* --- ARCEO PREMIUM THEME: DEEP BLUE & GOLD --- */
     :root { 
         --gold: #D4AF37; 
-        --gold-muted: #C5A028; /* Lite mer dämpad guld för elegans */
+        --gold-muted: #C5A028; 
         --blue-bg: #0B1120;      
         --blue-card: #151e32;    
         --text-main: #ffffff;
@@ -48,9 +48,8 @@
     }
     .header-inner { display: flex; justify-content: space-between; align-items: center; width: 100%; }
 
-    /* --- LOGGA (MATCHAD MED 1-ON-1) --- */
+    /* --- LOGGA --- */
     .brand { display: flex; align-items: center; gap: 15px; }
-    /* Mer subtil hover-effekt för premiumkänsla */
     .logo-svg .shield-a { transition: all 0.5s ease; fill: #B38728; }
     .brand:hover .shield-a { fill: var(--gold); } 
     
@@ -84,12 +83,13 @@
         .lang-switcher { justify-content: center; border-left: none; padding-left: 0; margin-top: 15px; }
     }
 
-    /* --- HERO --- */
+    /* --- HERO (NY, LJUSARE BILD) --- */
     .hero { 
         padding: 160px 0 120px; 
         text-align: center; 
         position: relative;
         background-color: var(--blue-bg);
+        /* NY, LJUSARE BILDLÄNK: */
         background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2301&ixlib=rb-4.0.3'); 
         background-size: cover;
         background-position: center;
@@ -104,6 +104,7 @@
     .hero h2 { font-size: 52px; margin: 0 0 25px; line-height: 1.15; color: #fff; letter-spacing: -1px; }
     .hero-subtitle { max-width: 650px; margin: 0 auto 40px; font-size: 20px; color: #cbd5e1; font-weight: 300; }
     
+    /* --- KNAPPAR & TRUST SIGNAL --- */
     .btn { display: inline-block; padding: 16px 32px; background: var(--gold); color: #000; font-weight: 700; border-radius: 4px; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; border: none; cursor: pointer; transition: all 0.3s ease; }
     .btn:hover { background: #fff; box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); transform: translateY(-1px); }
     .btn-ghost { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #fff; margin-left: 10px; }
@@ -185,7 +186,7 @@
       <h1 data-i18n="hero.eyebrow">Guardian Consulting for SMEs & Private Clients</h1>
       <h2 data-i18n="hero.title">We act when others talk.</h2>
       <p class="hero-subtitle" data-i18n="hero.subtitle">
-        We execute <strong>Recovery</strong> of assets, protect your <strong>Reputation</strong>, and lead through <strong>Crisis</strong>.
+        We execute <strong style="color:#fff;">Recovery</strong> of assets, protect your <strong style="color:#fff;">Reputation</strong>, and lead through <strong style="color:#fff;">Crisis</strong>.
       </p>
       <div class="cta">
         <a href="#contact" class="btn" data-i18n="btn.contact">Initiate Confidential Assessment</a>
@@ -224,21 +225,21 @@
   <section id="pillars" class="section bg-alt">
     <div class="container">
       <h2 data-i18n="pillars.title">What We Do</h2>
-      <p data-i18n="pillars.intro">Our operations are strictly focused on three critical levers:</p>
+      <p data-i18n="pillars.intro">Our operations are strictly focused on three critical levers for both companies and individuals.</p>
       <div class="grid">
         <article class="card">
           <h3 data-i18n="pillar1.t">Recovery</h3>
-          <p data-i18n="pillar1.d">We hunt down and recover locked assets. Corporate bad debt, investment fraud, or stalled capital.</p>
+          <p data-i18n="pillar1.d">We hunt down and recover locked assets. Corporate bad debt, investment fraud, or stalled capital – for businesses and private clients alike.</p>
           <em data-i18n="pillar1.out">Result: Cash back in your account.</em>
         </article>
         <article class="card">
           <h3 data-i18n="pillar2.t">Reputation</h3>
-          <p data-i18n="pillar2.d">We protect your name. We neutralize bad press, remove digital smear campaigns, and rebuild trust.</p>
+          <p data-i18n="pillar2.d">We protect your name. We neutralize bad press, remove digital smear campaigns, and rebuild trust for the company or the individual.</p>
           <em data-i18n="pillar2.out">Result: A clean slate and restored trust.</em>
         </article>
         <article class="card">
           <h3 data-i18n="pillar3.t">Management</h3>
-          <p data-i18n="pillar3.d">We take command. For SMEs, we act as Interim Leaders. For Private Clients, we provide Crisis Management.</p>
+          <p data-i18n="pillar3.d">We take command. For SMEs, we act as Interim Leaders. For Private Clients, we provide Crisis Management and strategic direction.</p>
           <em data-i18n="pillar3.out">Result: Control and operational excellence.</em>
         </article>
       </div>
@@ -338,7 +339,7 @@
         "nav.1on1": "1-on-1 Consulting", "nav.intent": "Intent", "nav.pillars": "Services", "nav.programs": "Programs", "nav.method": "Method", "nav.contact": "Contact",
         "hero.eyebrow": "Guardian Consulting for SMEs & Private Clients",
         "hero.title": "We act when others talk.",
-        "hero.subtitle": "We execute <strong>Recovery</strong> of assets, protect your <strong>Reputation</strong>, and lead through <strong>Crisis</strong>.",
+        "hero.subtitle": "We execute <strong style='color:#fff;'>Recovery</strong> of assets, protect your <strong style='color:#fff;'>Reputation</strong>, and lead through <strong style='color:#fff;'>Crisis</strong>.",
         "hero.trust": "Confidential • 24–48h Response",
         "btn.contact": "Initiate Confidential Assessment",
         "identity.title": "What We Are",
@@ -372,7 +373,7 @@
         "nav.1on1": "1-till-1 Rådgivning", "nav.intent": "Vårt Syfte", "nav.pillars": "Tjänster", "nav.programs": "Program", "nav.method": "Metod", "nav.contact": "Kontakt",
         "hero.eyebrow": "Strategisk partner för Företag & Privatpersoner",
         "hero.title": "Vi agerar där andra bara pratar.",
-        "hero.subtitle": "Vi återvinner <strong>låsta tillgångar</strong>, skyddar ditt <strong>rykte</strong> och leder genom <strong>kris</strong>.",
+        "hero.subtitle": "Vi återvinner <strong style='color:#fff;'>låsta tillgångar</strong>, skyddar ditt <strong style='color:#fff;'>rykte</strong> och leder genom <strong style='color:#fff;'>kris</strong>.",
         "hero.trust": "Konfidentiellt • 24–48h återkoppling",
         "btn.contact": "Boka Konfidentiell Bedömning",
         "identity.title": "Vilka vi är",
