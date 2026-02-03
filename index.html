@@ -6,172 +6,145 @@
   <title>ArceoConsult - Recovery, Reputation, Management</title>
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
-  <link rel="canonical" href="https://www.arceoconsult.com/">
-  <link rel="alternate" hreflang="en" href="https://www.arceoconsult.com/?lang=en">
-  <link rel="alternate" hreflang="sv" href="https://www.arceoconsult.com/?lang=sv">
-
-  <meta property="og:site_name" content="ArceoConsult">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.arceoconsult.com/">
-  <meta property="og:title" content="ArceoConsult – Guardian Consulting">
-  <meta property="og:description" content="We recover Assets, protect Reputation, and execute Management. For SMEs & Private Clients.">
-  <meta property="og:image" content="https://www.arceoconsult.com/og-image.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ArceoConsult – Recovery. Reputation. Management.">
-  <meta name="twitter:description" content="We act when others talk. Asset recovery and crisis management for companies and individuals.">
-  <meta name="twitter:image" content="https://www.arceoconsult.com/og-image.jpg">
-
-  <meta name="description" content="ArceoConsult - Guardian consulting for SMEs and Private Clients. We specialize in Asset Recovery, Reputation Defense, and Crisis Management.">
-  <meta name="robots" content="index, follow">
-   
-  <link rel="stylesheet" href="style.css?v=final"> 
-   
+  
   <style>
-    /* --- NYA ARCEO EFFEKTER --- */
-    @keyframes metallicShine {
-        0% { transform: translateX(-150%) skewX(-25deg); opacity: 0; }
-        50% { opacity: 0.5; }
-        100% { transform: translateX(250%) skewX(-25deg); opacity: 0; }
-    }
-    .guardian-shield {
-        overflow: visible; transition: transform 0.4s; cursor: pointer;
-    }
-    .guardian-shield path, .guardian-shield text { transition: all 0.4s ease; }
-    .brand:hover .guardian-shield { transform: scale(1.05); filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)); }
-    .brand:hover .shield-accent { fill: #FFD700 !important; text-shadow: 0 0 5px rgba(255, 215, 0, 0.8); }
-    .brand:hover .shield-motto-bg { fill: #1a1a1a !important; stroke: #D4AF37; }
-    .shine-layer { fill: url(#shineGradient); opacity: 0; }
-    .brand:hover .shine-layer { animation: metallicShine 1.2s ease-in-out infinite; }
-    /* --- HEADER & NAV OPTIMERING --- */
+    /* --- GRUNDLÄGGANDE STIL --- */
+    :root { --gold: #D4AF37; --dark: #0a0a0a; --light: #f4f4f4; --gray: #888; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #000; color: #fff; line-height: 1.6; padding-top: 80px; }
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    h1, h2, h3 { font-weight: 700; letter-spacing: -0.5px; margin-top: 0; }
+    p { margin-bottom: 20px; color: #ccc; }
     
-    /* Tajtare spacing i headern för att minska totalhöjden */
-    .header-inner {
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
+    /* --- CONTAINER --- */
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; position: relative; }
+    .narrow { max-width: 800px; }
 
-    /* Navlänkar: Grundstil */
-    .main-nav a {
-        position: relative;
-        text-decoration: none;
-        padding-bottom: 5px; /* Plats för understrykningen */
-        transition: color 0.3s ease;
-    }
+    /* --- HEADER & NAV --- */
+    .site-header { position: fixed; top: 0; left: 0; width: 100%; background: rgba(10, 10, 10, 0.95); border-bottom: 1px solid #333; z-index: 1000; height: 80px; display: flex; align-items: center; backdrop-filter: blur(10px); }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; width: 100%; }
 
-    /* --- PREMIUM GULD-UNDERLINE PÅ HOVER --- */
-    /* Skapar strecket */
-    .main-nav a::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0); /* Dold från början */
-        height: 2px; /* Guldstreckets tjocklek */
-        bottom: 0;
-        left: 0;
-        background-color: #D4AF37; /* Guld */
-        transform-origin: bottom right;
-        transition: transform 0.3s ease-out;
-    }
-    /* Animerar fram strecket vid hover */
-    .main-nav a:hover::after,
-    .main-nav a:focus::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-    }
+    /* LOGGA & EFFEKTER */
+    .brand { display: flex; align-items: center; gap: 15px; }
     
-    /* --- SPRÅK-KNAPPAR (Undantag från underline) --- */
-    .lang-btn { background:none; border:1px solid rgba(255,255,255,0.3); color:#fff; padding:5px 10px; cursor:pointer; font-size:12px; margin-left:5px; border-radius:3px; transition:0.3s; position: relative; }
-    .lang-btn:hover { border-color:#D4AF37; color:#D4AF37; }
-    .lang-btn.active { background:#D4AF37; color:#000; border-color:#D4AF37; font-weight:bold; }
-    .lang-switcher { display:flex; align-items:center; margin-left:20px; }
-    /* Tar bort underline-effekten på språkknapparna */
-    .lang-switcher button::after { display: none; }
+    /* Shield Hover Effect - The Glow */
+    .logo-svg .shield-a { transition: all 0.4s ease; fill: #B38728; }
+    .brand:hover .shield-a { 
+        fill: #FFD700; 
+        filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8)); /* GLOW EFFEKT */
+    }
+    .brand:hover .shield-bg { stroke: #FFD700; }
     
+    .logo-text { font-weight: 800; font-size: 20px; letter-spacing: 1px; color: #fff; text-transform: uppercase; line-height: 1; }
+    .logo-text span { color: var(--gold); }
+    .logo-sub { font-size: 10px; letter-spacing: 2px; color: #666; margin-top: 3px; display: block; font-weight: 400; }
+
+    /* MENY */
+    .main-nav ul { display: flex; gap: 25px; align-items: center; }
+    .main-nav a { font-size: 14px; font-weight: 500; letter-spacing: 0.5px; opacity: 0.8; position: relative; }
+    .main-nav a:hover { color: var(--gold); opacity: 1; }
+    .main-nav a::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -5px; left: 0; background: var(--gold); transition: 0.3s; }
+    .main-nav a:hover::after { width: 100%; }
+    
+    /* SPRÅK KNAPPAR */
+    .lang-switcher { display: flex; gap: 5px; margin-left: 15px; border-left: 1px solid #444; padding-left: 15px; }
+    .lang-btn { background: none; border: 1px solid #444; color: #888; padding: 4px 8px; font-size: 11px; cursor: pointer; border-radius: 4px; font-weight: bold; transition: 0.3s; }
+    .lang-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .lang-btn.active { background: var(--gold); color: #000; border-color: var(--gold); }
+
+    /* MOBIL MENY */
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+    .nav-toggle-line { display: block; width: 25px; height: 2px; background: #fff; margin: 5px 0; }
     @media (max-width: 900px) {
-        .lang-switcher { margin: 20px 0; justify-content: center; }
+        .nav-toggle { display: block; }
+        .main-nav { position: absolute; top: 80px; left: 0; width: 100%; background: #000; flex-direction: column; display: none; padding: 20px 0; border-bottom: 1px solid var(--gold); }
+        .main-nav.open { display: flex; }
+        .main-nav ul { flex-direction: column; gap: 20px; text-align: center; }
+        .lang-switcher { justify-content: center; border-left: none; padding-left: 0; margin-top: 10px; }
+        .hero h2 { font-size: 36px !important; }
     }
 
-    /* --- PREMIUM-JUSTERINGAR (LUFT & RYMD I SEKTIONER) --- */
-    .section {
-        padding-top: 100px !important;
-        padding-bottom: 100px !important;
-    }
-    p {
-        line-height: 1.8 !important;
-        margin-bottom: 24px !important;
-    }
-    h2 {
-        margin-bottom: 40px !important;
-    }
-    .hero-inner {
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
-    .card {
-        padding: 40px !important;
-    }
-    @media (max-width: 768px) {
-        .section { padding-top: 60px !important; padding-bottom: 60px !important; }
-        .card { padding: 25px !important; }
-    }
+    /* --- HERO --- */
+    .hero { padding: 100px 0; text-align: center; background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%); }
+    .hero h1 { font-size: 13px; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; }
+    .hero h2 { font-size: 56px; margin: 0 0 25px; line-height: 1.1; }
+    .hero-subtitle { max-width: 700px; margin: 0 auto 40px; font-size: 20px; color: #ccc; }
+    
+    .btn { display: inline-block; padding: 14px 35px; background: var(--gold); color: #000; font-weight: bold; border-radius: 4px; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; border: none; cursor: pointer; }
+    .btn:hover { background: #fff; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); transform: translateY(-2px); }
+    .btn-ghost { background: transparent; border: 1px solid #444; color: #fff; margin-left: 10px; }
+    .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.1); color: #fff; transform: translateY(-2px); box-shadow: none; }
 
-    /* Justering för logga och text */
-    .logo-wrap {
-        display: flex;
-        align-items: center;
-    }
-    .logo {
-        margin-right: 15px;
-        min-width: 55px; 
-    }
-    .navbar-slogan {
-        margin-top: 0 !important;
-        text-align: left;
-    }
+    /* --- SEKTIONER --- */
+    .section { padding: 100px 0; border-top: 1px solid #222; }
+    .gradient-alt { background: linear-gradient(180deg, #050505 0%, #111 100%); }
+    
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+    
+    /* CARDS */
+    .card { background: rgba(255,255,255,0.03); padding: 40px; border: 1px solid #222; border-radius: 8px; transition: 0.3s; }
+    .card:hover { border-color: var(--gold); transform: translateY(-5px); background: rgba(255,255,255,0.05); }
+    .card h3 { color: var(--gold); font-size: 22px; margin-bottom: 15px; }
+    .card em { color: #fff; font-style: normal; font-size: 14px; display: block; margin-top: 15px; border-top: 1px solid #333; padding-top: 15px; opacity: 0.7; }
+
+    /* IDENTITY & IMG */
+    .identity-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .identity-photo img { width: 100%; border-radius: 8px; filter: grayscale(100%); transition: 0.5s; }
+    .identity-photo img:hover { filter: grayscale(0%); }
+    @media (max-width: 800px) { .identity-grid { grid-template-columns: 1fr; } }
+
+    /* FORM */
+    .form-grid { max-width: 600px; margin: 0 auto; }
+    input, textarea { width: 100%; padding: 15px; margin-bottom: 20px; background: #000; border: 1px solid #333; color: #fff; font-family: inherit; border-radius: 4px; box-sizing: border-box; }
+    input:focus, textarea:focus { outline: none; border-color: var(--gold); }
+    
+    /* FOOTER */
+    footer { padding: 50px 0; text-align: center; font-size: 13px; color: #555; border-top: 1px solid #222; }
+    .footer-link { color: #777; margin-left: 10px; }
   </style>
-
 </head>
 
 <body id="top">
 
-  <header class="site-header" role="banner">
-    <div class="container header-inner" style="display: flex; justify-content: space-between; align-items: center;">
+  <header class="site-header">
+    <div class="container header-inner">
       
-      <a class="brand" href="/" aria-label="ArceoConsult Home" style="margin-right: 40px; text-decoration: none; display: flex; align-items: center;">
-        
-        <svg width="40" height="50" viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 15px;">
-            <path d="M50 5 L10 20 V55 C10 80 28 98 50 105 C72 98 90 80 90 55 V20 L50 5 Z" fill="#1a1a1a" stroke="#D4AF37" stroke-width="3" />
-            <path d="M50 25 L35 60 L50 50 Z" fill="#B38728" />
-            <path d="M50 25 L65 60 L50 50 Z" fill="#D4AF37" />
+      <a class="brand" href="/">
+        <svg class="logo-svg" width="50" height="60" viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="ironGrad" x1="0" y1="0" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#333" />
+                    <stop offset="100%" stop-color="#000" />
+                </linearGradient>
+            </defs>
+            <path class="shield-bg" d="M50 5 L10 20 V55 C10 80 28 98 50 105 C72 98 90 80 90 55 V20 L50 5 Z" fill="url(#ironGrad)" stroke="#555" stroke-width="2" />
+            
+            <path class="shield-a" d="M50 25 L25 80 H38 L44 65 H56 L62 80 H75 L50 25 Z M50 42 L54 55 H46 L50 42 Z" fill="#B38728" />
         </svg>
 
-        <div style="display: flex; flex-direction: column;">
-            <span style="font-weight:bold; font-size:20px; color:#fff; letter-spacing: 2px;">ARCEO</span>
-            <span style="font-size: 10px; color: rgba(255,255,255,0.6); letter-spacing: 1px;">CONSULTING</span>
+        <div style="display:flex; flex-direction:column;">
+            <div class="logo-text">ARCEOCONSULT</div>
+            <span class="logo-sub">RECOVERY • REPUTATION • MANAGEMENT</span>
         </div>
       </a>
 
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="primary-nav" aria-expanded="false">
-        <span class="nav-toggle-box" aria-hidden="true">
-          <span class="nav-toggle-line"></span>
-          <span class="nav-toggle-line"></span>
-          <span class="nav-toggle-line"></span>
-        </span>
+      <button class="nav-toggle" aria-label="Menu">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
       </button>
 
-      <nav class="main-nav" id="primary-nav" role="navigation">
-        <ul style="display: flex; align-items: center; margin: 0; padding: 0; list-style: none; gap: 20px;">
+      <nav class="main-nav">
+        <ul>
           <li><a href="1on1-consulting.html" data-i18n="nav.1on1">1-on-1 Consulting</a></li>
           <li><a href="#intent" data-i18n="nav.intent">Intent</a></li>
-          <li><a href="#pillars" data-i18n="nav.pillars">Pillars</a></li>
+          <li><a href="#pillars" data-i18n="nav.pillars">Services</a></li>
           <li><a href="#programs" data-i18n="nav.programs">Programs</a></li>
+          <li><a href="#method" data-i18n="nav.method">Method</a></li>
           <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
-            
-          <li class="lang-switcher" style="margin-left: 20px;">
+          
+          <li class="lang-switcher">
              <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
              <button class="lang-btn" id="btn-sv" onclick="setLang('sv')">SV</button>
           </li>
@@ -179,28 +152,28 @@
       </nav>
     </div>
   </header>
-  <section class="hero" role="region" aria-label="Intro">
+
+  <section class="hero">
     <div class="container hero-inner">
-      <h1 class="hero-eyebrow" data-i18n="hero.eyebrow">Guardian Consulting for SMEs & Private Clients</h1>
+      <h1 data-i18n="hero.eyebrow">Guardian Consulting for SMEs & Private Clients</h1>
       <h2 data-i18n="hero.title">We act when others talk.</h2>
       <p class="hero-subtitle" data-i18n="hero.subtitle">
         We execute <strong>Recovery</strong> of assets, protect your <strong>Reputation</strong>, and take command of <strong>Management</strong> – for both companies and individuals.
       </p>
       <div class="cta">
         <a href="#contact" class="btn" data-i18n="btn.contact">Initiate Assessment</a>
-        <a href="https://www.linkedin.com/in/leocelija" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/leocelija" target="_blank" class="btn btn-ghost">LinkedIn</a>
       </div>
     </div>
-    <div class="hero-media" role="presentation" aria-hidden="true"></div>
   </section>
 
-  <section id="identity" class="section gradient-alt" aria-labelledby="identity-title">
+  <section id="identity" class="section gradient-alt">
     <div class="container identity-grid">
       <div class="identity-photo">
-        <img src="leo.webp.webp" alt="Leo Riccardo Celija – Founder of ArceoConsult" loading="lazy" style="border-radius:16px; display:block; margin:0 auto; width:100%; max-width:560px; height:auto;">
+         <img src="leo.webp.webp" alt="Leo Riccardo Celija" loading="lazy">
       </div>
       <div class="identity-text">
-        <h2 id="identity-title" data-i18n="identity.title">What We Are</h2>
+        <h2 data-i18n="identity.title">What We Are</h2>
         <p data-i18n="identity.text">
           ArceoConsult is not a traditional advisory firm. We are a <strong>tactical unit</strong> for business owners and private individuals.
           We step in when you need to recover locked capital, defend your personal or corporate name, or fix broken leadership.
@@ -211,264 +184,223 @@
     </div>
   </section>
 
-  <section id="intent" class="section" aria-labelledby="intent-title">
+  <section id="intent" class="section">
     <div class="container narrow">
-      <h2 id="intent-title" data-i18n="intent.title">Our Intent</h2>
-       
-      <p class="lead" data-i18n="intent.lead">
-        <strong>Our Mission:</strong>
-        To return <strong>Control</strong> to the owner.
-      </p>
-      <p data-i18n="intent.p1">
-        <strong>What we intend to do:</strong>
-        We exist to solve the problems that threaten your value. 
-        Whether it is money stuck in bad deals (Recovery), a digital attack on your standing (Reputation), or a crisis that needs leadership (Management).
-      </p>
-      <p data-i18n="intent.p2">
-        <strong>How we do it:</strong>
-        Shoulder-to-shoulder with you. We execute the hard decisions. We handle the conflict. We secure the cash.
-      </p>
-      <p><em data-i18n="intent.quote">"We clear the mess so you can run the business."</em></p>
+      <h2 data-i18n="intent.title">Our Intent</h2>
+      <p style="font-size:20px; color:#fff;" data-i18n="intent.lead"><strong>Our Mission:</strong> To return <strong>Control</strong> to the owner.</p>
+      <p data-i18n="intent.p1"><strong>What we intend to do:</strong> We exist to solve the problems that threaten your value. Whether it is money stuck in bad deals (Recovery), a digital attack on your standing (Reputation), or a crisis that needs leadership (Management).</p>
+      <p data-i18n="intent.p2"><strong>How we do it:</strong> Shoulder-to-shoulder with you. We execute the hard decisions. We handle the conflict. We secure the cash.</p>
+      <p style="border-left: 2px solid var(--gold); padding-left: 20px; margin-top:30px;"><em data-i18n="intent.quote">"We clear the mess so you can run the business."</em></p>
     </div>
   </section>
 
-  <section id="pillars" class="section gradient-alt" aria-labelledby="pillars-title">
+  <section id="pillars" class="section gradient-alt">
     <div class="container">
-      <h2 id="pillars-title" data-i18n="pillars.title">What We Do</h2>
-
-      <p class="lead" data-i18n="pillars.intro">
-        Our operations are strictly focused on three critical levers for both companies and individuals.
-      </p>
-
-      <div class="grid cards-3">
+      <h2 data-i18n="pillars.title">What We Do</h2>
+      <p data-i18n="pillars.intro">Our operations are strictly focused on three critical levers:</p>
+      
+      <div class="grid">
         <article class="card">
           <h3 data-i18n="pillar1.t">Recovery</h3>
           <p data-i18n="pillar1.d">We hunt down and recover locked assets. Corporate bad debt, investment fraud, or stalled capital – for businesses and private clients alike.</p>
-          <p><em data-i18n="pillar1.out">Result: Cash back in your account.</em></p>
+          <em data-i18n="pillar1.out">Result: Cash back in your account.</em>
         </article>
-
         <article class="card">
           <h3 data-i18n="pillar2.t">Reputation</h3>
           <p data-i18n="pillar2.d">We protect your name. We neutralize bad press, remove digital smear campaigns, and rebuild trust for the company or the individual.</p>
-          <p><em data-i18n="pillar2.out">Result: A clean slate and restored trust.</em></p>
+          <em data-i18n="pillar2.out">Result: A clean slate and restored trust.</em>
         </article>
-
         <article class="card">
           <h3 data-i18n="pillar3.t">Management</h3>
           <p data-i18n="pillar3.d">We take command. For SMEs, we act as Interim Leaders. For Private Clients, we provide Crisis Management and strategic direction.</p>
-          <p><em data-i18n="pillar3.out">Result: Control and operational excellence.</em></p>
+          <em data-i18n="pillar3.out">Result: Control and operational excellence.</em>
         </article>
       </div>
     </div>
   </section>
 
-  <section id="programs" class="section" aria-labelledby="programs-title">
+  <section id="programs" class="section">
     <div class="container">
-      <h2 id="programs-title" data-i18n="programs.title">Our Programs</h2>
-
-      <p class="lead" data-i18n="programs.intro">Direct action packages designed for speed.</p>
-      <div class="grid cards-3">
+      <h2 data-i18n="programs.title">Our Programs</h2>
+      <p data-i18n="programs.intro">Direct action packages designed for speed.</p>
+      <div class="grid">
         <article class="card">
           <h3 data-i18n="prog1.t">Guardian Scan</h3>
           <p data-i18n="prog1.d">48-hour tactical diagnostic. We analyze your Recovery potential, Reputation risks, and Management gaps.</p>
-          <p><em data-i18n="prog1.out">Output: A clear Battle Plan.</em></p>
+          <em data-i18n="prog1.out">Output: A clear Battle Plan.</em>
         </article>
         <article class="card">
           <h3 data-i18n="prog2.t">Guardian Reset</h3>
           <p data-i18n="prog2.d">1–2 months of execution. We recover the assets, clean the reputation, and reboot operations.</p>
-          <p><em data-i18n="prog2.out">Output: Stabilized Operations.</em></p>
+          <em data-i18n="prog2.out">Output: Stabilized Operations.</em>
         </article>
         <article class="card">
           <h3 data-i18n="prog3.t">Guardian Strategy</h3>
           <p data-i18n="prog3.d">Long-term protection. We stay on as advisors to ensure you remain untouchable and profitable.</p>
-          <p><em data-i18n="prog3.out">Output: Long-term Independence.</em></p>
+          <em data-i18n="prog3.out">Output: Long-term Independence.</em>
         </article>
       </div>
     </div>
   </section>
 
-  <section id="method" class="section" aria-labelledby="method-title">
+  <section id="method" class="section gradient-alt">
     <div class="container narrow">
-      <h2 id="method-title" data-i18n="method.title">The Arceo Method™</h2>
-
-      <p class="lead" data-i18n="method.intro">Analyze. Act. Secure.</p>
+      <h2 data-i18n="method.title">The Arceo Method™</h2>
+      <p style="font-size: 20px; color: #fff;" data-i18n="method.intro">Analyze. Act. Secure.</p>
       <p data-i18n="method.text">We do not believe in fluff. We identify where the money is stuck (Recovery), who is attacking you (Reputation), and why the machine isn't working (Management). Then we fix it. It is that simple.</p>
     </div>
   </section>
 
-  <section id="contact" class="section" aria-labelledby="contact-title">
-    <div class="container">
-      <h2 id="contact-title" data-i18n="contact.title">Contact</h2>
-
-      <p class="lead" data-i18n="contact.lead">Direct line to the operators.</p>
-       
-      <form class="contact-form" action="https://formspree.io/f/mwpnynjz" method="POST">
-        <input type="text" name="_gotcha" style="display:none">
-        
-        <div class="form-grid">
-          <input type="text" name="name" id="f-name" placeholder="Name" required>
-          <input type="email" name="email" id="f-email" placeholder="Email" required>
-          <textarea name="message" id="f-msg" placeholder="What is the situation? (Confidential)..." rows="5" required></textarea>
-          <button type="submit" class="btn" data-i18n="btn.send">Send for Review</button>
-        </div>
+  <section id="contact" class="section">
+    <div class="container narrow">
+      <h2 data-i18n="contact.title">Contact</h2>
+      <p data-i18n="contact.lead">Direct line to the operators.</p>
+      <form class="form-grid" action="https://formspree.io/f/mwpnynjz" method="POST">
+        <input type="text" id="f-name" name="name" placeholder="Name" required>
+        <input type="email" id="f-email" name="email" placeholder="Email" required>
+        <textarea id="f-msg" name="message" rows="5" placeholder="What is the situation? (Confidential)..." required></textarea>
+        <button type="submit" class="btn" data-i18n="btn.send">Send for Review</button>
       </form>
     </div>
   </section>
 
-  <section id="consulting" class="section gradient-alt" aria-labelledby="consulting-title">
+  <section id="consulting" class="section gradient-alt">
     <div class="container narrow">
-      <h2 id="consulting-title" data-i18n="cons.title">1-on-1 for Leaders & Individuals</h2>
-      <p class="lead" data-i18n="cons.lead">
-        Sometimes you just need someone in your corner who knows the game. 
-        Direct, unfiltered advisory for leaders and private clients under pressure.
-      </p>
-
-      <div class="grid cards-3">
-        <article class="card">
-          <h3 data-i18n="cons1.t">Crisis Comms</h3>
-          <p data-i18n="cons1.d">Immediate support when the storm hits. We tell you exactly what to say and what to silence.</p>
-        </article>
-
-        <article class="card">
-          <h3 data-i18n="cons2.t">Asset Hunting</h3>
-          <p data-i18n="cons2.d">We define the strategy to track down and recover what is yours – corporate or private.</p>
-        </article>
-
-        <article class="card">
-          <h3 data-i18n="cons3.t">Strategic Leadership</h3>
-          <p data-i18n="cons3.d">We step in to lead the troops or manage your personal crisis when you need to focus on strategy.</p>
-        </article>
+      <h2 data-i18n="cons.title">1-on-1 for Leaders & Individuals</h2>
+      <p data-i18n="cons.lead">Sometimes you just need someone in your corner who knows the game. Direct, unfiltered advisory.</p>
+      <div class="grid" style="margin-top: 40px;">
+        <div>
+            <h3 data-i18n="cons1.t" style="color:#fff; font-size:16px;">Crisis Comms</h3>
+            <p data-i18n="cons1.d" style="font-size:14px;">Immediate support. What to say, what to silence.</p>
+        </div>
+        <div>
+            <h3 data-i18n="cons2.t" style="color:#fff; font-size:16px;">Asset Hunting</h3>
+            <p data-i18n="cons2.d" style="font-size:14px;">Strategy to track down and recover what is yours.</p>
+        </div>
+        <div>
+            <h3 data-i18n="cons3.t" style="color:#fff; font-size:16px;">Strategic Leadership</h3>
+            <p data-i18n="cons3.d" style="font-size:14px;">Personal support when the pressure is high.</p>
+        </div>
       </div>
-
-      <div class="cta" style="justify-content:center; margin-top:40px;">
-        <a href="1on1-consulting.html" class="btn" data-i18n="btn.full">Full Advisory Details</a>
-        <a href="https://wa.me/46700193462" target="_blank" class="btn btn-ghost">WhatsApp +46 700 193 462</a>
-        <a href="mailto:info@arceoconsult.com" class="btn btn-ghost">Email Us</a>
+      <div style="text-align:center; margin-top:40px;">
+        <a href="1on1-consulting.html" class="btn btn-ghost" data-i18n="btn.full">Full Advisory Details</a>
       </div>
-
     </div>
   </section>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer-inner">
-      <div>
-        © <span id="year"></span> ArceoConsult OÜ. <span data-i18n="footer.rights">All rights reserved.</span>
-        <span aria-hidden="true"> • </span>
-        <a href="/privacy-policy.html" class="footer-link" aria-label="Privacy Policy" data-i18n="footer.privacy">Privacy Policy</a>
-      </div>
+  <footer>
+    <div class="container">
+      © <span id="year"></span> ArceoConsult OÜ. <span data-i18n="footer.rights">All rights reserved.</span>
+      <a href="/privacy-policy.html" class="footer-link" data-i18n="footer.privacy">Privacy Policy</a>
     </div>
   </footer>
 
- <script>
+  <script>
     // 1. Årtal
-    const yearEl = document.getElementById('year');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
 
     // 2. Mobilmeny
     const navToggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.main-nav');
-    if (navToggle && nav) {
-      navToggle.addEventListener('click', () => {
-        const isOpen = nav.classList.toggle('open');
-        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        document.body.classList.toggle('nav-open', isOpen);
-      });
-      document.querySelectorAll('.main-nav a').forEach(link => {
-        link.addEventListener('click', () => {
-          nav.classList.remove('open');
-          navToggle.setAttribute('aria-expanded', 'false');
-          document.body.classList.remove('nav-open');
-        });
-      });
-    }
+    navToggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+    });
+    // Stäng meny vid klick
+    document.querySelectorAll('.main-nav a').forEach(link => {
+        link.addEventListener('click', () => { nav.classList.remove('open'); });
+    });
 
-    // 3. SPRÅKHANTERING (EN / SV)
+    // 3. SPRÅKHANTERING (ALLA TEXER)
     const i18n = {
       en: {
-        "nav.1on1": "1-on-1 Consulting", "nav.intent": "Intent", "nav.pillars": "Services", "nav.programs": "Programs", "nav.contact": "Contact",
+        "nav.1on1": "1-on-1 Consulting", "nav.intent": "Intent", "nav.pillars": "Services", "nav.programs": "Programs", "nav.method": "Method", "nav.contact": "Contact",
         "hero.eyebrow": "Guardian Consulting for SMEs & Private Clients",
         "hero.title": "We act when others talk.",
         "hero.subtitle": "We execute <strong>Recovery</strong> of assets, protect your <strong>Reputation</strong>, and take command of <strong>Management</strong>.",
         "btn.contact": "Initiate Assessment",
-        "identity.title": "Who We Are",
-        "identity.text": "ArceoConsult is a tactical unit for business owners and private individuals. We recover locked capital, defend reputations, and fix broken leadership. No fluff, just results.",
+        "identity.title": "What We Are",
+        "identity.text": "ArceoConsult is not a traditional advisory firm. We are a <strong>tactical unit</strong> for business owners and private individuals. We step in when you need to recover locked capital, defend your personal or corporate name, or fix broken leadership. We don't deliver thick reports; we deliver results.",
         "intent.title": "Our Intent",
-        "intent.lead": "To return Control to the owner.",
-        "intent.p1": "We solve problems that threaten your value.",
-        "intent.p2": "We execute the hard decisions and secure the cash.",
+        "intent.lead": "<strong>Our Mission:</strong> To return <strong>Control</strong> to the owner.",
+        "intent.p1": "<strong>What we intend to do:</strong> We exist to solve the problems that threaten your value. Whether it is money stuck in bad deals (Recovery), a digital attack on your standing (Reputation), or a crisis that needs leadership (Management).",
+        "intent.p2": "<strong>How we do it:</strong> Shoulder-to-shoulder with you. We execute the hard decisions. We handle the conflict. We secure the cash.",
         "intent.quote": "\"We clear the mess so you can run the business.\"",
         "pillars.title": "What We Do",
-        "pillars.intro": "Strictly focused on three critical levers:",
-        "pillar1.t": "Recovery", "pillar1.d": "We hunt down and recover locked assets.", "pillar1.out": "Result: Cash back.",
-        "pillar2.t": "Reputation", "pillar2.d": "We protect your name and neutralize bad press.", "pillar2.out": "Result: Restored trust.",
-        "pillar3.t": "Management", "pillar3.d": "We take command as interim leaders or crisis managers.", "pillar3.out": "Result: Operational control.",
+        "pillars.intro": "Our operations are strictly focused on three critical levers for both companies and individuals.",
+        "pillar1.t": "Recovery", "pillar1.d": "We hunt down and recover locked assets. Corporate bad debt, investment fraud, or stalled capital – for businesses and private clients alike.", "pillar1.out": "Result: Cash back in your account.",
+        "pillar2.t": "Reputation", "pillar2.d": "We protect your name. We neutralize bad press, remove digital smear campaigns, and rebuild trust for the company or the individual.", "pillar2.out": "Result: A clean slate and restored trust.",
+        "pillar3.t": "Management", "pillar3.d": "We take command. For SMEs, we act as Interim Leaders. For Private Clients, we provide Crisis Management and strategic direction.", "pillar3.out": "Result: Control and operational excellence.",
         "programs.title": "Our Programs",
-        "programs.intro": "Direct action packages.",
-        "prog1.t": "Guardian Scan", "prog1.d": "48-hour tactical diagnostic.", "prog1.out": "Output: Battle Plan.",
-        "prog2.t": "Guardian Reset", "prog2.d": "Execution and stabilization.", "prog2.out": "Output: Stabilized Ops.",
-        "prog3.t": "Guardian Strategy", "prog3.d": "Long-term protection.", "prog3.out": "Output: Independence.",
-        "method.title": "The Arceo Method", "method.intro": "Analyze. Act. Secure.", "method.text": "Identify the problem. Fix it. Simple.",
-        "contact.title": "Contact", "contact.lead": "Direct line to the operators.", "btn.send": "Send",
-        "p.name": "Name", "p.email": "Email", "p.msg": "Confidential Message...",
-        "cons.title": "1-on-1 Advisory", "cons.lead": "Direct, unfiltered advice.", "cons1.t": "Crisis Comms", "cons1.d": "What to say, when to say it.", "cons2.t": "Asset Hunting", "cons2.d": "Strategy to recover what is yours.", "cons3.t": "Leadership", "cons3.d": "Support when the pressure is high.", "btn.full": "View Details",
+        "programs.intro": "Direct action packages designed for speed.",
+        "prog1.t": "Guardian Scan", "prog1.d": "48-hour tactical diagnostic. We analyze your Recovery potential, Reputation risks, and Management gaps.", "prog1.out": "Output: A clear Battle Plan.",
+        "prog2.t": "Guardian Reset", "prog2.d": "1–2 months of execution. We recover the assets, clean the reputation, and reboot operations.", "prog2.out": "Output: Stabilized Operations.",
+        "prog3.t": "Guardian Strategy", "prog3.d": "Long-term protection. We stay on as advisors to ensure you remain untouchable and profitable.", "prog3.out": "Output: Long-term Independence.",
+        "method.title": "The Arceo Method™", "method.intro": "Analyze. Act. Secure.", "method.text": "We do not believe in fluff. We identify where the money is stuck (Recovery), who is attacking you (Reputation), and why the machine isn't working (Management). Then we fix it. It is that simple.",
+        "contact.title": "Contact", "contact.lead": "Direct line to the operators.", "btn.send": "Send for Review",
+        "p.name": "Name", "p.email": "Email", "p.msg": "What is the situation? (Confidential)...",
+        "cons.title": "1-on-1 for Leaders & Individuals", "cons.lead": "Sometimes you just need someone in your corner who knows the game. Direct, unfiltered advisory.",
+        "cons1.t": "Crisis Comms", "cons1.d": "Immediate support when the storm hits. What to say, what to silence.",
+        "cons2.t": "Asset Hunting", "cons2.d": "Strategy to track down and recover what is yours.",
+        "cons3.t": "Strategic Leadership", "cons3.d": "Personal support when the pressure is high.",
+        "btn.full": "Full Advisory Details",
         "footer.rights": "All rights reserved.", "footer.privacy": "Privacy Policy"
       },
       sv: {
-        "nav.1on1": "1-till-1 Rådgivning", "nav.intent": "Vårt Syfte", "nav.pillars": "Tjänster", "nav.programs": "Program", "nav.contact": "Kontakt",
+        "nav.1on1": "1-till-1 Rådgivning", "nav.intent": "Vårt Syfte", "nav.pillars": "Tjänster", "nav.programs": "Program", "nav.method": "Metod", "nav.contact": "Kontakt",
         "hero.eyebrow": "Strategisk partner för Företag & Privatpersoner",
         "hero.title": "Vi agerar där andra bara pratar.",
-        "hero.subtitle": "Vi specialiserar oss på <strong>Recovery</strong> (återvinning), <strong>Reputation</strong> (rykte) och <strong>Management</strong> (krishantering).",
+        "hero.subtitle": "Vi specialiserar oss på <strong>Recovery</strong> (återvinning av låsta tillgångar), <strong>Reputation</strong> (rykteshantering) och <strong>Management</strong> (krishantering och ledning).",
         "btn.contact": "Kontakta Oss",
-        "identity.title": "Vilka Vi Är",
-        "identity.text": "ArceoConsult är en operativ enhet för ägare och privatpersoner. Vi återvinner låst kapital, försvarar rykten och hanterar ledarskapskriser. Inga tjocka rapporter, bara resultat.",
+        "identity.title": "Vilka vi är",
+        "identity.text": "ArceoConsult är inte en traditionell rådgivare. Vi är en <strong>operativ enhet</strong> som kliver in när läget är skarpt. Oavsett om det handlar om att få loss kapital från en låst investering, hantera ett mediadrev eller styra upp ett bolag i kris, så levererar vi resultat. Inga tjocka rapporter – bara handling.",
         "intent.title": "Vårt Uppdrag",
-        "intent.lead": "Att ge dig kontrollen tillbaka.",
-        "intent.p1": "Vi löser problemen som hotar dina värden.",
-        "intent.p2": "Vi tar de tuffa besluten och säkrar tillgångarna.",
-        "intent.quote": "\"Vi reder ut situationen så du kan fokusera framåt.\"",
+        "intent.lead": "<strong>Målet:</strong> Att ge dig kontrollen tillbaka.",
+        "intent.p1": "<strong>Vad vi gör:</strong> Vi löser problem som hotar dina värden. Pengar som fastnat, rykten som skadar eller ledarskap som brister.",
+        "intent.p2": "<strong>Hur vi jobbar:</strong> Sida vid sida med dig. Vi tar de tuffa förhandlingarna. Vi säkrar tillgångarna.",
+        "intent.quote": "\"Vi reder ut situationen så att du kan fokusera på framtiden.\"",
         "pillars.title": "Våra Tjänster",
-        "pillars.intro": "Fokus på tre områden:",
-        "pillar1.t": "Recovery", "pillar1.d": "Vi spårar och återvinner låsta tillgångar.", "pillar1.out": "Resultat: Pengar tillbaka.",
-        "pillar2.t": "Reputation", "pillar2.d": "Vi skyddar ditt namn och hanterar media.", "pillar2.out": "Resultat: Återupprättat förtroende.",
-        "pillar3.t": "Management", "pillar3.d": "Vi kliver in som interimschefer eller krishanterare.", "pillar3.out": "Resultat: Full kontroll.",
-        "programs.title": "Våra Program",
-        "programs.intro": "Tydliga åtgärdspaket.",
-        "prog1.t": "Guardian Scan", "prog1.d": "48-timmars diagnos och analys.", "prog1.out": "Du får: En handlingsplan.",
-        "prog2.t": "Guardian Reset", "prog2.d": "Genomförande och stabilisering.", "prog2.out": "Du får: Stabil verksamhet.",
-        "prog3.t": "Guardian Strategy", "prog3.d": "Långsiktig rådgivning.", "prog2.out": "Du får: Trygghet över tid.",
-        "method.title": "Arceo-Metoden", "method.intro": "Analysera. Agera. Säkra.", "method.text": "Hitta felet. Lös det. Klart.",
-        "contact.title": "Kontakt", "contact.lead": "Direktlinje för bedömning.", "btn.send": "Skicka",
-        "p.name": "Namn", "p.email": "E-post", "p.msg": "Beskriv ärendet konfidentiellt...",
-        "cons.title": "1-till-1 Rådgivning", "cons.lead": "Ofiltrerat stöd för ledare.", "cons1.t": "Kriskommunikation", "cons1.d": "Vad ska sägas och när?", "cons2.t": "Tillgångsanalys", "cons2.d": "Strategi för återvinning.", "cons3.t": "Ledarskap", "cons3.d": "Stöd under hög press.", "btn.full": "Läs Mer",
+        "pillars.intro": "Vi fokuserar strikt på tre områden:",
+        "pillar1.t": "Recovery", "pillar1.d": "Vi spårar och återvinner låsta tillgångar. Företagsskulder, investeringsbedrägerier eller låst kapital – vi har metoderna för att hämta hem det.", "pillar1.out": "Resultat: Likviditet.",
+        "pillar2.t": "Reputation", "pillar2.d": "Vi skyddar ditt namn. Vi neutraliserar negativ publicitet och återuppbygger förtroendet för dig eller ditt bolag.", "pillar2.out": "Resultat: Återupprättat förtroende.",
+        "pillar3.t": "Management", "pillar3.d": "Vi tar ansvar. Vi går in som interimschefer eller strategiska rådgivare vid personliga kriser.", "pillar3.out": "Resultat: Ordning och reda.",
+        "programs.title": "Våra Upplägg",
+        "programs.intro": "Tydliga paket för snabb effekt.",
+        "prog1.t": "Guardian Scan", "prog1.d": "48-timmars analys. Vi kartlägger din situation och ger dig en konkret stridsplan.", "prog1.out": "Du får: En tydlig plan.",
+        "prog2.t": "Guardian Reset", "prog2.d": "1–2 månaders exekvering. Vi genomför planen, säkrar tillgångar och stabiliserar läget.", "prog2.out": "Du får: Stabiliserad verksamhet.",
+        "prog3.t": "Guardian Strategy", "prog3.d": "Långsiktigt skydd. Vi stannar kvar som rådgivare för att säkra din position över tid.", "prog3.out": "Du får: Långsiktig trygghet.",
+        "method.title": "Arceo-Metoden", "method.intro": "Analysera. Agera. Säkra.", "method.text": "Vi krånglar inte till det. Vi identifierar var problemet ligger, vem som orsakar det och hur vi löser det. Sen gör vi jobbet.",
+        "contact.title": "Kontakt", "contact.lead": "Direktlinje för konfidentiell bedömning.", "btn.send": "Skicka",
+        "p.name": "Namn", "p.email": "E-post", "p.msg": "Beskriv situationen kortfattat...",
+        "cons.title": "1-till-1 Rådgivning", "cons.lead": "För ledare och privatpersoner som behöver ett ofiltrerat bollplank.",
+        "cons1.t": "Kriskommunikation", "cons1.d": "Akut stöd när stormen slår till. Vad ska sägas och vad ska tystas ner?",
+        "cons2.t": "Tillgångsanalys", "cons2.d": "Strategi för att spåra och återfå det som är ditt.",
+        "cons3.t": "Strategiskt Ledarskap", "cons3.d": "Personligt stöd i ditt ledarskap när pressen är som högst.",
+        "btn.full": "Läs mer om Rådgivning",
         "footer.rights": "Alla rättigheter förbehållna.", "footer.privacy": "Integritetspolicy"
       }
     };
 
     function setLang(lang) {
-      const dict = i18n[lang];
-      if (!dict) return;
-      
-      // Spara val
       localStorage.setItem('arceo_lang', lang);
-      document.documentElement.setAttribute('lang', lang);
-
-      // Uppdatera text
+      const dict = i18n[lang];
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (dict[key]) el.innerHTML = dict[key];
       });
-
-      // Uppdatera placeholders
+      // Placeholders
       if(document.getElementById('f-name')) document.getElementById('f-name').placeholder = dict['p.name'];
       if(document.getElementById('f-email')) document.getElementById('f-email').placeholder = dict['p.email'];
       if(document.getElementById('f-msg')) document.getElementById('f-msg').placeholder = dict['p.msg'];
-
-      // Uppdatera knappar
+      
+      // Knappar
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
       document.getElementById('btn-sv').classList.toggle('active', lang === 'sv');
     }
 
-    // Initiera vid start
+    // Start
     const savedLang = localStorage.getItem('arceo_lang') || 'en';
     setLang(savedLang);
   </script>
+
+</body>
+</html>
