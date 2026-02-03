@@ -2,108 +2,160 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>1-on-1 Consulting | Recovery, Reputation, Management</title>
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
-  <meta name="robots" content="index, follow">
-  <meta name="keywords" content="asset recovery, reputation management, crisis consulting, Leo Celija, SME advisory, private client consulting">
-  <meta name="description" content="Direct 1-on-1 consulting for SMEs and Private Clients. We strategize Recovery of assets, defense of Reputation, and execution of Management.">
   
-  <meta property="og:title" content="1-on-1 Consulting | ArceoConsult">
-  <meta property="og:description" content="Direct access to tactical advisory. Recovery. Reputation. Management. For businesses and individuals.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.arceoconsult.com/1on1-consulting.html">
-  <meta property="og:image" content="https://www.arceoconsult.com/og-image.jpg">
-  
-  <link rel="canonical" href="https://www.arceoconsult.com/1on1-consulting.html">
-  <link rel="stylesheet" href="style.css?v=final2">
-
   <style>
-    /* --- HEADER & NAV OPTIMERING (Samma som startsidan) --- */
-    .header-inner { padding-top: 15px; padding-bottom: 15px; }
+    /* --- ARCEO PREMIUM THEME: DEEP BLUE & GOLD (SAMMA SOM STARTSIDAN) --- */
+    :root { 
+        --gold: #D4AF37; 
+        --gold-muted: #C5A028; 
+        --blue-bg: #0B1120;      
+        --blue-card: #151e32;    
+        --text-main: #ffffff;
+        --text-muted: #cbd5e1; 
+    }
     
-    /* Navlänkar: Grundstil & Guld Hover */
-    .main-nav a { position: relative; text-decoration: none; padding-bottom: 5px; transition: color 0.3s ease; }
+    html { scroll-behavior: smooth; }
+    body { 
+        margin: 0; padding: 0; 
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+        background-color: var(--blue-bg); 
+        color: var(--text-main); 
+        line-height: 1.6; 
+        padding-top: 80px; 
+    }
+    
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    h1, h2, h3 { font-weight: 700; letter-spacing: -0.5px; margin-top: 0; }
+    p { margin-bottom: 20px; color: var(--text-muted); font-size: 16px; line-height: 1.8; }
+
+    /* --- LAYOUT --- */
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+    .narrow { max-width: 800px; margin: 0 auto; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+
+    /* --- HEADER --- */
+    .site-header { 
+        position: fixed; top: 0; left: 0; width: 100%; 
+        background: rgba(11, 17, 32, 0.95); 
+        border-bottom: 1px solid rgba(255,255,255,0.08); 
+        z-index: 1000; height: 80px; 
+        display: flex; align-items: center; 
+        backdrop-filter: blur(12px); 
+    }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+
+    /* --- LOGGA --- */
+    .brand { display: flex; align-items: center; gap: 15px; }
+    .logo-svg .shield-a { transition: all 0.5s ease; fill: #B38728; }
+    .brand:hover .shield-a { fill: var(--gold); } 
+    
+    .logo-text { font-weight: 800; font-size: 20px; letter-spacing: 1.5px; color: #fff; text-transform: uppercase; line-height: 1; }
+    .logo-sub { font-size: 10px; letter-spacing: 2px; color: #94a3b8; margin-top: 4px; display: block; font-weight: 400; }
+
+    /* --- MENY --- */
+    .main-nav ul { display: flex; gap: 30px; align-items: center; }
+    .main-nav a { font-size: 13px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; opacity: 0.8; position: relative; color: #e2e8f0; }
+    .main-nav a:hover { color: var(--gold); opacity: 1; }
+    /* Den snygga understrukna effekten */
     .main-nav a::after {
-        content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 2px; bottom: 0; left: 0;
-        background-color: #D4AF37; transform-origin: bottom right; transition: transform 0.3s ease-out;
+        content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 1px; bottom: -4px; left: 0;
+        background-color: var(--gold); transform-origin: bottom right; transition: transform 0.3s ease-out;
     }
-    .main-nav a:hover::after, .main-nav a:focus::after { transform: scaleX(1); transform-origin: bottom left; }
+    .main-nav a:hover::after { transform: scaleX(1); transform-origin: bottom left; }
     
-    /* --- SPRÅK-KNAPPAR --- */
-    .lang-btn { background:none; border:1px solid rgba(255,255,255,0.3); color:#fff; padding:5px 10px; cursor:pointer; font-size:12px; margin-left:5px; border-radius:3px; transition:0.3s; position: relative; }
-    .lang-btn:hover { border-color:#D4AF37; color:#D4AF37; }
-    .lang-btn.active { background:#D4AF37; color:#000; border-color:#D4AF37; font-weight:bold; }
-    .lang-switcher { display:flex; align-items:center; margin-left:20px; }
-    .lang-switcher button::after { display: none; } 
-    
-    @media (max-width: 900px) { .lang-switcher { margin: 20px 0; justify-content: center; } }
+    /* SPRÅK KNAPPAR */
+    .lang-switcher { display: flex; gap: 5px; margin-left: 15px; border-left: 1px solid rgba(255,255,255,0.15); padding-left: 20px; }
+    .lang-btn { background: none; border: 1px solid rgba(255,255,255,0.15); color: #64748b; padding: 4px 8px; font-size: 10px; cursor: pointer; border-radius: 3px; font-weight: bold; transition: 0.3s; text-transform: uppercase; }
+    .lang-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .lang-btn.active { background: var(--gold); color: #000; border-color: var(--gold); }
 
-    /* --- PREMIUM-JUSTERINGAR (LUFT & RYMD) --- */
-    .section { padding-top: 100px !important; padding-bottom: 100px !important; }
-    p { line-height: 1.8 !important; margin-bottom: 24px !important; }
-    h2 { margin-bottom: 40px !important; }
-    .hero-inner { padding-top: 80px; padding-bottom: 80px; }
-    .card { padding: 40px !important; }
-    @media (max-width: 768px) {
-        .section { padding-top: 60px !important; padding-bottom: 60px !important; }
-        .card { padding: 25px !important; }
+    /* MOBIL MENY */
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+    .nav-toggle-line { display: block; width: 25px; height: 2px; background: #fff; margin: 5px 0; }
+    @media (max-width: 900px) {
+        .nav-toggle { display: block; }
+        .main-nav { position: absolute; top: 80px; left: 0; width: 100%; background: var(--blue-bg); flex-direction: column; display: none; padding: 30px 0; border-bottom: 1px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+        .main-nav.open { display: flex; }
+        .main-nav ul { flex-direction: column; gap: 25px; text-align: center; }
+        .lang-switcher { justify-content: center; border-left: none; padding-left: 0; margin-top: 15px; }
     }
 
-    /* Logga & Text Layout */
-    .logo-wrap { display: flex; align-items: center; }
-    .logo { margin-right: 15px; min-width: 55px; }
-    .navbar-slogan { margin-top: 0 !important; text-align: left; }
+    /* --- HERO --- */
+    .hero { 
+        padding: 160px 0 120px; 
+        text-align: center; 
+        position: relative;
+        background-color: var(--blue-bg);
+        /* SAMMA BILD SOM STARTSIDAN */
+        background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2301&ixlib=rb-4.0.3'); 
+        background-size: cover;
+        background-position: center;
+    }
+    .hero::before { 
+        content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        background: linear-gradient(180deg, rgba(11, 17, 32, 0.7) 0%, rgba(11, 17, 32, 0.95) 100%);
+        z-index: 1;
+    }
+
+    .hero h1 { font-size: 12px; color: var(--gold); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px; font-weight: 600; opacity: 0.9; }
+    .hero h2 { font-size: 48px; margin: 0 auto 25px; line-height: 1.15; color: #fff; letter-spacing: -1px; max-width: 900px; }
+    .hero-subtitle { max-width: 650px; margin: 0 auto 40px; font-size: 20px; color: #cbd5e1; font-weight: 300; }
+    
+    .btn { display: inline-block; padding: 16px 32px; background: var(--gold); color: #000; font-weight: 700; border-radius: 4px; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; border: none; cursor: pointer; transition: all 0.3s ease; }
+    .btn:hover { background: #fff; box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); transform: translateY(-1px); }
+    .btn-ghost { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #fff; margin-left: 10px; }
+    .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.05); color: #fff; transform: translateY(-1px); }
+
+    /* --- CARDS & SECTIONS --- */
+    .section { padding: 100px 0; border-top: 1px solid rgba(255,255,255,0.03); }
+    .bg-alt { background: #0f1623; } 
+    
+    .card { background: var(--blue-card); padding: 40px; border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; transition: 0.4s ease; }
+    .card:hover { border-color: var(--gold-muted); transform: translateY(-3px); background: #1a2438; box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
+    .card h3 { color: var(--gold); font-size: 20px; margin-bottom: 15px; letter-spacing: 0.5px; }
+    .card em { color: #64748b; font-style: normal; font-size: 13px; display: block; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; }
+
+    footer { padding: 60px 0; text-align: center; font-size: 12px; color: #475569; border-top: 1px solid rgba(255,255,255,0.03); background: #050911; }
+    .footer-link { color: #475569; margin-left: 15px; text-decoration: none; }
+    .footer-link:hover { color: var(--gold); }
   </style>
-
 </head>
 
-<body>
-  <header class="site-header" role="banner">
+<body id="top">
+
+  <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="/" aria-label="ArceoConsult Home">
-        <div class="logo-wrap">
-          
-          <svg class="logo" width="55" height="55" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+      <a class="brand" href="/"> <svg class="logo-svg" width="45" height="55" viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
-                <linearGradient id="goldGradSubtle" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
-                    <stop offset="50%" style="stop-color:#EACDA3;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
-                </linearGradient>
-                <linearGradient id="silverGrad" x1="100%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" style="stop-color:#8e9eab;stop-opacity:1" />
-                    <stop offset="50%" style="stop-color:#eef2f3;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#8e9eab;stop-opacity:1" />
+                <linearGradient id="ironGrad" x1="0" y1="0" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#222" />
+                    <stop offset="100%" stop-color="#000" />
                 </linearGradient>
             </defs>
-            <path d="M12 2L3 6V11.5C3 17.2 7.1 21.5 12 23C16.9 21.5 21 17.2 21 11.5V6L12 2Z" fill="url(#silverGrad)" stroke="url(#silverGrad)" stroke-width="0.5"/>
-            <path d="M12 4.5L5.5 7.5V11.5C5.5 15.8 8.6 19 12 20.2C15.4 19 18.5 15.8 18.5 11.5V7.5L12 4.5Z" fill="url(#goldGradSubtle)"/>
-          </svg>
-          
-          <div>
-              <div style="font-weight:bold; font-size:20px; color:#fff; letter-spacing: 2px;">ARCEOCONSULT</div>
-              <div class="navbar-slogan" style="font-size: 12px; color: rgba(255,255,255,0.7);">RECOVERY • REPUTATION • MANAGEMENT</div>
-          </div>
+            <path class="shield-bg" d="M50 5 L10 20 V55 C10 80 28 98 50 105 C72 98 90 80 90 55 V20 L50 5 Z" fill="url(#ironGrad)" stroke="#475569" stroke-width="2" />
+            <text class="shield-a" x="50" y="80" font-family="'Times New Roman', serif" font-size="60" font-weight="bold" fill="#B38728" text-anchor="middle">A</text>
+        </svg>
+        <div style="display:flex; flex-direction:column;">
+            <div class="logo-text">ARCEOCONSULT</div>
+            <span class="logo-sub">RECOVERY • REPUTATION • MANAGEMENT</span>
         </div>
       </a>
 
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="primary-nav" aria-expanded="false">
-        <span class="nav-toggle-box" aria-hidden="true">
-          <span class="nav-toggle-line"></span><span class="nav-toggle-line"></span><span class="nav-toggle-line"></span>
-        </span>
+      <button class="nav-toggle" aria-label="Menu">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
       </button>
 
-      <nav class="main-nav" id="primary-nav" role="navigation">
+      <nav class="main-nav">
         <ul>
-          <li><a href="/" data-i18n="nav.home">Home</a></li>
-          <li><a href="/#contact" data-i18n="nav.contact">Contact</a></li>
-          
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
           <li class="lang-switcher">
              <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
              <button class="lang-btn" id="btn-sv" onclick="setLang('sv')">SV</button>
@@ -113,26 +165,26 @@
     </div>
   </header>
 
-  <section class="hero" aria-label="1-on-1 Consulting">
+  <section class="hero">
     <div class="container hero-inner">
-      <h1 data-i18n="hero.text">
-        Guardian Advisory for SMEs & Private Clients.
-        We provide direct 1-on-1 access to execute <strong>Recovery</strong>, protect <strong>Reputation</strong>, and fix <strong>Management</strong>.
-      </h1>
+      <h1 data-i18n="hero.eyebrow">Guardian Advisory for SMEs & Private Clients</h1>
+      
+      <h2 data-i18n="hero.text">
+        We provide direct 1-on-1 access to execute <strong style="color:#fff;">Recovery</strong>, protect <strong style="color:#fff;">Reputation</strong>, and fix <strong style="color:#fff;">Management</strong>.
+      </h2>
 
       <div class="cta">
         <a href="https://wa.me/46700193462" target="_blank" class="btn">WhatsApp +46 700 193 462</a>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=arceoconsult@gmail.com" target="_blank" class="btn btn-ghost" data-i18n="btn.email">Email Us</a>
+        <a href="mailto:arceoconsult@gmail.com" target="_blank" class="btn btn-ghost" data-i18n="btn.email">Email Us</a>
       </div>
     </div>
-    <div class="hero-media" role="presentation" aria-hidden="true"></div>
   </section>
 
-  <section class="section gradient-alt" aria-label="Consulting Details">
+  <section class="section bg-alt">
     <div class="container narrow">
       <h2 data-i18n="areas.title">The Tactical Focus</h2>
 
-      <div class="grid cards-3">
+      <div class="grid">
         <article class="card">
           <h3 data-i18n="card1.t">Recovery</h3>
           <p data-i18n="card1.d">We strategize the hunt. Whether it is corporate bad debt or private capital locked in bad deals, we define the path to get your assets back.</p>
@@ -151,37 +203,32 @@
     </div>
   </section>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer-inner">
-      <div>
-        © <span id="year"></span> ArceoConsult OÜ • <span data-i18n="footer.rights">All rights reserved.</span>
-      </div>
+  <footer>
+    <div class="container">
+      © <span id="year"></span> ArceoConsult OÜ. <span data-i18n="footer.rights">All rights reserved.</span>
+      <a href="/privacy-policy.html" class="footer-link" data-i18n="footer.privacy">Privacy Policy</a>
     </div>
   </footer>
 
   <script>
-    // 1. Automatic Year
-    const y = document.getElementById('year');
-    if (y) y.textContent = new Date().getFullYear();
-
-    // 2. Mobile Nav Toggle
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // MENY
     const navToggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.main-nav');
     if (navToggle && nav) {
       navToggle.addEventListener('click', () => {
         const isOpen = nav.classList.toggle('open');
         navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        document.body.classList.toggle('nav-open', isOpen);
       });
     }
 
-    // 3. i18n Language Logic (Updated for Recovery/Reputation/Management)
-    let currentLang = 'en'; 
-
+    // SPRÅK (SV/EN)
     const i18n = {
       en: {
         "nav.home": "Home", "nav.contact": "Contact",
-        "hero.text": "Guardian Advisory for SMEs & Private Clients. We provide direct 1-on-1 access to execute <strong>Recovery</strong>, protect <strong>Reputation</strong>, and fix <strong>Management</strong>.",
+        "hero.eyebrow": "Guardian Advisory for SMEs & Private Clients",
+        "hero.text": "We provide direct 1-on-1 access to execute <strong style='color:#fff;'>Recovery</strong>, protect <strong style='color:#fff;'>Reputation</strong>, and fix <strong style='color:#fff;'>Management</strong>.",
         "btn.email": "Email Us",
         "areas.title": "The Tactical Focus",
         "card1.t": "Recovery",
@@ -190,11 +237,12 @@
         "card2.d": "We defend your name. Crisis communication and removal of digital attacks for both the company brand and your personal standing.",
         "card3.t": "Management",
         "card3.d": "We take the lead. Interim leadership for SMEs or crisis management for private life situations. We bring order to chaos.",
-        "footer.rights": "All rights reserved."
+        "footer.rights": "All rights reserved.", "footer.privacy": "Privacy Policy"
       },
       sv: {
         "nav.home": "Hem", "nav.contact": "Kontakt",
-        "hero.text": "Guardian Rådgivning för SME & Privatpersoner. Vi erbjuder direkt 1-till-1 tillgång för att exekvera <strong>Recovery</strong>, skydda <strong>Reputation</strong> och fixa <strong>Management</strong>.",
+        "hero.eyebrow": "Guardian Rådgivning för SME & Privatpersoner",
+        "hero.text": "Vi erbjuder direkt 1-till-1 tillgång för att exekvera <strong style='color:#fff;'>Recovery</strong>, skydda <strong style='color:#fff;'>Reputation</strong> och fixa <strong style='color:#fff;'>Management</strong>.",
         "btn.email": "Mejla Oss",
         "areas.title": "Taktiskt Fokus",
         "card1.t": "Recovery",
@@ -203,49 +251,26 @@
         "card2.d": "Vi försvarar ditt namn. Kriskommunikation och borttagning av digitala attacker för både företagsvarumärket och din personliga ställning.",
         "card3.t": "Management",
         "card3.d": "Vi tar ledningen. Interim management för SME eller krishantering för privata livssituationer. Vi skapar ordning i kaoset.",
-        "footer.rights": "Alla rättigheter förbehållna."
+        "footer.rights": "Alla rättigheter förbehållna.", "footer.privacy": "Integritetspolicy"
       }
     };
 
     function setLang(lang) {
-      try {
-        currentLang = (lang === 'sv') ? 'sv' : 'en';
-        localStorage.setItem('arceo_lang', currentLang);
-        document.documentElement.setAttribute('lang', currentLang);
-
-        const dict = i18n[currentLang];
-        
-        // Update text content
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-          const key = el.getAttribute('data-i18n');
-          if (dict && dict[key]) el.innerHTML = dict[key];
-        });
-
-        // Update buttons active state
-        const btnEn = document.getElementById('btn-en');
-        const btnSv = document.getElementById('btn-sv');
-        if (btnEn) btnEn.classList.toggle('active', currentLang === 'en');
-        if (btnSv) btnSv.classList.toggle('active', currentLang === 'sv');
-
-      } catch (e) {
-        console.error('Language switch error', e);
-      }
+      localStorage.setItem('arceo_lang', lang);
+      const dict = i18n[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.innerHTML = dict[key];
+      });
+      // Buttons
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-sv').classList.toggle('active', lang === 'sv');
     }
 
-    // Initialize Language
-    document.addEventListener('DOMContentLoaded', () => {
-      const saved = localStorage.getItem('arceo_lang');
-      const params = new URLSearchParams(window.location.search);
-      const urlLang = params.get('lang');
-
-      if (urlLang === 'sv' || urlLang === 'en') {
-        setLang(urlLang);
-      } else if (saved) {
-        setLang(saved);
-      } else {
-        setLang('en'); 
-      }
-    });
+    // Start
+    const savedLang = localStorage.getItem('arceo_lang') || 'en';
+    setLang(savedLang);
   </script>
+
 </body>
 </html>
