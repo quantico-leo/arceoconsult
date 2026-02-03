@@ -141,35 +141,17 @@
   <header class="site-header" role="banner">
     <div class="container header-inner" style="display: flex; justify-content: space-between; align-items: center;">
       
-      <a class="brand" href="/" aria-label="ArceoConsult Home" style="margin-right: 40px; text-decoration: none;">
-        <div class="logo-wrap" style="display: flex; align-items: center; gap: 15px;">
-          
-          <svg class="logo guardian-shield" width="50" height="60" viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block; min-width:50px; height:auto;">
-            <defs>
-                <linearGradient id="ironGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#2b2b2b;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#050505;stop-opacity:1" />
-                </linearGradient>
-                <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
-                    <stop offset="50%" style="stop-color:#FEE581;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#996515;stop-opacity:1" />
-                </linearGradient>
-            </defs>
-            
-            <path d="M50 5 L10 20 V55 C10 80 28 98 50 105 C72 98 90 80 90 55 V20 L50 5 Z" fill="url(#ironGrad)" stroke="url(#goldAccent)" stroke-width="2" />
-            
-            <path d="M50 25 L35 60 L50 50 Z" fill="#B38728" /> 
-            <path d="M50 25 L65 60 L50 50 Z" fill="#D4AF37" /> 
-            <rect x="48" y="50" width="4" height="15" fill="url(#goldAccent)" /> 
-            
-            <text x="50" y="98" font-family="Arial, sans-serif" font-weight="bold" font-size="9" text-anchor="middle" letter-spacing="2" fill="#aaa">ARCEO</text>
-          </svg>
+      <a class="brand" href="/" aria-label="ArceoConsult Home" style="margin-right: 40px; text-decoration: none; display: flex; align-items: center;">
+        
+        <svg width="40" height="50" viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 15px;">
+            <path d="M50 5 L10 20 V55 C10 80 28 98 50 105 C72 98 90 80 90 55 V20 L50 5 Z" fill="#1a1a1a" stroke="#D4AF37" stroke-width="3" />
+            <path d="M50 25 L35 60 L50 50 Z" fill="#B38728" />
+            <path d="M50 25 L65 60 L50 50 Z" fill="#D4AF37" />
+        </svg>
 
-          <div style="display: flex; flex-direction: column; justify-content: center;">
-              <div style="font-weight:bold; font-size:20px; color:#fff; letter-spacing: 2px; line-height: 1.2;">ARCEOCONSULT</div>
-              <div class="navbar-slogan" style="font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 0.5px; margin-top: 2px;">RECOVERY • REPUTATION • MANAGEMENT</div>
-          </div>
+        <div style="display: flex; flex-direction: column;">
+            <span style="font-weight:bold; font-size:20px; color:#fff; letter-spacing: 2px;">ARCEO</span>
+            <span style="font-size: 10px; color: rgba(255,255,255,0.6); letter-spacing: 1px;">CONSULTING</span>
         </div>
       </a>
 
@@ -187,10 +169,9 @@
           <li><a href="#intent" data-i18n="nav.intent">Intent</a></li>
           <li><a href="#pillars" data-i18n="nav.pillars">Pillars</a></li>
           <li><a href="#programs" data-i18n="nav.programs">Programs</a></li>
-          <li><a href="#method" data-i18n="nav.method">Method</a></li>
           <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             
-          <li class="lang-switcher">
+          <li class="lang-switcher" style="margin-left: 20px;">
              <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
              <button class="lang-btn" id="btn-sv" onclick="setLang('sv')">SV</button>
           </li>
@@ -378,12 +359,12 @@
     </div>
   </footer>
 
-  <script>
-    // 1. Automatic Year
+ <script>
+    // 1. Årtal
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // 2. Mobile Nav Toggle
+    // 2. Mobilmeny
     const navToggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.main-nav');
     if (navToggle && nav) {
@@ -392,7 +373,6 @@
         navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         document.body.classList.toggle('nav-open', isOpen);
       });
-      // Close menu when clicking a link
       document.querySelectorAll('.main-nav a').forEach(link => {
         link.addEventListener('click', () => {
           nav.classList.remove('open');
@@ -402,144 +382,93 @@
       });
     }
 
-    // 3. i18n Language Logic
-    let currentLang = 'en'; // default English
-
+    // 3. SPRÅKHANTERING (EN / SV)
     const i18n = {
       en: {
-        "nav.1on1": "1-on-1 Consulting", "nav.intent": "Intent", "nav.pillars": "Pillars", "nav.programs": "Programs", "nav.method": "Method", "nav.contact": "Contact",
+        "nav.1on1": "1-on-1 Consulting", "nav.intent": "Intent", "nav.pillars": "Services", "nav.programs": "Programs", "nav.contact": "Contact",
         "hero.eyebrow": "Guardian Consulting for SMEs & Private Clients",
         "hero.title": "We act when others talk.",
-        "hero.subtitle": "We execute <strong>Recovery</strong> of assets, protect your <strong>Reputation</strong>, and take command of <strong>Management</strong> – for both companies and individuals.",
+        "hero.subtitle": "We execute <strong>Recovery</strong> of assets, protect your <strong>Reputation</strong>, and take command of <strong>Management</strong>.",
         "btn.contact": "Initiate Assessment",
-        "identity.title": "What We Are",
-        "identity.text": "ArceoConsult is not a traditional advisory firm. We are a <strong>tactical unit</strong> for business owners and private individuals. We step in when you need to recover locked capital, defend your personal or corporate name, or fix broken leadership. We don't deliver thick reports; we deliver results. <strong>Recovery. Reputation. Management.</strong> This is crystal clear consulting for a complex world.",
+        "identity.title": "Who We Are",
+        "identity.text": "ArceoConsult is a tactical unit for business owners and private individuals. We recover locked capital, defend reputations, and fix broken leadership. No fluff, just results.",
         "intent.title": "Our Intent",
-        "intent.lead": "<strong>Our Mission:</strong> To return <strong>Control</strong> to the owner.",
-        "intent.p1": "<strong>What we intend to do:</strong> We exist to solve the problems that threaten your value. Whether it is money stuck in bad deals (Recovery), a digital attack on your standing (Reputation), or a crisis that needs leadership (Management).",
-        "intent.p2": "<strong>How we do it:</strong> Shoulder-to-shoulder with you. We execute the hard decisions. We handle the conflict. We secure the cash.",
+        "intent.lead": "To return Control to the owner.",
+        "intent.p1": "We solve problems that threaten your value.",
+        "intent.p2": "We execute the hard decisions and secure the cash.",
         "intent.quote": "\"We clear the mess so you can run the business.\"",
         "pillars.title": "What We Do",
-        "pillars.intro": "Our operations are strictly focused on three critical levers for both companies and individuals.",
-        "pillar1.t": "Recovery", "pillar1.d": "We hunt down and recover locked assets. Corporate bad debt, investment fraud, or stalled capital – for businesses and private clients alike.", "pillar1.out": "Result: Cash back in your account.",
-        "pillar2.t": "Reputation", "pillar2.d": "We protect your name. We neutralize bad press, remove digital smear campaigns, and rebuild trust for the company or the individual.", "pillar2.out": "Result: A clean slate and restored trust.",
-        "pillar3.t": "Management", "pillar3.d": "We take command. For SMEs, we act as Interim Leaders. For Private Clients, we provide Crisis Management and strategic direction.", "pillar3.out": "Result: Control and operational excellence.",
+        "pillars.intro": "Strictly focused on three critical levers:",
+        "pillar1.t": "Recovery", "pillar1.d": "We hunt down and recover locked assets.", "pillar1.out": "Result: Cash back.",
+        "pillar2.t": "Reputation", "pillar2.d": "We protect your name and neutralize bad press.", "pillar2.out": "Result: Restored trust.",
+        "pillar3.t": "Management", "pillar3.d": "We take command as interim leaders or crisis managers.", "pillar3.out": "Result: Operational control.",
         "programs.title": "Our Programs",
-        "programs.intro": "Direct action packages designed for speed.",
-        "prog1.t": "Guardian Scan", "prog1.d": "48-hour tactical diagnostic. We analyze your Recovery potential, Reputation risks, and Management gaps.", "prog1.out": "Output: A clear Battle Plan.",
-        "prog2.t": "Guardian Reset", "prog2.d": "1–2 months of execution. We recover the assets, clean the reputation, and reboot operations.", "prog2.out": "Output: Stabilized Operations.",
-        "prog3.t": "Guardian Strategy", "prog3.d": "Long-term protection. We stay on as advisors to ensure you remain untouchable and profitable.", "prog3.out": "Output: Long-term Independence.",
-        "method.title": "The Arceo Method™",
-        "method.intro": "Analyze. Act. Secure.",
-        "method.text": "We do not believe in fluff. We identify where the money is stuck (Recovery), who is attacking you (Reputation), and why the machine isn't working (Management). Then we fix it. It is that simple.",
-        "contact.title": "Contact", "contact.lead": "Direct line to the operators.", "btn.send": "Send for Review",
-        "p.name": "Name", "p.email": "Email", "p.msg": "What is the situation? (Confidential)...",
-        "cons.title": "1-on-1 for Leaders & Individuals",
-        "cons.lead": "Sometimes you just need someone in your corner who knows the game. Direct, unfiltered advisory for leaders and private clients under pressure.",
-        "cons1.t": "Crisis Comms", "cons1.d": "Immediate support when the storm hits. We tell you exactly what to say and what to silence.",
-        "cons2.t": "Asset Hunting", "cons2.d": "We define the strategy to track down and recover what is yours – corporate or private.",
-        "cons3.t": "Strategic Leadership", "cons3.d": "We step in to lead the troops or manage your personal crisis when you need to focus on strategy.",
-        "btn.full": "Full Advisory Details",
+        "programs.intro": "Direct action packages.",
+        "prog1.t": "Guardian Scan", "prog1.d": "48-hour tactical diagnostic.", "prog1.out": "Output: Battle Plan.",
+        "prog2.t": "Guardian Reset", "prog2.d": "Execution and stabilization.", "prog2.out": "Output: Stabilized Ops.",
+        "prog3.t": "Guardian Strategy", "prog3.d": "Long-term protection.", "prog3.out": "Output: Independence.",
+        "method.title": "The Arceo Method", "method.intro": "Analyze. Act. Secure.", "method.text": "Identify the problem. Fix it. Simple.",
+        "contact.title": "Contact", "contact.lead": "Direct line to the operators.", "btn.send": "Send",
+        "p.name": "Name", "p.email": "Email", "p.msg": "Confidential Message...",
+        "cons.title": "1-on-1 Advisory", "cons.lead": "Direct, unfiltered advice.", "cons1.t": "Crisis Comms", "cons1.d": "What to say, when to say it.", "cons2.t": "Asset Hunting", "cons2.d": "Strategy to recover what is yours.", "cons3.t": "Leadership", "cons3.d": "Support when the pressure is high.", "btn.full": "View Details",
         "footer.rights": "All rights reserved.", "footer.privacy": "Privacy Policy"
       },
       sv: {
-        "nav.1on1": "1-till-1 Rådgivning", 
-        "nav.intent": "Vårt Syfte", 
-        "nav.pillars": "Tjänster", 
-        "nav.programs": "Upplägg", 
-        "nav.method": "Metod", 
-        "nav.contact": "Kontakt",
-
+        "nav.1on1": "1-till-1 Rådgivning", "nav.intent": "Vårt Syfte", "nav.pillars": "Tjänster", "nav.programs": "Program", "nav.contact": "Kontakt",
         "hero.eyebrow": "Strategisk partner för Företag & Privatpersoner",
         "hero.title": "Vi agerar där andra bara pratar.",
-        "hero.subtitle": "Vi specialiserar oss på <strong>Recovery</strong> (återvinning av låsta tillgångar), <strong>Reputation</strong> (rykteshantering) och <strong>Management</strong> (krishantering och ledning).",
+        "hero.subtitle": "Vi specialiserar oss på <strong>Recovery</strong> (återvinning), <strong>Reputation</strong> (rykte) och <strong>Management</strong> (krishantering).",
         "btn.contact": "Kontakta Oss",
-
-        "identity.title": "Vilka vi är",
-        "identity.text": "ArceoConsult är inte en traditionell rådgivare. Vi är en operativ enhet som kliver in när läget är skarpt. Oavsett om det handlar om att få loss kapital från en låst investering, hantera ett mediadrev eller styra upp ett bolag i kris, så levererar vi resultat. Inga tjocka rapporter – bara handling.",
-
+        "identity.title": "Vilka Vi Är",
+        "identity.text": "ArceoConsult är en operativ enhet för ägare och privatpersoner. Vi återvinner låst kapital, försvarar rykten och hanterar ledarskapskriser. Inga tjocka rapporter, bara resultat.",
         "intent.title": "Vårt Uppdrag",
-        "intent.lead": "<strong>Målet:</strong> Att ge dig kontrollen tillbaka.",
-        "intent.p1": "<strong>Vad vi gör:</strong> Vi löser problem som hotar dina värden. Pengar som fastnat, rykten som skadar eller ledarskap som brister.",
-        "intent.p2": "<strong>Hur vi jobbar:</strong> Sida vid sida med dig. Vi tar de tuffa förhandlingarna. Vi säkrar tillgångarna.",
-        "intent.quote": "\"Vi reder ut situationen så att du kan fokusera på framtiden.\"",
-
+        "intent.lead": "Att ge dig kontrollen tillbaka.",
+        "intent.p1": "Vi löser problemen som hotar dina värden.",
+        "intent.p2": "Vi tar de tuffa besluten och säkrar tillgångarna.",
+        "intent.quote": "\"Vi reder ut situationen så du kan fokusera framåt.\"",
         "pillars.title": "Våra Tjänster",
-        "pillars.intro": "Vi fokuserar strikt på tre områden:",
-        "pillar1.t": "Recovery", "pillar1.d": "Vi spårar och återvinner låsta tillgångar. Företagsskulder, investeringsbedrägerier eller låst kapital – vi har metoderna för att hämta hem det.", "pillar1.out": "Resultat: Likviditet.",
-        "pillar2.t": "Reputation", "pillar2.d": "Vi skyddar ditt namn. Vi neutraliserar negativ publicitet och återuppbygger förtroendet för dig eller ditt bolag.", "pillar2.out": "Resultat: Återupprättat förtroende.",
-        "pillar3.t": "Management", "pillar3.d": "Vi tar ansvar. Vi går in som interimschefer eller strategiska rådgivare vid personliga kriser.", "pillar3.out": "Resultat: Ordning och reda.",
-
-        "programs.title": "Våra Upplägg",
-        "programs.intro": "Tydliga paket för snabb effekt.",
-        "prog1.t": "Guardian Scan", "prog1.d": "48-timmars analys. Vi kartlägger din situation och ger dig en konkret stridsplan.", "prog1.out": "Du får: En tydlig plan.",
-        "prog2.t": "Guardian Reset", "prog2.d": "1–2 månaders exekvering. Vi genomför planen, säkrar tillgångar och stabiliserar läget.", "prog2.out": "Du får: Stabiliserad verksamhet.",
-        "prog3.t": "Guardian Strategy", "prog3.d": "Långsiktigt skydd. Vi stannar kvar som rådgivare för att säkra din position över tid.", "prog3.out": "Du får: Långsiktig trygghet.",
-
-        "method.title": "Arceo-Metoden",
-        "method.intro": "Analysera. Agera. Säkra.",
-        "method.text": "Vi krånglar inte till det. Vi identifierar var problemet ligger, vem som orsakar det och hur vi löser det. Sen gör vi jobbet.",
-        
-        "contact.title": "Kontakt", "contact.lead": "Direktlinje för konfidentiell bedömning.", "btn.send": "Skicka",
-        "p.name": "Namn", "p.email": "E-post", "p.msg": "Beskriv situationen kortfattat...",
-        
-        "cons.title": "1-till-1 Rådgivning",
-        "cons.lead": "För ledare och privatpersoner som behöver ett ofiltrerat bollplank.",
-        "cons1.t": "Kriskommunikation", "cons1.d": "Akut stöd när stormen slår till. Vad ska sägas och vad ska tystas ner?",
-        "cons2.t": "Tillgångsanalys", "cons2.d": "Strategi för att spåra och återfå det som är ditt.",
-        "cons3.t": "Strategiskt Ledarskap", "cons3.d": "Personligt stöd i ditt ledarskap när pressen är som högst.",
-        "btn.full": "Läs mer om Rådgivning",
+        "pillars.intro": "Fokus på tre områden:",
+        "pillar1.t": "Recovery", "pillar1.d": "Vi spårar och återvinner låsta tillgångar.", "pillar1.out": "Resultat: Pengar tillbaka.",
+        "pillar2.t": "Reputation", "pillar2.d": "Vi skyddar ditt namn och hanterar media.", "pillar2.out": "Resultat: Återupprättat förtroende.",
+        "pillar3.t": "Management", "pillar3.d": "Vi kliver in som interimschefer eller krishanterare.", "pillar3.out": "Resultat: Full kontroll.",
+        "programs.title": "Våra Program",
+        "programs.intro": "Tydliga åtgärdspaket.",
+        "prog1.t": "Guardian Scan", "prog1.d": "48-timmars diagnos och analys.", "prog1.out": "Du får: En handlingsplan.",
+        "prog2.t": "Guardian Reset", "prog2.d": "Genomförande och stabilisering.", "prog2.out": "Du får: Stabil verksamhet.",
+        "prog3.t": "Guardian Strategy", "prog3.d": "Långsiktig rådgivning.", "prog2.out": "Du får: Trygghet över tid.",
+        "method.title": "Arceo-Metoden", "method.intro": "Analysera. Agera. Säkra.", "method.text": "Hitta felet. Lös det. Klart.",
+        "contact.title": "Kontakt", "contact.lead": "Direktlinje för bedömning.", "btn.send": "Skicka",
+        "p.name": "Namn", "p.email": "E-post", "p.msg": "Beskriv ärendet konfidentiellt...",
+        "cons.title": "1-till-1 Rådgivning", "cons.lead": "Ofiltrerat stöd för ledare.", "cons1.t": "Kriskommunikation", "cons1.d": "Vad ska sägas och när?", "cons2.t": "Tillgångsanalys", "cons2.d": "Strategi för återvinning.", "cons3.t": "Ledarskap", "cons3.d": "Stöd under hög press.", "btn.full": "Läs Mer",
         "footer.rights": "Alla rättigheter förbehållna.", "footer.privacy": "Integritetspolicy"
       }
     };
 
     function setLang(lang) {
-      try {
-        currentLang = (lang === 'sv') ? 'sv' : 'en';
-        localStorage.setItem('arceo_lang', currentLang);
-        document.documentElement.setAttribute('lang', currentLang);
+      const dict = i18n[lang];
+      if (!dict) return;
+      
+      // Spara val
+      localStorage.setItem('arceo_lang', lang);
+      document.documentElement.setAttribute('lang', lang);
 
-        const dict = i18n[currentLang];
-        
-        if (!dict) return;
+      // Uppdatera text
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.innerHTML = dict[key];
+      });
 
-        // Update text content
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-          const key = el.getAttribute('data-i18n');
-          if (dict[key]) el.innerHTML = dict[key];
-        });
+      // Uppdatera placeholders
+      if(document.getElementById('f-name')) document.getElementById('f-name').placeholder = dict['p.name'];
+      if(document.getElementById('f-email')) document.getElementById('f-email').placeholder = dict['p.email'];
+      if(document.getElementById('f-msg')) document.getElementById('f-msg').placeholder = dict['p.msg'];
 
-        // Update placeholders
-        const fName = document.getElementById('f-name');
-        if (fName && dict['p.name']) fName.placeholder = dict['p.name'];
-        const fEmail = document.getElementById('f-email');
-        if (fEmail && dict['p.email']) fEmail.placeholder = dict['p.email'];
-        const fMsg = document.getElementById('f-msg');
-        if (fMsg && dict['p.msg']) fMsg.placeholder = dict['p.msg'];
-
-        // Update buttons
-        const btnEn = document.getElementById('btn-en');
-        const btnSv = document.getElementById('btn-sv');
-        if (btnEn) btnEn.classList.toggle('active', currentLang === 'en');
-        if (btnSv) btnSv.classList.toggle('active', currentLang === 'sv');
-
-      } catch (e) {
-        console.error('Language switch error', e);
-      }
+      // Uppdatera knappar
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-sv').classList.toggle('active', lang === 'sv');
     }
 
-    // Initialize Language
-    document.addEventListener('DOMContentLoaded', () => {
-      const saved = localStorage.getItem('arceo_lang');
-      const params = new URLSearchParams(window.location.search);
-      const urlLang = params.get('lang');
-
-      if (urlLang === 'sv' || urlLang === 'en') {
-        setLang(urlLang);
-      } else if (saved) {
-        setLang(saved);
-      } else {
-        setLang('en'); // Default to English
-      }
-    });
+    // Initiera vid start
+    const savedLang = localStorage.getItem('arceo_lang') || 'en';
+    setLang(savedLang);
   </script>
