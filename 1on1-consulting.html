@@ -49,10 +49,12 @@
     }
     .header-inner { display: flex; justify-content: space-between; align-items: center; width: 100%; }
 
-    /* --- LOGO --- */
+    /* --- LOGO (NU MED GLOW!) --- */
     .brand { display: flex; align-items: center; gap: 15px; }
     .logo-svg .shield-a { transition: all 0.5s ease; fill: #B38728; }
-    .brand:hover .shield-a { fill: var(--gold); } 
+    
+    /* HÄR ÄR FIXEN: FILTER DROP-SHADOW TILLAGT */
+    .brand:hover .shield-a { fill: var(--gold); filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6)); } 
     
     .logo-text { font-weight: 800; font-size: 20px; letter-spacing: 1.5px; color: #fff; text-transform: uppercase; line-height: 1; }
     .logo-sub { font-size: 10px; letter-spacing: 2px; color: #94a3b8; margin-top: 4px; display: block; font-weight: 400; }
@@ -245,7 +247,7 @@
       sv: {
         "nav.home": "Hem", "nav.contact": "Kontakt",
         "hero.eyebrow": "Guardian Rådgivning för SME & Privatpersoner",
-        /* HÄR ÄR DEN NYA SVENSKA TEXTEN */
+        /* UPDATED SWEDISH TEXT */
         "hero.text": "Vi erbjuder direkt 1-till-1 rådgivning för att <strong style='color:#fff;'>återta tillgångar</strong>, skydda <strong style='color:#fff;'>ryktet</strong> och <strong style='color:#fff;'>stabilisera</strong> verksamheten.",
         "btn.email": "Mejla Oss",
         "areas.title": "Taktiskt Fokus",
