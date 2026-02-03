@@ -8,7 +8,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   
   <style>
-    /* --- ARCEO PREMIUM THEME: DEEP BLUE & GOLD (SAMMA SOM STARTSIDAN) --- */
+    /* --- ARCEO PREMIUM THEME: DEEP BLUE & GOLD (Consistent with Home) --- */
     :root { 
         --gold: #D4AF37; 
         --gold-muted: #C5A028; 
@@ -49,7 +49,7 @@
     }
     .header-inner { display: flex; justify-content: space-between; align-items: center; width: 100%; }
 
-    /* --- LOGGA --- */
+    /* --- LOGO --- */
     .brand { display: flex; align-items: center; gap: 15px; }
     .logo-svg .shield-a { transition: all 0.5s ease; fill: #B38728; }
     .brand:hover .shield-a { fill: var(--gold); } 
@@ -57,24 +57,23 @@
     .logo-text { font-weight: 800; font-size: 20px; letter-spacing: 1.5px; color: #fff; text-transform: uppercase; line-height: 1; }
     .logo-sub { font-size: 10px; letter-spacing: 2px; color: #94a3b8; margin-top: 4px; display: block; font-weight: 400; }
 
-    /* --- MENY --- */
+    /* --- NAV --- */
     .main-nav ul { display: flex; gap: 30px; align-items: center; }
     .main-nav a { font-size: 13px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; opacity: 0.8; position: relative; color: #e2e8f0; }
     .main-nav a:hover { color: var(--gold); opacity: 1; }
-    /* Den snygga understrukna effekten */
     .main-nav a::after {
         content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 1px; bottom: -4px; left: 0;
         background-color: var(--gold); transform-origin: bottom right; transition: transform 0.3s ease-out;
     }
     .main-nav a:hover::after { transform: scaleX(1); transform-origin: bottom left; }
     
-    /* SPRÅK KNAPPAR */
+    /* LANGUAGE SWITCHER */
     .lang-switcher { display: flex; gap: 5px; margin-left: 15px; border-left: 1px solid rgba(255,255,255,0.15); padding-left: 20px; }
     .lang-btn { background: none; border: 1px solid rgba(255,255,255,0.15); color: #64748b; padding: 4px 8px; font-size: 10px; cursor: pointer; border-radius: 3px; font-weight: bold; transition: 0.3s; text-transform: uppercase; }
     .lang-btn:hover { border-color: var(--gold); color: var(--gold); }
     .lang-btn.active { background: var(--gold); color: #000; border-color: var(--gold); }
 
-    /* MOBIL MENY */
+    /* MOBILE NAV */
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
     .nav-toggle-line { display: block; width: 25px; height: 2px; background: #fff; margin: 5px 0; }
     @media (max-width: 900px) {
@@ -91,7 +90,6 @@
         text-align: center; 
         position: relative;
         background-color: var(--blue-bg);
-        /* SAMMA BILD SOM STARTSIDAN */
         background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2301&ixlib=rb-4.0.3'); 
         background-size: cover;
         background-position: center;
@@ -103,8 +101,11 @@
     }
 
     .hero h1 { font-size: 12px; color: var(--gold); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px; font-weight: 600; opacity: 0.9; }
-    .hero h2 { font-size: 48px; margin: 0 auto 25px; line-height: 1.15; color: #fff; letter-spacing: -1px; max-width: 900px; }
-    .hero-subtitle { max-width: 650px; margin: 0 auto 40px; font-size: 20px; color: #cbd5e1; font-weight: 300; }
+    
+    /* UPDATED FONT SIZE HERE - Smaller than before */
+    .hero h2 { font-size: 42px; margin: 0 auto 25px; line-height: 1.2; color: #fff; letter-spacing: -0.5px; max-width: 800px; }
+    
+    .hero-subtitle { max-width: 650px; margin: 0 auto 40px; font-size: 18px; color: #cbd5e1; font-weight: 300; }
     
     .btn { display: inline-block; padding: 16px 32px; background: var(--gold); color: #000; font-weight: 700; border-radius: 4px; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; border: none; cursor: pointer; transition: all 0.3s ease; }
     .btn:hover { background: #fff; box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); transform: translateY(-1px); }
@@ -130,7 +131,7 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="/"> <svg class="logo-svg" width="45" height="55" viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <a class="brand" href="index.html"> <svg class="logo-svg" width="45" height="55" viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <linearGradient id="ironGrad" x1="0" y1="0" x2="100%" y2="100%">
                     <stop offset="0%" stop-color="#222" />
@@ -256,15 +257,33 @@
     };
 
     function setLang(lang) {
-      localStorage.setItem('arceo_lang', lang);
-      const dict = i18n[lang];
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (dict[key]) el.innerHTML = dict[key];
-      });
-      // Buttons
-      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-      document.getElementById('btn-sv').classList.toggle('active', lang === 'sv');
+      try {
+        localStorage.setItem('arceo_lang', lang);
+        document.documentElement.setAttribute('lang', lang);
+        
+        const dict = i18n[lang];
+        if (!dict) return;
+
+        // Update text
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (dict[key]) el.innerHTML = dict[key];
+        });
+        
+        // Update placeholders
+        if(document.getElementById('f-name')) document.getElementById('f-name').placeholder = dict['p.name'];
+        if(document.getElementById('f-email')) document.getElementById('f-email').placeholder = dict['p.email'];
+        if(document.getElementById('f-msg')) document.getElementById('f-msg').placeholder = dict['p.msg'];
+        
+        // Update buttons
+        const btnEn = document.getElementById('btn-en');
+        const btnSv = document.getElementById('btn-sv');
+        if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+        if (btnSv) btnSv.classList.toggle('active', lang === 'sv');
+        
+      } catch(e) {
+        console.error("Language error:", e);
+      }
     }
 
     // Start
