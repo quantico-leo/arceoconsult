@@ -8,6 +8,25 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   
   <style>
+    /* --- FIX FÖR MOBIL HERO CTA (Luftrum) --- */
+    @media (max-width: 600px) {
+        .cta {
+            display: flex;
+            flex-direction: column; /* Staplar knapparna */
+            gap: 15px;              /* Luftrum emellan */
+            width: 100%;
+            padding: 0 10px;        /* Marginal mot kant */
+            box-sizing: border-box;
+        }
+        
+        .cta .btn, 
+        .cta .btn-ghost {
+            margin-left: 0;         /* Nollställ marginal */
+            width: 100%;            /* Breda knappar */
+            text-align: center;
+            box-sizing: border-box;
+        }
+    }
     /* --- ARCEO PREMIUM THEME: DEEP BLUE & GOLD (Consistent with Home) --- */
     :root { 
         --gold: #D4AF37; 
