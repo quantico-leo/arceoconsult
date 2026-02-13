@@ -336,12 +336,12 @@
     </div>
   </section>
 
-  <footer>
-  <div class="container">
-    © <span id="year"></span> ArceoConsult OÜ (Reg. Code: 17311000). <span data-i18n="footer.rights">All rights reserved.</span>
-    <a href="/privacy-policy.html" class="footer-link" data-i18n="footer.privacy">Privacy Policy</a>
-  </div>
-</footer>
+ <footer>
+    <div class="container">
+      © <span id="year"></span> ArceoConsult OÜ (Reg. Code: 17311000). <span data-i18n="footer.rights">All rights reserved.</span>
+      <a href="/privacy-policy.html" class="footer-link" data-i18n="footer.privacy">Privacy Policy</a>
+    </div>
+  </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -354,7 +354,7 @@
         link.addEventListener('click', () => { nav.classList.remove('open'); });
     });
 
-    // SPRÅK (SV/EN)
+    // SPRÅK-DATA
     const i18n = {
       en: {
         "nav.1on1": "1-on-1 Consulting", "nav.intent": "Intent", "nav.pillars": "Services", "nav.programs": "Programs", "nav.method": "Method", "nav.contact": "Contact",
@@ -412,10 +412,10 @@
         "programs.title": "Våra Upplägg",
         "programs.intro": "Tydliga paket för snabb effekt.",
         "prog1.t": "Guardian Scan", "prog1.d": "48-timmars analys. Vi kartlägger din situation och ger dig en konkret stridsplan.", "prog1.out": "Du får: En tydlig plan.",
-        "prog2.t": "Guardian Reset", "prog2.d": "1–2 månaders exekvering. Vi genomför planen, säkrar tillgångar och stabiliserar läget.", "prog2.out": "Du får: Stabiliserad verksamhet.",
+        "prog2.t": "Guardian Reset", "prog2.d": "1–2 months of execution. Vi genomför planen, säkrar tillgångar och stabiliserar läget.", "prog2.out": "Du får: Stabiliserad verksamhet.",
         "prog3.t": "Guardian Strategy", "prog3.d": "Långsiktigt skydd. Vi stannar kvar som rådgivare för att säkra din position över tid.", "prog3.out": "Du får: Långsiktig trygghet.",
         "method.title": "Arceo-Metoden", "method.intro": "Analysera. Agera. Säkra.", "method.text": "Vi krånglar inte till det. Vi identifierar var problemet ligger, vem som orsakar det och hur vi löser det. Sen gör vi jobbet.",
-        "contact.title": "Kontakt", "contact.lead": "Direktlinje för konfidentiell bedömning.", "btn.send": "Skicka",
+        "contact.title": "Kontakt", "contact.lead": "Direct line to the operators.", "btn.send": "Skicka",
         "p.name": "Namn", "p.email": "E-post", "p.msg": "Beskriv situationen kortfattat...",
         "cons.title": "1-till-1 Rådgivning", "cons.lead": "För ledare och privatpersoner som behöver ett ofiltrerat bollplank.",
         "cons1.t": "Kriskommunikation", "cons1.d": "Akut stöd när stormen slår till. Vad ska sägas och vad ska tystas ner?",
@@ -427,10 +427,7 @@
     };
 
     function setLang(lang) {
-      // --- HÄR ÄR NYCKELN FÖR GOOGLE (SEO) ---
-      document.documentElement.setAttribute('lang', lang);
-      // ---------------------------------------
-
+      document.documentElement.setAttribute('lang', lang); // SEO FIX
       localStorage.setItem('arceo_lang', lang);
       const dict = i18n[lang];
       document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -446,3 +443,11 @@
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
       document.getElementById('btn-sv').classList.toggle('active', lang === 'sv');
     }
+
+    // Start
+    const savedLang = localStorage.getItem('arceo_lang') || 'en';
+    setLang(savedLang);
+  </script>
+
+</body>
+</html>
