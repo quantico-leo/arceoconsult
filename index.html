@@ -10,32 +10,31 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   
   <style>
-    /* --- FIX FÖR MOBIL HERO CTA (Luftrum) --- */
+    /* --- FIX FÖR MOBIL HERO CTA --- */
     @media (max-width: 600px) {
         .cta {
             display: flex;
-            flex-direction: column; /* Staplar knapparna vertikalt */
-            gap: 15px;              /* Här är luftrummet du ville ha */
+            flex-direction: column;
+            gap: 15px;
             width: 100%;
-            padding: 0 10px;        /* Lite marginal mot skärmkanten */
+            padding: 0 10px;
             box-sizing: border-box;
         }
-        
         .cta .btn, 
         .cta .btn-ghost {
-            margin-left: 0;         /* Tar bort gamla marginalen */
-            width: 100%;            /* Gör knapparna breda och klickvänliga */
-            text-align: center;     /* Centrerar texten */
+            margin-left: 0;
+            width: 100%;
+            text-align: center;
             box-sizing: border-box;
         }
     }
-    /* --- ARCEO PREMIUM THEME: DEEP BLUE & GOLD --- */
+    /* --- ARCEO PREMIUM THEME --- */
     :root { 
         --gold: #D4AF37; 
         --gold-glow: #FFD700;
         --gold-muted: #C5A028; 
-        --blue-bg: #0B1120;      /* Den djupa mörka bakgrunden */
-        --blue-card: #151e32;    /* Panelernas färg */
+        --blue-bg: #0B1120;
+        --blue-card: #151e32;
         --text-main: #ffffff;
         --text-muted: #cbd5e1; 
     }
@@ -107,20 +106,18 @@
         .hero h2 { font-size: 38px !important; }
     }
 
-    /* --- HERO (LJUS & KLAR) --- */
+    /* --- HERO --- */
     .hero { 
         padding: 160px 0 120px; 
         text-align: center; 
         position: relative;
         background-color: var(--blue-bg);
-        /* Den nya ljusa bilden */
         background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2301&ixlib=rb-4.0.3'); 
         background-size: cover;
         background-position: center;
     }
     .hero::before { 
         content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-        /* Lättare filter (0.7) så bilden syns bättre */
         background: linear-gradient(180deg, rgba(11, 17, 32, 0.7) 0%, rgba(11, 17, 32, 0.95) 100%);
         z-index: 1;
     }
@@ -384,7 +381,6 @@
         "prog2.t": "Guardian Reset", "prog2.d": "1–2 months of execution. We recover the assets, clean the reputation, and reboot operations.", "prog2.out": "Output: Stabilized Operations.",
         "prog3.t": "Guardian Strategy", "prog3.d": "Long-term protection. We stay on as advisors to ensure you remain untouchable and profitable.", "prog3.out": "Output: Long-term Independence.",
         
-        // HÄR ÄR DE TILLAGDA ENGELSKA RADERNA
         "method.title": "The Arceo Method",
         "method.intro": "Analyze. Act. Secure.",
         "method.text": "We operate with absolute clarity. We identify where capital is trapped (Recovery), who is challenging your standing (Reputation), and where operations are failing (Management). Then we fix it. It is that simple.",
@@ -427,7 +423,7 @@
         "method.intro": "Analysera. Agera. Säkra.",
         "method.text": "Vi arbetar med absolut tydlighet. Vi identifierar var kapitalet är låst (Recovery), vem som utmanar din position (Reputation) och var verksamheten brister (Management). Sedan löser vi det. Så enkelt är det.",
         
-        "contact.title": "Kontakt", "contact.lead": "Direct line to the operators.", "btn.send": "Skicka",
+        "contact.title": "Kontakt", "contact.lead": "Direktlinje till våra operatörer.", "btn.send": "Skicka",
         "p.name": "Namn", "p.email": "E-post", "p.msg": "Beskriv situationen kortfattat...",
         "cons.title": "1-till-1 Rådgivning", "cons.lead": "För ledare och privatpersoner som behöver ett ofiltrerat bollplank.",
         "cons1.t": "Kriskommunikation", "cons1.d": "Akut stöd när stormen slår till. Vad ska sägas och vad ska tystas ner?",
