@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ArceoConsult | Financial Forensics & Asset Tracing</title>
   
-  <meta name="description" content="Vi hjälper offer för finansiella bedrägerier. Kombinerad OSINT-forensik, förlustavdrag och juridisk koordinering för att spåra tillgångar." />
+  <meta name="description" content="Vi hjälper offer för finansiella bedrägerier. Kombinerad OSINT-forensik, strukturering av förlustavdrag och juridisk koordinering för att spåra tillgångar." />
   <link rel="canonical" href="https://arceoconsult.com/">
   
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 stroke=%22#D4AF37%22 stroke-width=%222%22 fill=%22none%22/><text x=%2250%22 y=%2273%22 text-anchor=%22middle%22 font-family=%22'Times New Roman', serif%22 font-weight=%22bold%22 font-size=%2260%22 fill=%22#D4AF37%22>A</text></svg>">
   
   <style>
     /* --- FIX FÖR MOBIL HERO CTA --- */
@@ -114,7 +114,7 @@
         text-align: center; 
         position: relative;
         background-color: var(--blue-bg);
-        background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2301&ixlib=rb-4.0.3'); 
+        background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2301'); 
         background-size: cover;
         background-position: center;
     }
@@ -206,8 +206,8 @@
           <li><a href="#method" data-i18n="nav.method">Metod</a></li>
           <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
           <li class="lang-switcher">
-             <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
-             <button class="lang-btn" id="btn-sv" onclick="setLang('sv')">SV</button>
+             <button class="lang-btn" id="btn-en" type="button" onclick="setLang('en')">EN</button>
+             <button class="lang-btn" id="btn-sv" type="button" onclick="setLang('sv')">SV</button>
           </li>
         </ul>
       </nav>
@@ -327,6 +327,8 @@
       <h2 data-i18n="contact.title">Kontakt</h2>
       <p data-i18n="contact.lead">Direktlinje för konfidentiell utvärdering.</p>
       <form class="form-grid" action="https://formspree.io/f/mwpnynjz" method="POST">
+        <input type="text" name="_gotcha" style="display:none">
+        
         <input type="text" id="f-name" name="name" placeholder="Namn / Företag" required>
         <input type="email" id="f-email" name="email" placeholder="E-post" required>
         <textarea id="f-msg" name="message" rows="5" placeholder="Beskriv vad som inträffat. All information hanteras under strikt sekretess." required></textarea>
@@ -495,9 +497,11 @@
       document.getElementById('btn-sv').classList.toggle('active', lang === 'sv');
     }
 
-    // Start 
-    const savedLang = localStorage.getItem('arceo_lang') || 'sv';
-    setLang(savedLang);
+    // Säkerställ att scriptet körs omedelbart men säkert
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('arceo_lang') || 'sv';
+        setLang(savedLang);
+    });
   </script>
 
 </body>
