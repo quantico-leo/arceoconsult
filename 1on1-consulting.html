@@ -12,22 +12,22 @@
     @media (max-width: 600px) {
         .cta {
             display: flex;
-            flex-direction: column; /* Staplar knapparna */
-            gap: 15px;              /* Luftrum emellan */
+            flex-direction: column;
+            gap: 15px;
             width: 100%;
-            padding: 0 10px;        /* Marginal mot kant */
+            padding: 0 10px;
             box-sizing: border-box;
         }
         
         .cta .btn, 
         .cta .btn-ghost {
-            margin-left: 0;         /* Nollställ marginal */
-            width: 100%;            /* Breda knappar */
+            margin-left: 0;
+            width: 100%;
             text-align: center;
             box-sizing: border-box;
         }
     }
-    /* --- ARCEO PREMIUM THEME: DEEP BLUE & GOLD (Consistent with Home) --- */
+    /* --- ARCEO PREMIUM THEME --- */
     :root { 
         --gold: #D4AF37; 
         --gold-muted: #C5A028; 
@@ -68,11 +68,9 @@
     }
     .header-inner { display: flex; justify-content: space-between; align-items: center; width: 100%; }
 
-    /* --- LOGO (NU MED GLOW!) --- */
+    /* --- LOGO --- */
     .brand { display: flex; align-items: center; gap: 15px; }
     .logo-svg .shield-a { transition: all 0.5s ease; fill: #B38728; }
-    
-    /* HÄR ÄR FIXEN: FILTER DROP-SHADOW TILLAGT */
     .brand:hover .shield-a { fill: var(--gold); filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6)); } 
     
     .logo-text { font-weight: 800; font-size: 20px; letter-spacing: 1.5px; color: #fff; text-transform: uppercase; line-height: 1; }
@@ -111,7 +109,7 @@
         text-align: center; 
         position: relative;
         background-color: var(--blue-bg);
-        background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2301&ixlib=rb-4.0.3'); 
+        background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2301'); 
         background-size: cover;
         background-position: center;
     }
@@ -123,7 +121,6 @@
 
     .hero h1 { font-size: 12px; color: var(--gold); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px; font-weight: 600; opacity: 0.9; }
     
-    /* BALANCED FONT SIZE */
     .hero h2 { font-size: 36px; margin: 0 auto 25px; line-height: 1.3; color: #fff; letter-spacing: -0.5px; max-width: 800px; font-weight: 600; }
     @media (max-width: 900px) { .hero h2 { font-size: 28px !important; } }
     
@@ -134,6 +131,8 @@
     .btn-ghost { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #fff; margin-left: 10px; }
     .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.05); color: #fff; transform: translateY(-1px); }
 
+    .trust-signal { display: block; margin-top: 25px; font-size: 11px; color: #94a3b8; letter-spacing: 1px; text-transform: uppercase; opacity: 0.8; }
+
     /* --- CARDS & SECTIONS --- */
     .section { padding: 100px 0; border-top: 1px solid rgba(255,255,255,0.03); }
     .bg-alt { background: #0f1623; } 
@@ -141,7 +140,9 @@
     .card { background: var(--blue-card); padding: 40px; border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; transition: 0.4s ease; }
     .card:hover { border-color: var(--gold-muted); transform: translateY(-3px); background: #1a2438; box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
     .card h3 { color: var(--gold); font-size: 20px; margin-bottom: 15px; letter-spacing: 0.5px; }
-    .card em { color: #64748b; font-style: normal; font-size: 13px; display: block; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; }
+    
+    /* Social Proof Blockquote */
+    blockquote { font-family: 'Times New Roman', serif; font-size: 22px; font-style: italic; border-left: 3px solid var(--gold); padding-left: 20px; color: #fff; margin: 40px auto; max-width: 800px; line-height: 1.4;}
 
     footer { padding: 60px 0; text-align: center; font-size: 12px; color: #475569; border-top: 1px solid rgba(255,255,255,0.03); background: #050911; }
     .footer-link { color: #475569; margin-left: 15px; text-decoration: none; }
@@ -199,8 +200,18 @@
 
       <div class="cta">
         <a href="https://wa.me/46700193462" target="_blank" class="btn">WhatsApp +46 700 193 462</a>
-        <a href="mailto:arceoconsult@gmail.com" target="_blank" class="btn btn-ghost" data-i18n="btn.email">Mejla Oss</a>
+        <a href="mailto:contact@arceoconsult.com" class="btn btn-ghost" data-i18n="btn.email">contact@arceoconsult.com</a>
       </div>
+      <span class="trust-signal" data-i18n="hero.trust">Strikt NDA • Konfidentiellt • Svar inom 24h</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow" style="text-align: center;">
+        <h3 style="color: var(--gold); text-transform: uppercase; font-size: 12px; letter-spacing: 2px;" data-i18n="proof.title">Track Record</h3>
+        <blockquote data-i18n="proof.quote">
+            "Bistod en privat klient med att säkra bevis och juridiskt övertag gällande 2,7 MSEK i förluster mot en obehörig plattform, vilket tvingade fram en förlikning."
+        </blockquote>
     </div>
   </section>
 
@@ -227,6 +238,27 @@
     </div>
   </section>
 
+  <section class="section">
+    <div class="container narrow">
+      <h2 data-i18n="process.title" style="text-align: center; margin-bottom: 50px;">Hur Processen Fungerar</h2>
+      
+      <div style="display: flex; flex-direction: column; gap: 30px;">
+          <div style="border-left: 2px solid var(--gold); padding-left: 25px;">
+              <h3 style="color:#fff;" data-i18n="step1.t">1. Säkrad Kommunikation & NDA</h3>
+              <p data-i18n="step1.d" style="margin:0;">Vi upprättar en säker kommunikationskanal och signerar ett strikt sekretessavtal. Din information stannar hos oss.</p>
+          </div>
+          <div style="border-left: 2px solid var(--gold); padding-left: 25px;">
+              <h3 style="color:#fff;" data-i18n="step2.t">2. Taktisk Genomgång</h3>
+              <p data-i18n="step2.d" style="margin:0;">Ett inledande möte där vi kartlägger hotbilden, analyserar spårbarheten i de låsta tillgångarna och definierar ditt förhandlingsläge.</p>
+          </div>
+          <div style="border-left: 2px solid var(--gold); padding-left: 25px;">
+              <h3 style="color:#fff;" data-i18n="step3.t">3. Genomförande</h3>
+              <p data-i18n="step3.d" style="margin:0;">Vi rullar ut strategin. Vi hjälper till att formulera din kommunikation mot institutioner, samordnar med skatteexperter och navigerar krisen tills målet är nått.</p>
+          </div>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div class="container">
       © <span id="year"></span> ArceoConsult OÜ. <span data-i18n="footer.rights">Alla rättigheter förbehållna.</span>
@@ -247,13 +279,18 @@
       });
     }
 
-    // SPRÅK (SV/EN) UPPDATERAT TILL FRAUD INTELLIGENCE
+    // SPRÅK (SV/EN) 
     const i18n = {
       en: {
         "nav.home": "Home", "nav.contact": "Contact",
         "hero.eyebrow": "1-ON-1 STRATEGIC SUPPORT",
         "hero.text": "We provide operational support to <strong style='color:#fff;'>map fraud networks</strong>, manage <strong style='color:#fff;'>authorities</strong>, and regain <strong style='color:#fff;'>control</strong>.",
-        "btn.email": "Email Us",
+        "btn.email": "contact@arceoconsult.com",
+        "hero.trust": "Strict NDA • Confidential • 24h Response",
+        
+        "proof.title": "Track Record",
+        "proof.quote": "\"Assisted a private client in securing documentation and legal leverage on €240k in unauthorized platform losses, forcing a settlement.\"",
+
         "areas.title": "Tactical Focus for Advisory",
         "card1.t": "Operational Tactics",
         "card1.d": "We build the strategy for your case. Which banks need to be pressured? How do you brief law enforcement? We give you the tools to compel institutions to act.",
@@ -261,13 +298,27 @@
         "card2.d": "When massive financial fraud occurs, it threatens your entire stability. We structure the situation, prioritize immediate threats, and manage communications.",
         "card3.t": "Unfiltered Advisory",
         "card3.d": "Being targeted by financial crime is isolating. We act as a strictly confidential sounding board that understands the mechanisms of modern fraud. No shame, just forward momentum.",
+        
+        "process.title": "How It Works",
+        "step1.t": "1. Secure Comms & NDA",
+        "step1.d": "We establish a secure line of communication and sign a strict Non-Disclosure Agreement. Your data stays with us.",
+        "step2.t": "2. Tactical Briefing",
+        "step2.d": "An initial session where we map the threat, analyze the traceability of locked assets, and define your leverage.",
+        "step3.t": "3. Execution",
+        "step3.d": "We deploy the strategy. We help draft your communications with institutions, coordinate with tax experts, and navigate the crisis.",
+
         "footer.rights": "All rights reserved.", "footer.privacy": "Privacy Policy"
       },
       sv: {
         "nav.home": "Hem", "nav.contact": "Kontakt",
         "hero.eyebrow": "1-TILL-1 STRATEGISKT STÖD",
         "hero.text": "Vi ger dig operativt stöd för att <strong style='color:#fff;'>kartlägga bedrägerier</strong>, hantera <strong style='color:#fff;'>myndighetskontakter</strong> och ta tillbaka <strong style='color:#fff;'>kontrollen</strong>.",
-        "btn.email": "Mejla Oss",
+        "btn.email": "contact@arceoconsult.com",
+        "hero.trust": "Strikt NDA • Konfidentiellt • Svar inom 24h",
+
+        "proof.title": "Track Record",
+        "proof.quote": "\"Bistod en privat klient med att säkra bevis och juridiskt övertag gällande 2,7 MSEK i förluster mot en obehörig plattform, vilket tvingade fram en förlikning.\"",
+
         "areas.title": "Taktiskt Fokus för Rådgivning",
         "card1.t": "Operativ Taktik",
         "card1.d": "Vi bygger strategin för ditt ärende. Vilka banker ska kontaktas? Hur formulerar du dig mot polisen? Vi ger dig verktygen att pressa rätt institutioner att agera.",
@@ -275,6 +326,15 @@
         "card2.d": "När ett finansiellt bedrägeri uppdagas drabbas ofta hela ens tillvaro. Vi strukturerar situationen, prioriterar akuta bränder och hjälper dig kommunicera med intressenter och familj.",
         "card3.t": "Ofiltrerat Bollplank",
         "card3.d": "Att drabbas av finansiell brottslighet är isolerande. Vi agerar som ett fullständigt konfidentiellt bollplank som förstår mekanismerna bakom moderna bedrägerinätverk. Ingen skam, bara framåtrörelse.",
+        
+        "process.title": "Hur Processen Fungerar",
+        "step1.t": "1. Säkrad Kommunikation & NDA",
+        "step1.d": "Vi upprättar en säker kommunikationskanal och signerar ett strikt sekretessavtal. Din information stannar hos oss.",
+        "step2.t": "2. Taktisk Genomgång",
+        "step2.d": "Ett inledande möte där vi kartlägger hotbilden, analyserar spårbarheten i de låsta tillgångarna och definierar ditt förhandlingsläge.",
+        "step3.t": "3. Genomförande",
+        "step3.d": "Vi rullar ut strategin. Vi hjälper till att formulera din kommunikation mot institutioner, samordnar med skatteexperter och navigerar krisen tills målet är nått.",
+
         "footer.rights": "Alla rättigheter förbehållna.", "footer.privacy": "Integritetspolicy"
       }
     };
@@ -304,9 +364,11 @@
       }
     }
 
-    // Start - Ändrad till SV som standard för att matcha index
-    const savedLang = localStorage.getItem('arceo_lang') || 'sv';
-    setLang(savedLang);
+    // Ladda sparat språk direkt när DOM är redo
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('arceo_lang') || 'sv';
+        setLang(savedLang);
+    });
   </script>
 
 </body>
