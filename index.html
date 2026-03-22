@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ArceoConsult | Financial Forensics & Asset Tracing</title>
   
-  <meta name="description" content="Vi hjälper offer för finansiella bedrägerier. Kombinerad OSINT-forensik, skatteoptimering och juridisk koordinering för att spåra tillgångar." />
+  <meta name="description" content="Vi hjälper offer för finansiella bedrägerier. Kombinerad OSINT-forensik, förlustavdrag och juridisk koordinering för att spåra tillgångar." />
   <link rel="canonical" href="https://arceoconsult.com/">
   
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -95,14 +95,15 @@
     .lang-btn:hover { border-color: var(--gold); color: var(--gold); }
     .lang-btn.active { background: var(--gold); color: #000; border-color: var(--gold); }
 
-    /* MOBIL MENY */
-    .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
-    .nav-toggle-line { display: block; width: 25px; height: 2px; background: #fff; margin: 5px 0; }
+    /* MOBIL MENY (Optimerad) */
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+    .nav-toggle-line { display: block; width: 25px; height: 2px; background: #fff; margin: 5px 0; transition: 0.3s; }
     @media (max-width: 900px) {
         .nav-toggle { display: block; }
-        .main-nav { position: absolute; top: 80px; left: 0; width: 100%; background: var(--blue-bg); flex-direction: column; display: none; padding: 30px 0; border-bottom: 1px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+        .main-nav { position: absolute; top: 80px; left: 0; width: 100%; background: var(--blue-bg); flex-direction: column; display: none; padding: 30px 0 40px; border-bottom: 1px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
         .main-nav.open { display: flex; }
         .main-nav ul { flex-direction: column; gap: 25px; text-align: center; }
+        .main-nav a { font-size: 16px; padding: 10px; display: block; }
         .lang-switcher { justify-content: center; border-left: none; padding-left: 0; margin-top: 15px; }
         .hero h2 { font-size: 38px !important; }
     }
@@ -143,9 +144,19 @@
     .card h3 { color: var(--gold); font-size: 20px; margin-bottom: 15px; letter-spacing: 0.5px; }
     .card em { color: #64748b; font-style: normal; font-size: 13px; display: block; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; }
 
-    /* --- BILD LEO --- */
-    .identity-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    /* --- BILD LEO & KONTEXT --- */
+    .identity-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; }
     .identity-photo img { width: 100%; border-radius: 6px; filter: grayscale(20%) contrast(1.05); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+    
+    .founder-context { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .founder-name { color: var(--gold); font-weight: 700; font-size: 18px; letter-spacing: 1px; text-transform: uppercase; }
+    .founder-title { color: #94a3b8; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; display: block; }
+    .founder-bio { font-size: 14px; color: #cbd5e1; line-height: 1.6; }
+
+    .stat-box { background: rgba(255,255,255,0.02); border-left: 3px solid var(--gold); padding: 20px; margin-top: 30px; }
+    .stat-box p { margin: 0; font-family: 'Times New Roman', serif; font-style: italic; font-size: 18px; color: #fff; }
+    .stat-source { display: block; font-size: 11px; color: #64748b; font-family: sans-serif; font-style: normal; margin-top: 5px; text-transform: uppercase; letter-spacing: 1px;}
+
     @media (max-width: 800px) { .identity-grid { grid-template-columns: 1fr; } }
 
     /* --- FORMULÄR --- */
@@ -208,7 +219,7 @@
       <h1 data-i18n="hero.eyebrow">FINANSIELL FORENSIK & ÅTERVINNING</h1>
       <h2 data-i18n="hero.title">Vi agerar där myndigheterna ger upp.</h2>
       <p class="hero-subtitle" data-i18n="hero.subtitle">
-        Har du drabbats av avancerade bedrägerier? Vi kombinerar <strong style='color:#fff;'>OSINT-forensik</strong>, strategisk <strong style='color:#fff;'>skatteoptimering</strong> och <strong style='color:#fff;'>juridisk handlingskraft</strong> för att spåra dina förlorade tillgångar.
+        Har du drabbats av avancerade bedrägerier? Vi kombinerar <strong style='color:#fff;'>OSINT-forensik</strong>, <strong style='color:#fff;'>strukturering av förlustavdrag</strong> och <strong style='color:#fff;'>juridisk handlingskraft</strong> för att spåra dina förlorade tillgångar.
       </p>
       <div class="cta">
         <a href="#contact" class="btn" data-i18n="btn.contact">Boka Skadekontroll</a>
@@ -220,14 +231,27 @@
 
   <section id="identity" class="section bg-alt">
     <div class="container identity-grid">
-      <div class="identity-photo">
-        <img src="leo.webp.webp" alt="Leo Riccardo Celija" loading="lazy">
+      <div>
+        <div class="identity-photo">
+          <img src="leo.webp.webp" alt="Leo Riccardo Celija" loading="lazy">
+        </div>
+        <div class="founder-context">
+          <div class="founder-name">Leo Riccardo Celija</div>
+          <span class="founder-title" data-i18n="identity.role">Grundare & Strategichef</span>
+          <p class="founder-bio" data-i18n="identity.bio">Leder utredningar och strukturerar återvinningsprocessen för drabbade företag och privatpersoner, med bakgrund inom cybersäkerhet och strategisk analys.</p>
+        </div>
       </div>
+      
       <div class="identity-text">
         <h2 data-i18n="identity.title">Vilka vi är</h2>
         <p data-i18n="identity.text">
-          ArceoConsult är inte en traditionell advokatbyrå. Vi är en <strong>operativ insatsstyrka</strong> för offer av finansiella brott. De flesta bedrägerifall, som "pig butchering" eller investeringsbluffar, slutar med en nedlagd polisanmälan. Vi börjar där andra slutar. Vi kartlägger transaktioner, samordnar juridiska processer och säkrar dina skatteavdrag. Inga falska löften – bara metodisk handlingskraft.
+          ArceoConsult är inte en traditionell advokatbyrå. Vi är en <strong>operativ insatsstyrka</strong> för offer av finansiella brott. De flesta bedrägerifall slutar med en nedlagd polisanmälan. Vi börjar där andra slutar. Vi har omfattande erfarenhet av ärenden som rör obehöriga investeringsplattformar och social engineering-bedrägerier. Vi kartlägger transaktioner, samordnar juridiska processer och säkrar dina skatteavdrag. Inga falska löften – bara metodisk handlingskraft.
         </p>
+        
+        <div class="stat-box">
+          <p data-i18n="identity.stat">"Globala förluster från investeringsbedrägerier översteg 100 miljarder SEK under 2025."</p>
+          <span class="stat-source">(Källa: FBI Internet Crime Complaint Center, IC3)</span>
+        </div>
       </div>
     </div>
   </section>
@@ -253,8 +277,8 @@
           <em data-i18n="pillar1.out">Syfte: Identifiera bevis och kassaflöden.</em>
         </article>
         <article class="card">
-          <h3 data-i18n="pillar2.t">Skatteoptimering</h3>
-          <p data-i18n="pillar2.d">Vi minimerar din finansiella skada genom att strukturera formella bevis underlag för fulla förlustavdrag i samråd med skattejurister.</p>
+          <h3 data-i18n="pillar2.t">Strukturering av Förlustavdrag</h3>
+          <p data-i18n="pillar2.d">Vi minimerar din finansiella skada genom att upprätta formella bevisunderlag för fulla kapitalförlustavdrag i samråd med skattejurister.</p>
           <em data-i18n="pillar2.out">Syfte: Rädda kapital genom skattelagstiftning.</em>
         </article>
         <article class="card">
@@ -273,7 +297,7 @@
       <div class="grid">
         <article class="card">
           <h3 data-i18n="prog1.t">Initial Skadekontroll</h3>
-          <p data-i18n="prog1.d">48-timmars genomlysning av ditt ärende. Finns det spårbarhet? Finns det grund för förlustavdrag? Vi ger dig ett ärligt svar på dina möjligheter.</p>
+          <p data-i18n="prog1.d">48-timmars genomlysning av ditt ärende. Finns det spårbarhet? Finns det grund för avdrag? Vi ger dig ett ärligt svar på dina möjligheter.</p>
           <em data-i18n="prog1.out">Du får: En realitetscheck och stridsplan.</em>
         </article>
         <article class="card">
@@ -283,7 +307,7 @@
         </article>
         <article class="card">
           <h3 data-i18n="prog3.t">Strategisk Återvinning</h3>
-          <p data-i18n="prog3.d">Vi förhandlar med banker, initierar skatteavdrags-processer och stöttar jurister i kravställandet för att hämta hem kapitalet.</p>
+          <p data-i18n="prog3.d">Vi förhandlar med banker, initierar avdragsprocesser och stöttar jurister i kravställandet för att hämta hem kapitalet.</p>
           <em data-i18n="prog3.out">Du får: Agerande och resultat.</em>
         </article>
       </div>
@@ -345,7 +369,7 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     
-    // MENY
+    // MENY MED STÄNG-FUNKTION VID KLICK FÖR MOBIL
     const navToggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.main-nav');
     navToggle.addEventListener('click', () => { nav.classList.toggle('open'); });
@@ -353,19 +377,22 @@
         link.addEventListener('click', () => { nav.classList.remove('open'); });
     });
 
-    // SPRÅK-DATA (Uppdaterad med anti-flagging Copywriting)
+    // SPRÅK-DATA 
     const i18n = {
       en: {
         "nav.1on1": "1-on-1 Consulting", "nav.intent": "Intent", "nav.pillars": "Services", "nav.programs": "Programs", "nav.method": "Method", "nav.contact": "Contact",
         "hero.eyebrow": "FINANCIAL FORENSICS & ASSET TRACING",
         "hero.title": "We act where authorities give up.",
-        "hero.subtitle": "Have you been targeted by advanced financial fraud? We combine <strong style='color:#fff;'>OSINT forensics</strong>, strategic <strong style='color:#fff;'>tax optimization</strong>, and <strong style='color:#fff;'>legal coordination</strong> to trace your lost assets.",
+        "hero.subtitle": "Have you been targeted by advanced financial fraud? We combine <strong style='color:#fff;'>OSINT forensics</strong>, <strong style='color:#fff;'>capital loss structuring</strong>, and <strong style='color:#fff;'>legal coordination</strong> to trace your lost assets.",
         "hero.trust": "Confidential • NDA • 24–48h Response",
         "btn.contact": "Book Damage Assessment",
         "btn.method": "Our Method",
         
+        "identity.role": "Founder & Lead Strategist",
+        "identity.bio": "Leads investigations and structures the recovery process for affected companies and private individuals, with a background in cybersecurity and strategic intelligence.",
         "identity.title": "Who We Are",
-        "identity.text": "ArceoConsult is not a traditional law firm. We are an <strong>operational task force</strong> for victims of financial crime. Most fraud cases end with a closed police report. We begin where others stop. We map transactions, coordinate legal action, and secure tax deductions. No false promises – just methodical execution.",
+        "identity.text": "ArceoConsult is not a traditional law firm. We are an <strong>operational task force</strong> for victims of financial crime. Most fraud cases end with a closed police report. We begin where others stop. We have extensive experience with cases involving unauthorized investment platforms and social engineering fraud. We map transactions, coordinate legal action, and secure tax deductions. No false promises – just methodical execution.",
+        "identity.stat": "\"Global investment fraud losses exceeded $10B in 2025.\"",
         
         "intent.title": "Our Intent",
         "intent.lead": "<strong>The Goal:</strong> To regain the initiative and control.",
@@ -376,12 +403,12 @@
         "pillars.title": "Our Services",
         "pillars.intro": "Clinical methods for financial intelligence:",
         "pillar1.t": "Forensic OSINT", "pillar1.d": "We trace transaction flows via blockchain analysis and digital forensics to map the networks and find where your assets have moved.", "pillar1.out": "Purpose: Identify evidence and cash flows.",
-        "pillar2.t": "Tax Optimization", "pillar2.d": "We minimize your financial damage by structuring formal evidence for full capital loss deductions in consultation with tax lawyers.", "pillar2.out": "Purpose: Salvage capital through tax law.",
+        "pillar2.t": "Capital Loss Structuring", "pillar2.d": "We minimize your financial damage by structuring formal evidence for full capital loss deductions in consultation with tax lawyers.", "pillar2.out": "Purpose: Salvage capital through tax law.",
         "pillar3.t": "Legal Coordination", "pillar3.d": "We build watertight intelligence briefs that compel law enforcement, your bank, and the justice system to act on your case.", "pillar3.out": "Purpose: Maximize chances of asset recovery.",
         
         "programs.title": "Our Programs",
         "programs.intro": "Clear steps to take back control.",
-        "prog1.t": "Initial Damage Assessment", "prog1.d": "48-hour diagnostic of your case. Is there traceability? Are there grounds for tax deductions? We give you an honest answer.", "prog1.out": "You get: A reality check and battle plan.",
+        "prog1.t": "Initial Damage Assessment", "prog1.d": "48-hour diagnostic of your case. Is there traceability? Are there grounds for deductions? We give you an honest answer.", "prog1.out": "You get: A reality check and battle plan.",
         "prog2.t": "Forensic Mapping", "prog2.d": "Active investigation. We perform in-depth OSINT analysis, trace crypto transactions, and map the perpetrators' infrastructure.", "prog2.out": "You get: A technical evidence brief.",
         "prog3.t": "Strategic Execution", "prog3.d": "We negotiate with banks, initiate tax deduction processes, and support lawyers with evidence to reclaim the capital.", "prog3.out": "You get: Action and structured results.",
         
@@ -404,14 +431,17 @@
         "nav.1on1": "1-till-1 Krishantering", "nav.intent": "Vårt Syfte", "nav.pillars": "Tjänster", "nav.programs": "Program", "nav.method": "Metod", "nav.contact": "Kontakt",
         "hero.eyebrow": "FINANSIELL FORENSIK & ÅTERVINNING",
         "hero.title": "Vi agerar där myndigheterna ger upp.",
-        "hero.subtitle": "Har du drabbats av avancerade bedrägerier? Vi kombinerar <strong style='color:#fff;'>OSINT-forensik</strong>, strategisk <strong style='color:#fff;'>skatteoptimering</strong> och <strong style='color:#fff;'>juridisk handlingskraft</strong> för att spåra dina förlorade tillgångar.",
+        "hero.subtitle": "Har du drabbats av avancerade bedrägerier? Vi kombinerar <strong style='color:#fff;'>OSINT-forensik</strong>, <strong style='color:#fff;'>strukturering av förlustavdrag</strong> och <strong style='color:#fff;'>juridisk handlingskraft</strong> för att spåra dina förlorade tillgångar.",
         "hero.trust": "Konfidentiellt • NDA • 24–48h återkoppling",
         "btn.contact": "Boka Skadekontroll",
         "btn.method": "Vår Metod",
         
+        "identity.role": "Grundare & Strategichef",
+        "identity.bio": "Leder utredningar och strukturerar återvinningsprocessen för drabbade företag och privatpersoner, med bakgrund inom cybersäkerhet och strategisk analys.",
         "identity.title": "Vilka vi är",
-        "identity.text": "ArceoConsult är inte en traditionell advokatbyrå. Vi är en <strong>operativ insatsstyrka</strong> för offer av finansiella brott. De flesta bedrägerifall, som 'pig butchering' eller investeringsbluffar, slutar med en nedlagd polisanmälan. Vi börjar där andra slutar. Vi kartlägger transaktioner, samordnar juridiska processer och säkrar dina skatteavdrag. Inga falska löften – bara metodisk handlingskraft.",
-        
+        "identity.text": "ArceoConsult är inte en traditionell advokatbyrå. Vi är en <strong>operativ insatsstyrka</strong> för offer av finansiella brott. De flesta bedrägerifall slutar med en nedlagd polisanmälan. Vi börjar där andra slutar. Vi har omfattande erfarenhet av ärenden som rör obehöriga investeringsplattformar och social engineering-bedrägerier. Vi kartlägger transaktioner, samordnar juridiska processer och säkrar dina skatteavdrag. Inga falska löften – bara metodisk handlingskraft.",
+        "identity.stat": "\"Globala förluster från investeringsbedrägerier översteg 100 miljarder SEK under 2025.\"",
+
         "intent.title": "Vårt Uppdrag",
         "intent.lead": "<strong>Målet:</strong> Att ta tillbaka initiativet och kontrollen.",
         "intent.p1": "<strong>Vad vi gör:</strong> Vi kliver in när du har förlorat kapital i komplexa nätverk. Vi strukturerar kaoset, identifierar var tillgångarna tagit vägen och bygger ärendet som tvingar institutioner att agera.",
@@ -421,14 +451,14 @@
         "pillars.title": "Våra Tjänster",
         "pillars.intro": "Kliniska metoder för finansiell utredning:",
         "pillar1.t": "Forensisk OSINT", "pillar1.d": "Vi spårar transaktionsflöden via blockchain-analys och digital forensik för att kartlägga nätverken och var dina tillgångar har tagit vägen.", "pillar1.out": "Syfte: Identifiera bevis och kassaflöden.",
-        "pillar2.t": "Skatteoptimering", "pillar2.d": "Vi minimerar din finansiella skada genom att strukturera formella bevisunderlag för fulla förlustavdrag i samråd med skattejurister.", "pillar2.out": "Syfte: Rädda kapital genom skattelagstiftning.",
+        "pillar2.t": "Strukturering av Förlustavdrag", "pillar2.d": "Vi minimerar din finansiella skada genom att upprätta formella bevisunderlag för fulla kapitalförlustavdrag i samråd med skattejurister.", "pillar2.out": "Syfte: Rädda kapital genom skattelagstiftning.",
         "pillar3.t": "Juridisk Koordinering", "pillar3.d": "Vi bygger vattentäta bevispaket (briefs) som tvingar polismyndigheter, din bank och rättsväsendet att agera på ditt ärende, istället för att lägga ner det.", "pillar3.out": "Syfte: Maximera chans till återvinning.",
         
         "programs.title": "Våra Upplägg",
         "programs.intro": "Tydliga steg för att ta tillbaka kontrollen.",
-        "prog1.t": "Initial Skadekontroll", "prog1.d": "48-timmars genomlysning av ditt ärende. Finns det spårbarhet? Finns det grund för förlustavdrag? Vi ger dig ett ärligt svar på dina möjligheter.", "prog1.out": "Du får: En realitetscheck och stridsplan.",
+        "prog1.t": "Initial Skadekontroll", "prog1.d": "48-timmars genomlysning av ditt ärende. Finns det spårbarhet? Finns det grund för avdrag? Vi ger dig ett ärligt svar på dina möjligheter.", "prog1.out": "Du får: En realitetscheck och stridsplan.",
         "prog2.t": "Forensisk Kartläggning", "prog2.d": "Aktiv utredning. Vi utför djupgående OSINT-analyser, spårar krypto-transaktioner och kartlägger bedragarnas infrastruktur.", "prog2.out": "Du får: Ett tekniskt bevispaket.",
-        "prog3.t": "Strategisk Återvinning", "prog3.d": "Vi förhandlar med banker, initierar skatteavdrags-processer och stöttar jurister i kravställandet för att hämta hem kapitalet.", "prog3.out": "Du får: Agerande och resultat.",
+        "prog3.t": "Strategisk Återvinning", "prog3.d": "Vi förhandlar med banker, initierar avdragsprocesser och stöttar jurister i kravställandet för att hämta hem kapitalet.", "prog3.out": "Du får: Agerande och resultat.",
         
         "method.title": "Vår Arbetsmetod",
         "method.intro": "Institutionell precision. Diskretion. Fakta.",
@@ -448,7 +478,7 @@
     };
 
     function setLang(lang) {
-      document.documentElement.setAttribute('lang', lang); // SEO FIX
+      document.documentElement.setAttribute('lang', lang); 
       localStorage.setItem('arceo_lang', lang);
       const dict = i18n[lang];
       document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -465,7 +495,7 @@
       document.getElementById('btn-sv').classList.toggle('active', lang === 'sv');
     }
 
-    // Start - HÄR HAR JAG ÄNDRAT SÅ ATT 'sv' ÄR STANDARD
+    // Start 
     const savedLang = localStorage.getItem('arceo_lang') || 'sv';
     setLang(savedLang);
   </script>
