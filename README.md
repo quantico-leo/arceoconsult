@@ -11,7 +11,11 @@ Static bilingual website for ArceoConsult OÜ: business development, market and 
 - `translations.js`: Swedish/English content dictionary.
 - `site.js`: language selection, accessible mobile navigation and form handling.
 
-Language order: valid `?lang=sv|en`, saved `arceo_lang`, browser language (Swedish → SV; all others → EN). Manual selection persists and is carried to internal pages. Without JavaScript, Swedish content and a native form POST remain available.
+Language order: valid `?lang=sv|en`, consented saved `arceo_lang`, browser language (Swedish → SV; all others → EN). Language selection is carried through internal URLs even without optional storage. Without JavaScript, Swedish content and a native form POST remain available.
+
+## Cookie choices
+
+The bilingual banner offers equal choices: necessary storage only, or optional language memory. No analytics or advertising services are installed. Before an active acceptance, no language preference is stored. `arceo_consent_v1` remembers acceptance/refusal for 180 days; `arceo_lang` is used only with active permission and shares that expiry. Expired records and legacy unconsented language values are removed on the next visit. The visible Cookie settings button and footer link reopen the choices on every page; refusal removes the language value immediately. Browser-blocked storage is handled without claiming the choice was saved.
 
 ## Preview
 

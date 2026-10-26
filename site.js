@@ -1,12 +1,28 @@
-/* Buildless progressive enhancement. Only the language preference is stored locally. */
+/* Buildless progressive enhancement. Optional language storage requires consent. */
 (() => {
   'use strict';
   const dictionaries = window.ARCEO_TRANSLATIONS;
   if (!dictionaries) return;
   const supported = value => value === 'sv' || value === 'en';
   const query = new URLSearchParams(location.search);
+  const consentKey = 'arceo_consent_v1';
+  const consentLifetime = 180 * 24 * 60 * 60 * 1000;
+  function readConsent() {
+    try {
+      const value = JSON.parse(localStorage.getItem(consentKey) || 'null');
+      if (value?.version === 1 && typeof value.preferences === 'boolean' && Number.isFinite(value.expiresAt) && value.expiresAt > Date.now() && value.expiresAt <= Date.now() + consentLifetime + 60000) return value;
+      localStorage.removeItem(consentKey);
+      localStorage.removeItem('arceo_lang');
+    } catch (_) { /* Storage can be blocked. */ }
+    return null;
+  }
+  let consent = readConsent();
+  const mayRememberLanguage = () => consent?.preferences === true && consent.expiresAt > Date.now();
   let saved;
-  try { saved = localStorage.getItem('arceo_lang'); } catch (_) { /* Storage can be blocked. */ }
+  try {
+    if (mayRememberLanguage()) saved = localStorage.getItem('arceo_lang');
+    else localStorage.removeItem('arceo_lang');
+  } catch (_) { /* Storage can be blocked. */ }
   let language = supported(query.get('lang')) ? query.get('lang') : supported(saved) ? saved : (navigator.language || '').toLowerCase().startsWith('sv') ? 'sv' : 'en';
   let statusKey = '';
   let busy = false;
@@ -15,6 +31,11 @@
   const status = document.getElementById('form-status');
   const menu = document.getElementById('mobile-nav');
   const menuButton = document.querySelector('.menu-toggle');
+  const cookieBanner = document.getElementById('cookie-banner');
+  const cookieSettings = document.getElementById('cookie-settings');
+  const cookieStatus = document.getElementById('cookie-status');
+  let consentStorageFailed = false;
+  let cookieReturnFocus = null;
   const t = key => dictionaries[language][key] || dictionaries.en[key] || key;
 
   function closeMenu(returnFocus = false) {
@@ -36,6 +57,7 @@
     document.querySelector('meta[property="og:description"]').content = t(page + '.description');
     document.querySelector('meta[property="og:locale"]').content = language === 'sv' ? 'sv_SE' : 'en_GB';
     menuButton.setAttribute('aria-label', t(menu.hidden ? 'menu.open' : 'menu.close'));
+    if (consentStorageFailed) cookieStatus.textContent = t('cookie.storageError');
     // Carry language across pages even if localStorage is unavailable.
     document.querySelectorAll('a[href]').forEach(link => {
       const href = link.getAttribute('href');
@@ -54,7 +76,10 @@
       [...form.elements].forEach(field => field.setCustomValidity?.(''));
     }
     if (remember) {
-      try { localStorage.setItem('arceo_lang', language); } catch (_) { /* A preference is optional. */ }
+      try {
+        if (mayRememberLanguage()) localStorage.setItem('arceo_lang', language);
+        else localStorage.removeItem('arceo_lang');
+      } catch (_) { /* A preference is optional. */ }
       const url = new URL(location.href);
       url.searchParams.set('lang', language);
       history.replaceState(null, '', url);
@@ -71,6 +96,42 @@
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && !menu.hidden) closeMenu(true); });
   window.matchMedia('(min-width: 901px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
   applyLanguage(language);
+
+  function showCookieBanner(show) {
+    cookieBanner.hidden = !show;
+    cookieSettings.hidden = show;
+  }
+  function chooseCookies(preferences) {
+    consent = { version: 1, preferences, expiresAt: Date.now() + consentLifetime };
+    try {
+      // Remembering the consent choice is necessary to honour a refusal too.
+      localStorage.setItem(consentKey, JSON.stringify(consent));
+      if (preferences) localStorage.setItem('arceo_lang', language);
+      else localStorage.removeItem('arceo_lang');
+      consentStorageFailed = false;
+      cookieStatus.hidden = true;
+      showCookieBanner(false);
+      (cookieReturnFocus || cookieSettings).focus({ preventScroll: true });
+    } catch (_) {
+      consentStorageFailed = true;
+      cookieStatus.textContent = t('cookie.storageError');
+      cookieStatus.hidden = false;
+    }
+  }
+  document.querySelectorAll('[data-cookie-choice]').forEach(button => button.addEventListener('click', () => chooseCookies(button.dataset.cookieChoice === 'allow')));
+  document.querySelectorAll('[data-cookie-settings]').forEach(button => button.addEventListener('click', () => {
+    cookieReturnFocus = button;
+    showCookieBanner(true);
+    cookieBanner.querySelector('button').focus({ preventScroll: true });
+  }));
+  window.addEventListener('storage', event => {
+    if (event.key === consentKey || event.key === null) {
+      consent = readConsent();
+      try { if (!mayRememberLanguage()) localStorage.removeItem('arceo_lang'); } catch (_) {}
+      showCookieBanner(!consent);
+    }
+  });
+  showCookieBanner(!consent);
 
   if (!form) return;
   form.noValidate = true;
